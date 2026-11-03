@@ -322,6 +322,62 @@
       "http_status": 200,
       "bytes": 21453,
       "sha256": "f489591ca904030b7a4f07f3b0521486e02797cd69251f6e552a4881ea1cbc27"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/410c65099fac89745524643758171ad212a7ffd9/scripts/bilibili-splash.js",
+      "repository": "moneychen003/stash-adblock",
+      "http_status": 200,
+      "bytes": 9598,
+      "sha256": "89ef8f3c5c2807af4ef72bbfb25dff897442d4088e68ded48b90860b3aff56d9"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/410c65099fac89745524643758171ad212a7ffd9/scripts/broadnet.js",
+      "repository": "moneychen003/stash-adblock",
+      "http_status": 200,
+      "bytes": 1744,
+      "sha256": "99b0fe6c148a976030fa930bac107d2919041326f7d527b051bb81e9b1dda487"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/410c65099fac89745524643758171ad212a7ffd9/scripts/coolapk.js",
+      "repository": "moneychen003/stash-adblock",
+      "http_status": 200,
+      "bytes": 2342,
+      "sha256": "14d87416d34ea0307fc55d33466f5f149c0c0139041991535409b75f2f4c241e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/410c65099fac89745524643758171ad212a7ffd9/scripts/douban.js",
+      "repository": "moneychen003/stash-adblock",
+      "http_status": 200,
+      "bytes": 888,
+      "sha256": "e7eb5d7a9adac3197835726bf62266c40d5924182800f447f50bfb4db0611c22"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/410c65099fac89745524643758171ad212a7ffd9/scripts/jd-splash.js",
+      "repository": "moneychen003/stash-adblock",
+      "http_status": 200,
+      "bytes": 5288,
+      "sha256": "65d4d8931d92746e797edfdfce4abac7f85272277c1abb91bfbc859c202d809f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/410c65099fac89745524643758171ad212a7ffd9/scripts/pinduoduo.js",
+      "repository": "moneychen003/stash-adblock",
+      "http_status": 200,
+      "bytes": 5368,
+      "sha256": "45f12cca6fe12a35eed8595617e379642a28f562aeefbe178b96fb1893c92c20"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/410c65099fac89745524643758171ad212a7ffd9/scripts/weibo.js",
+      "repository": "moneychen003/stash-adblock",
+      "http_status": 200,
+      "bytes": 5469,
+      "sha256": "3aed7db15d48c3c9e9f370a78b0e3fe93168e4461b9cefb10f3f44d93520db1f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/410c65099fac89745524643758171ad212a7ffd9/scripts/youku-ad-only.js",
+      "repository": "moneychen003/stash-adblock",
+      "http_status": 200,
+      "bytes": 3811,
+      "sha256": "86998fc1d58289a4885457ac6f03cc3a854e739d162b08b31074ac706ffa1a64"
     }
   ]
 }
