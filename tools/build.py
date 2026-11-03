@@ -10,7 +10,7 @@ def build(check=False):
  if check:
   assert path.read_text()==text,'Generated subscription differs; run python tools/build.py'
  else:path.parent.mkdir(exist_ok=True);path.write_text(text)
- manifest={'version':'2026.11.04','configuration_sha256':hashlib.sha256(text.encode()).hexdigest(),'counts':{'rules':len(config['rules']),'mitm_hosts':len(config['http']['mitm']),'script_bindings':len(config['http']['script']),'script_providers':len(config['script-providers'])},'local_scripts':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((ROOT/'scripts').glob('*.js'))}}
+ manifest={'version':'2026.11.04.2','configuration_sha256':hashlib.sha256(text.encode()).hexdigest(),'counts':{'rules':len(config['rules']),'url_rewrites':len(config['http']['url-rewrite']),'body_rewrites':len(config['http']['body-rewrite']),'mitm_hosts':len(config['http']['mitm']),'script_bindings':len(config['http']['script']),'script_providers':len(config['script-providers'])},'local_scripts':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((ROOT/'scripts').glob('*.js'))}}
  target=ROOT/'rules/manifest.json';body=json.dumps(manifest,ensure_ascii=False,indent=2)+'\n'
  if check:assert target.read_text()==body,'Manifest differs'
  else:target.write_text(body)

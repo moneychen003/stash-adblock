@@ -4,7 +4,7 @@
 
 1. 修改 `sources/config.json` 或 `scripts/`；不要直接编辑生成的覆写。
 2. `python -m pip install -r requirements.txt`。
-3. 执行 `python tools/build.py`，再执行 `python tools/validate.py` 和 `node tools/test_scripts.cjs`。
+3. 执行 `python tools/build.py`，再执行 `python tools/validate.py`、`python tools/test_coverage.py` 和 `node tools/test_scripts.cjs`。
 4. 核对上游固定提交及许可；修改上游依赖时更新 `rules/upstream-lock.json` 的可用性、大小和 SHA-256。
 5. 至少做对应 App 的冷启动对照，注明版本、登录状态、缓存/重装步骤和实际观察窗口。一次没出现广告不代表所有页面和长期使用都无广告。
 6. 更新版本号、报告与变更记录，发布后用匿名请求检查主订阅和引用脚本能访问。
@@ -14,3 +14,5 @@
 ## 本地验证范围
 
 静态检查覆盖 YAML 结构、脚本引用、JavaScript 语法、配置重建一致性、无关响应放行、广告字段替换和大整数文本保留。它们不能替代 Stash 内核加载、证书信任或用户设备上的实际验收。
+
+`rules/coverage.json` 记录基线与公开版计数、非广告删除项和改成广告专用处理的绑定。每次改变保留／删除范围都要同步更新该清单。恢复广告规则时也需保留相应 MitM 主机，检查现有更高优先级的拒绝规则是否抢先拦住响应修复。上游许可和署名不能因规则转换丢失。

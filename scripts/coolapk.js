@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
- * Ad-only scoped handler. Scope: api.coolapk.com/v6/main/init.
+ * Candidate only. Scope: api.coolapk.com/v6/main/init.
  *
  * Public API captures place SplashAd.Type and ad network app ids in the
  * extraData of card 6390. Preserve the card and its normal navigation fields;

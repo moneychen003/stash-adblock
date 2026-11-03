@@ -17,4 +17,5 @@ jobs:
           node-version: '22'
       - run: python -m pip install -r requirements.txt
       - run: python tools/validate.py
+      - run: python tools/test_coverage.py
       - run: node tools/test_scripts.cjs

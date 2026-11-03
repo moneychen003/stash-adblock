@@ -1,17 +1,22 @@
 {
-  "version": "2026.11.04",
-  "configuration_sha256": "a10274b7a2dbf25be63d052eac4d9054ac6894b08c0ce1b6249a13312e65f814",
+  "version": "2026.11.04.2",
+  "configuration_sha256": "f40de53e597ef18a21d5990ab4a404654331bf42775080113e44dcddafba4d46",
   "counts": {
-    "rules": 28,
-    "mitm_hosts": 17,
-    "script_bindings": 9,
-    "script_providers": 7
+    "rules": 2559,
+    "url_rewrites": 419,
+    "body_rewrites": 3,
+    "mitm_hosts": 329,
+    "script_bindings": 143,
+    "script_providers": 53
   },
   "local_scripts": {
     "bilibili-splash.js": "89ef8f3c5c2807af4ef72bbfb25dff897442d4088e68ded48b90860b3aff56d9",
-    "broadnet.js": "a28c818137ef4faba0a1052f6aad36126b5c15491302af53b6bed6896a7fe70b",
-    "coolapk.js": "4a000e00503698db2ce6f7d880c48ec196187a3a4af22626635a99beb348af92",
+    "broadnet.js": "99b0fe6c148a976030fa930bac107d2919041326f7d527b051bb81e9b1dda487",
+    "coolapk.js": "14d87416d34ea0307fc55d33466f5f149c0c0139041991535409b75f2f4c241e",
     "douban.js": "e7eb5d7a9adac3197835726bf62266c40d5924182800f447f50bfb4db0611c22",
-    "weibo.js": "3aed7db15d48c3c9e9f370a78b0e3fe93168e4461b9cefb10f3f44d93520db1f"
+    "jd-splash.js": "65d4d8931d92746e797edfdfce4abac7f85272277c1abb91bfbc859c202d809f",
+    "pinduoduo.js": "45f12cca6fe12a35eed8595617e379642a28f562aeefbe178b96fb1893c92c20",
+    "weibo.js": "3aed7db15d48c3c9e9f370a78b0e3fe93168e4461b9cefb10f3f44d93520db1f",
+    "youku-ad-only.js": "86998fc1d58289a4885457ac6f03cc3a854e739d162b08b31074ac706ffa1a64"
   }
 }

@@ -1,9 +1,28 @@
 const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('assert');
 const dir=path.join(__dirname,'../scripts');
-function run(file,url,body){const results=[];vm.runInNewContext(fs.readFileSync(path.join(dir,file),'utf8'),{$request:{url,method:'GET'},$response:{body,status:200,statusCode:200,headers:{}},$done:x=>results.push(x),console:{log(){}},URL,Set,Uint8Array,Buffer},{timeout:1000});assert.equal(results.length,1,file);return results[0];}
+function run(file,url,body,request={}){const results=[];vm.runInNewContext(fs.readFileSync(path.join(dir,file),'utf8'),{$request:{url,method:'GET',...request},$response:{body,status:200,statusCode:200,headers:{}},$done:x=>results.push(x),console:{log(){}},URL,Set,Uint8Array,Buffer},{timeout:1000});assert.equal(results.length,1,file);return results[0];}
 for(const f of fs.readdirSync(dir).filter(x=>x.endsWith('.js')))assert.deepEqual(run(f,'https://example.com/ordinary','{"value":1}'),{});
 const raw='{"enable_sdk_ad":true,"enable_splash_client_bid":true,"splash_client_bid_use_preload":true,"id":9007199254740993123}';
 const d=run('douban.js','https://frodo.douban.com/api/v2/feature_switch',raw);assert(d.body.includes('9007199254740993123'));assert.equal(JSON.parse(d.body).enable_sdk_ad,false);
-const normal='{"data":{"floors":[{"floorName":"权益楼层","service":"balance"}]}}';assert.deepEqual(run('broadnet.js','https://app.10099.com.cn/contact-web/api/content/qryTouchpointContent',normal),{});
+const normal='{"data":{"floors":[{"floorName":"账单查询楼层","service":"balance"}]}}';assert.deepEqual(run('broadnet.js','https://app.10099.com.cn/contact-web/api/content/qryTouchpointContent',normal),{});
 const ad=run('broadnet.js','https://app.10099.com.cn/contact-web/api/version/getFlashScreenPage','{"ok":true,"data":{"path":"https://example.com/ad.png","videoLink":"ad.mp4"}}');assert.equal(JSON.parse(ad.body).data.videoLink,'');
-console.log('PASS: unknown URL passthrough, single completion, integer preservation, ad replacement and service-floor preservation');
+const promoted=run('broadnet.js','https://app.10099.com.cn/contact-web/api/content/qryTouchpointContent','{"data":{"navigation":["充值","账单"],"floors":[{"floorName":"视听楼层"},{"floorName":"账单查询楼层"}]}}');
+assert.deepEqual(JSON.parse(promoted.body).data.navigation,['充值','账单']);assert.equal(JSON.parse(promoted.body).data.floors.length,1);
+const pdd='{"data":{"goods_list":[{"data":{"need_ad_logo":true,"id":1}},{"data":{"id":9007199254740993123}},{"data":{"ad":{"pubinfo":"test","nbid":"test"},"id":3}}]},"status":0}';
+const p=run('pinduoduo.js','https://api.pinduoduo.com/api/alexa/cells/hub/v3',pdd);assert(p.body.includes('9007199254740993123'));assert.equal(JSON.parse(p.body).data.goods_list.length,1);assert.equal(JSON.parse(p.body).status,0);
+const jdPayload=JSON.stringify({data:{images:[{url:'https://example.com/ad.png'}],showTimesDaily:3,normal:'keep'}});
+const jd=run('jd-splash.js','https://api.m.jd.com/client.action',Buffer.from(jdPayload).toString('base64'),{method:'POST',body:'functionId=startup'});
+const decoded=JSON.parse(Buffer.from(jd.body,'base64').toString());assert.deepEqual(decoded.data.images,[]);assert.equal(decoded.data.normal,'keep');assert.equal(decoded.data.showTimesDaily,0);
+assert.deepEqual(run('jd-splash.js','https://api.m.jd.com/client.action?functionId=ordinary','{"data":{"orderStatus":"ready","normal":"keep"}}'),{});
+assert.deepEqual(run('pinduoduo.js','https://api.pinduoduo.com/api/alexa/cells/hub/v3','{"data":{"goods_list":[{"data":{"id":1}}]}}'),{});
+const playBody='{"data":{"data":{"ad":{"test":1},"ykad":[1],"watermark":{"text":"keep"},"stream":{"url":"https://example.com/video"},"pay":{"required":true}}}}';
+const y=run('youku-ad-only.js','https://un-acs.youku.com/gw/mtop.youku.play.ups.appinfo.get/1.0/',playBody);
+const cleanPlay=JSON.parse(y.body).data.data;assert.equal(cleanPlay.ad,undefined);assert.equal(cleanPlay.ykad,undefined);assert.deepEqual(cleanPlay.watermark,{text:'keep'});assert.equal(cleanPlay.stream.url,'https://example.com/video');assert.equal(cleanPlay.pay.required,true);
+const tree='{"data":{"2019030100":{"data":{"data":{"global":{"PHONE_DETAIL_TOP_TAB":{"pageTabs":[{"code":"detail"},{"code":"list"},{"code":"planet"}]}}},"nodes":[{"typeName":"NORMAL","nodes":[{"typeName":"播放页广告组件"},{"typeName":"EPISODES","id":42}]}]}}}}';
+const cleanTree=JSON.parse(run('youku-ad-only.js','https://acs.youku.com/gw/mtop.youku.columbus.gateway.new.execute/1.0/',tree).body).data['2019030100'].data;
+assert.equal(cleanTree.nodes[0].nodes.length,1);assert.equal(cleanTree.data.global.PHONE_DETAIL_TOP_TAB.pageTabs.length,3);
+const feed='{"data":{"2019061000":{"data":{"nodes":[{"nodes":[{"data":{"ad":{"slot":1}}},{"id":77,"typeName":"VIDEO","data":{"title":"keep"}}]}]}}}}';
+const cleanFeed=JSON.parse(run('youku-ad-only.js','https://acs.youku.com/gw/mtop.youku.columbus.home.feed/1.0/',feed).body).data['2019061000'].data;
+assert.equal(cleanFeed.nodes[0].nodes.length,1);assert.equal(cleanFeed.nodes[0].nodes[0].id,77);
+assert.deepEqual(run('youku-ad-only.js','https://acs.youku.com/gw/mtop.youku.huluwa.dispatcher.youthmode.config2/1.0/','{"data":{"result":{"enabled":true}}}'),{});
+console.log('PASS: passthrough, integer preservation, PDD ads, JD encoded splash, Broadnet navigation and Youku playback/navigation preservation');
