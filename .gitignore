@@ -1,0 +1,12 @@
+__pycache__/
+.venv/
+*.pyc
+*.ipa
+*.p12
+*.pfx
+*.pem
+*.key
+*.pcap
+*.har
+*.log
+.DS_Store

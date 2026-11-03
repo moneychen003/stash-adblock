@@ -1,0 +1,23 @@
+{
+  "checked_date": "2026-11-04",
+  "dependencies": [
+    {
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/cnftp.js",
+      "http_status": 200,
+      "bytes": 31606,
+      "sha256": "4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zmqcherish/proxy-script/1d9f51bc9a0077d81998bb503ee6158ca83faa73/weibo_launch.js",
+      "http_status": 200,
+      "bytes": 999,
+      "sha256": "1ebea73aa974503abf72371cd32bdda86975dbad9beaf4c6f648db6debb75fa6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/72dd30fb6d5e2ff7b5bcdbecf164d288f41d9dfa/Filters/AWAvenue-Ads-Rule-Clash-Classical-Only.Ads.yaml",
+      "http_status": 200,
+      "bytes": 21453,
+      "sha256": "f489591ca904030b7a4f07f3b0521486e02797cd69251f6e552a4881ea1cbc27"
+    }
+  ]
+}

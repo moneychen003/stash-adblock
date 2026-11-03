@@ -1,0 +1,17 @@
+{
+  "version": "2026.11.04",
+  "configuration_sha256": "a10274b7a2dbf25be63d052eac4d9054ac6894b08c0ce1b6249a13312e65f814",
+  "counts": {
+    "rules": 28,
+    "mitm_hosts": 17,
+    "script_bindings": 9,
+    "script_providers": 7
+  },
+  "local_scripts": {
+    "bilibili-splash.js": "89ef8f3c5c2807af4ef72bbfb25dff897442d4088e68ded48b90860b3aff56d9",
+    "broadnet.js": "a28c818137ef4faba0a1052f6aad36126b5c15491302af53b6bed6896a7fe70b",
+    "coolapk.js": "4a000e00503698db2ce6f7d880c48ec196187a3a4af22626635a99beb348af92",
+    "douban.js": "e7eb5d7a9adac3197835726bf62266c40d5924182800f447f50bfb4db0611c22",
+    "weibo.js": "3aed7db15d48c3c9e9f370a78b0e3fe93168e4461b9cefb10f3f44d93520db1f"
+  }
+}

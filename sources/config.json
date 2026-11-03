@@ -1,0 +1,192 @@
+{
+  "name": "陈前 · Stash 去广告",
+  "desc": "公开核心版 2026.11.04。通用广告域名拦截与部分App定向修复；旧缓存可能需清理或重装。公开版已裁剪，不承诺全部广告去除。",
+  "rule-providers": {
+    "AWAvenue-OnlyAds": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "yaml",
+      "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/72dd30fb6d5e2ff7b5bcdbecf164d288f41d9dfa/Filters/AWAvenue-Ads-Rule-Clash-Classical-Only.Ads.yaml",
+      "interval": 86400
+    }
+  },
+  "rules": [
+    "DOMAIN,adstats.tencentmusic.com,REJECT",
+    "DOMAIN,ad.tencentmusic.com,REJECT",
+    "DOMAIN,adcdn.tencentmusic.com,REJECT",
+    "DOMAIN,adcdn6.tencentmusic.com,REJECT",
+    "DOMAIN,adexpo.tencentmusic.com,REJECT",
+    "DOMAIN,adclick.tencentmusic.com,REJECT",
+    "DOMAIN,tmead.y.qq.com,REJECT",
+    "DOMAIN,tmeadbak.y.qq.com,REJECT",
+    "DOMAIN,tmeadcomm.y.qq.com,REJECT",
+    "DOMAIN,tmeadquic.y.qq.com,REJECT",
+    "DOMAIN,us.l.qq.com,REJECT",
+    "DOMAIN,p.l.qq.com,REJECT",
+    "DOMAIN,xs.gdt.qq.com,REJECT",
+    "DOMAIN,yk-ssp.ad.youku.com,REJECT",
+    "DOMAIN,ykad-data.youku.com,REJECT",
+    "DOMAIN,adx-core.youku.com,REJECT",
+    "DOMAIN,adx-open-service.youku.com,REJECT",
+    "DOMAIN,vali-g1.cp31.ott.cibntv.net,REJECT",
+    "DOMAIN,api.yunxish.com,REJECT",
+    "DOMAIN,cpc-service-square.yunxish.com,REJECT",
+    "DOMAIN,cpc-service-square.iggrowth.cn,REJECT",
+    "DOMAIN,cpc-service-square.58iclick.com,REJECT",
+    "DOMAIN,ad-api.adn-plus.com.cn,REJECT",
+    "DOMAIN,log-api.pangolin-sdk-toutiao.com,REJECT-DROP",
+    "AND,((DOMAIN,y.gtimg.cn),(PROTOCOL,QUIC)),REJECT",
+    "AND,((DOMAIN,music.y.qq.com),(PROTOCOL,QUIC)),REJECT",
+    "AND,((DOMAIN,frodo.douban.com),(PROTOCOL,QUIC)),REJECT",
+    "RULE-SET,AWAvenue-OnlyAds,REJECT"
+  ],
+  "http": {
+    "mitm": [
+      "frodo.douban.com",
+      "api.weibo.cn",
+      "bootpreload.uve.weibo.com",
+      "wbapp.uve.weibo.com",
+      "sdkapp.uve.weibo.com",
+      "bootrealtime.uve.weibo.com",
+      "app.10099.com.cn",
+      "api.coolapk.com",
+      "app.bilibili.com",
+      "app.biliapi.net",
+      "app.biliapi.com",
+      "music.y.qq.com",
+      "us.l.qq.com",
+      "y.gtimg.cn",
+      "acs.youku.com",
+      "push.m.youku.com",
+      "un-acs.youku.com"
+    ],
+    "body-rewrite": [
+      "^https?:\\/\\/bootpreload\\.uve\\.weibo\\.com\\/v[23]\\/ad\\/preload(?:\\?|$) response-jq if type == \"object\" and (.ads | type) == \"array\" then .ads = [] else . end",
+      "^https?:\\/\\/wbapp\\.uve\\.weibo\\.com\\/wbapplua\\/wbpullad\\.lua(?:\\?|$) response-jq if type == \"object\" and (.cached_ad | type) == \"object\" and (.cached_ad.ads | type) == \"array\" then .cached_ad.ads = [] else . end"
+    ],
+    "url-rewrite": [
+      "^https://frodo\\.douban\\.com/api/v2/(?:home_banner|home_ads)(?:[?#]|$) - reject-dict",
+      "^https?://music\\.y\\.qq\\.com/maproxy/getPbCompressAd(?:\\?|$) - reject",
+      "^https?://us\\.l\\.qq\\.com/exapp(?:\\?|$) - reject",
+      "^https?://y\\.gtimg\\.cn/music/common/upload/(?:t_splash_info|targeted_ads|kg_ad)[^/]*/ - reject",
+      "^https?://y\\.gtimg\\.cn/music/common//upload/kg_ad/ - reject-img",
+      "^https?://sdkapp\\.uve\\.weibo\\.com/interface/sdk/sdkconfig\\.php(?:\\?|$) - reject",
+      "^https?://bootrealtime\\.uve\\.weibo\\.com/v\\d/ad/realtime(?:\\?|$) - reject-dict",
+      "^https?://acs\\.youku\\.com/gw/mtop\\.youku\\.(?:pisp\\.scripts\\.get|xspace\\.play\\.position\\.preload\\.query|xspace\\.poplayer\\.position\\.query)(?:/|\\?|$) - reject-dict"
+    ],
+    "script": [
+      {
+        "match": "^https:\\/\\/frodo\\.douban\\.com\\/api\\/v2\\/feature_switch(?:\\?|$)",
+        "name": "cq.douban",
+        "type": "response",
+        "require-body": true,
+        "max-size": 1048576,
+        "timeout": 5
+      },
+      {
+        "match": "^https:\\/\\/api\\.weibo\\.cn\\/2\\/(?:live\\/media_homelist|statuses\\/container_timeline_unread)(?:\\?.*)?$",
+        "name": "cq.weibo",
+        "type": "response",
+        "require-body": true,
+        "max-size": 1048576,
+        "timeout": 5
+      },
+      {
+        "match": "^https:\\/\\/app\\.10099\\.com\\.cn\\/contact-web\\/api\\/(?:version\\/getFlashScreenPage|content\\/(?:qryPosterStand))(?:\\?.*)?$",
+        "name": "cq.broadnet",
+        "type": "response",
+        "require-body": true,
+        "max-size": 1048576,
+        "timeout": 5
+      },
+      {
+        "match": "^https?:\\/\\/api\\.coolapk\\.com\\/v6\\/main\\/init(?:[?#]|$)",
+        "name": "cq.coolapk",
+        "type": "response",
+        "require-body": true,
+        "max-size": 1048576,
+        "timeout": 5
+      },
+      {
+        "match": "^https?:\\/\\/(?:app\\.bilibili\\.com|app\\.biliapi\\.net|app\\.biliapi\\.com)(?::443)?\\/x\\/v2\\/splash\\/(?:list|show|brand\\/list|event\\/list2)(?:\\?.*)?$",
+        "name": "cq.bilibili-splash",
+        "type": "response",
+        "require-body": true,
+        "max-size": 1048576,
+        "timeout": 5
+      },
+      {
+        "match": "^https?:\\/\\/sdkapp\\.uve\\.weibo\\.com\\/interface\\/sdk\\/sdkad\\.php(?:\\?|$)",
+        "name": "cq.weibo-launch",
+        "type": "response",
+        "require-body": true,
+        "max-size": 1048576,
+        "timeout": 5
+      },
+      {
+        "match": "^https?:\\/\\/acs\\.youku\\.com\\/gw\\/mtop\\.youku\\.columbus\\.(gateway\\.new\\.execute|home\\.feed|home\\.query|uc\\.query|ycp\\.query)",
+        "name": "cq.youku",
+        "type": "response",
+        "require-body": true,
+        "max-size": 1048576,
+        "timeout": 5
+      },
+      {
+        "match": "^https?:\\/\\/push\\.m\\.youku\\.com\\/collect-api\\/get_push_interval_config_wx\\?",
+        "name": "cq.youku",
+        "type": "response",
+        "require-body": true,
+        "max-size": 1048576,
+        "timeout": 5
+      },
+      {
+        "match": "^https?:\\/\\/un-acs\\.youku\\.com\\/gw\\/mtop\\.youku\\.play\\.ups\\.appinfo\\.get",
+        "name": "cq.youku",
+        "type": "response",
+        "require-body": true,
+        "max-size": 1048576,
+        "timeout": 5
+      }
+    ],
+    "mock": [
+      {
+        "match": "^https:\\/\\/app\\.10099\\.com\\.cn\\/\\.well-known\\/stash-ad-free\\.gif(?:\\?.*)?$",
+        "status-code": 200,
+        "headers": {
+          "Content-Type": "image/gif"
+        },
+        "base64": "R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+      }
+    ]
+  },
+  "script-providers": {
+    "cq.douban": {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/main/scripts/douban.js",
+      "interval": 86400
+    },
+    "cq.weibo": {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/main/scripts/weibo.js",
+      "interval": 86400
+    },
+    "cq.broadnet": {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/main/scripts/broadnet.js",
+      "interval": 86400
+    },
+    "cq.coolapk": {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/main/scripts/coolapk.js",
+      "interval": 86400
+    },
+    "cq.bilibili-splash": {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/main/scripts/bilibili-splash.js",
+      "interval": 86400
+    },
+    "cq.youku": {
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/cnftp.js",
+      "interval": 86400
+    },
+    "cq.weibo-launch": {
+      "url": "https://raw.githubusercontent.com/zmqcherish/proxy-script/1d9f51bc9a0077d81998bb503ee6158ca83faa73/weibo_launch.js",
+      "interval": 86400
+    }
+  }
+}
