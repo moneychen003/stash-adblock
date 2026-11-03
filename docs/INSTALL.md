@@ -7,7 +7,7 @@
 ## 最快安装方法
 
 1. 在装有 Stash 的设备上打开[一键安装链接](https://link.stash.ws/install-override/raw.githubusercontent.com/moneychen003/stash-adblock/main/rules/stash-adblock.stoverride)。预览页确认是覆写，选择安装并启用。
-2. 如果跳转失败，复制下面的地址，在 Stash 的「覆写」中添加**远程覆写**，并启用它。不同版本的菜单文字可能略有不同。
+2. 如果一键页面返回 403 或跳转失败，复制下面的地址，在 Stash 的「覆写」中添加**远程覆写**，并启用它。不同版本的菜单文字可能略有不同。
 
    ```text
    https://raw.githubusercontent.com/moneychen003/stash-adblock/main/rules/stash-adblock.stoverride

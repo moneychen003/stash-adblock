@@ -6,7 +6,7 @@
 
 ## 一键安装
 
-在装有 Stash 的设备上打开：[安装 Stash 去广告覆写](https://link.stash.ws/install-override/raw.githubusercontent.com/moneychen003/stash-adblock/main/rules/stash-adblock.stoverride)。也可以复制下面的主订阅地址，在 Stash 中作为**远程覆写**导入：
+在装有 Stash 的设备上打开：[安装 Stash 去广告覆写](https://link.stash.ws/install-override/raw.githubusercontent.com/moneychen003/stash-adblock/main/rules/stash-adblock.stoverride)。若一键页面返回 403 或跳转失败，请复制下面的主订阅地址，在 Stash 中作为**远程覆写**导入：
 
 ```text
 https://raw.githubusercontent.com/moneychen003/stash-adblock/main/rules/stash-adblock.stoverride
