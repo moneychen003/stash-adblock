@@ -1,0 +1,685 @@
+{
+  "checked_date": "2026-11-04",
+  "dependencies": [
+    {
+      "original_url": "https://github.com/fmz200/wool_scripts/raw/main/Scripts/mlxx/mlxx.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/mlxx/mlxx.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 2295,
+      "sha256": "7c22e8836f2e9247755180d094d2700e5bb6d10d70cfd042ebc463eb501e8416"
+    },
+    {
+      "original_url": "https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/xiaohongshu/xiaohongshu.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 28643,
+      "sha256": "318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/Keywos/rule/main/mocks/caiyun.json",
+      "url": "https://raw.githubusercontent.com/Keywos/rule/a06d921d370ad6fca9e972a3f76e64d90bc8cfae/mocks/caiyun.json",
+      "repository": "Keywos/rule",
+      "http_status": 200,
+      "bytes": 314,
+      "sha256": "4db327264945d64ea37b50115e1af9563f17cd81048732a2525b0c5953f2bb97"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js",
+      "url": "https://raw.githubusercontent.com/Keywos/rule/a06d921d370ad6fca9e972a3f76e64d90bc8cfae/script/wy/js/wyres.js",
+      "repository": "Keywos/rule",
+      "http_status": 200,
+      "bytes": 17300,
+      "sha256": "b729d3f27bcb4992b7dc8d82ef7563af7b2a1380976f55975166f68defe3c393"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js",
+      "url": "https://raw.githubusercontent.com/Maasea/sgmodule/65075cdb388fc5e3094afd7e7314c67b243f3525/Script/Youtube/youtube.response.js",
+      "repository": "Maasea/sgmodule",
+      "http_status": 200,
+      "bytes": 132973,
+      "sha256": "f98483d5f5017514f82502253c0db5ce2d4ffb7839887aa2cadc22666f5a7f12"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/NobyDa/Script/master/Bahamut/BahamutAnimeAds.js",
+      "url": "https://raw.githubusercontent.com/NobyDa/Script/0b8d083d444f4476700cb9d5d059c07b42da85eb/Bahamut/BahamutAnimeAds.js",
+      "repository": "NobyDa/Script",
+      "http_status": 200,
+      "bytes": 1860,
+      "sha256": "7be309316b34c0272bdfef7ababd2219e79e3c85d38b525fa97e3ae409c40252"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/xjsp.js",
+      "url": "https://raw.githubusercontent.com/NobyDa/Script/0b8d083d444f4476700cb9d5d059c07b42da85eb/QuantumultX/File/xjsp.js",
+      "repository": "NobyDa/Script",
+      "http_status": 200,
+      "bytes": 1889,
+      "sha256": "6fc5d0aa5b7d70febfc7081b95d16f15cf1664767286a9ca0c5939d5c8187859"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/wnbz.js",
+      "url": "https://raw.githubusercontent.com/Sliverkiss/QuantumultX/89b9ae1c9e1554976464e6b56739fc80d390bdb1/AdBlock/xmApp/wnbz.js",
+      "repository": "Sliverkiss/QuantumultX",
+      "http_status": 200,
+      "bytes": 604,
+      "sha256": "b4c4a10fbb15268d20b1c2dd69c842494029f7bd8eb691add5db105ce087cbef"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/xmApp.js",
+      "url": "https://raw.githubusercontent.com/Sliverkiss/QuantumultX/89b9ae1c9e1554976464e6b56739fc80d390bdb1/AdBlock/xmApp/xmApp.js",
+      "repository": "Sliverkiss/QuantumultX",
+      "http_status": 200,
+      "bytes": 340,
+      "sha256": "319c650370f0c4086a6aea0f0d9efa0677c4ac9829d07830218dac69c174164a"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/adsense.js",
+      "url": "https://raw.githubusercontent.com/app2smile/rules/df6366a7024e0b3f0aa3510c5b791eea6f3cba89/js/adsense.js",
+      "repository": "app2smile/rules",
+      "http_status": 200,
+      "bytes": 2354,
+      "sha256": "171f97bb25c6cb29aeb134acdddca5c96b06e0e70a6e4f670914eba1c8f3b662"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/qidian.js",
+      "url": "https://raw.githubusercontent.com/app2smile/rules/df6366a7024e0b3f0aa3510c5b791eea6f3cba89/js/qidian.js",
+      "repository": "app2smile/rules",
+      "http_status": 200,
+      "bytes": 5761,
+      "sha256": "e599a063040ecb222ad5d4f8666157ef1ee31495aef6d87fb13453dce46f5c19"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/qq-news.js",
+      "url": "https://raw.githubusercontent.com/app2smile/rules/df6366a7024e0b3f0aa3510c5b791eea6f3cba89/js/qq-news.js",
+      "repository": "app2smile/rules",
+      "http_status": 200,
+      "bytes": 2283,
+      "sha256": "98b921f278eae3f4d99751a35c2b0c867b9716bd20713da14859f4033f8c7394"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js",
+      "url": "https://raw.githubusercontent.com/app2smile/rules/df6366a7024e0b3f0aa3510c5b791eea6f3cba89/js/spotify-json.js",
+      "repository": "app2smile/rules",
+      "http_status": 200,
+      "bytes": 381,
+      "sha256": "41cf1074770cdef3948baa12ff4a8db9045d1cac888714c8b7e69909eb531bc9"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js",
+      "url": "https://raw.githubusercontent.com/app2smile/rules/df6366a7024e0b3f0aa3510c5b791eea6f3cba89/js/spotify-proto.js",
+      "repository": "app2smile/rules",
+      "http_status": 200,
+      "bytes": 71920,
+      "sha256": "2e6850e888d092905c766f0bbedc4b4afb9a712330970cc1265105d7fb4995d0"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-qx-header.js",
+      "url": "https://raw.githubusercontent.com/app2smile/rules/df6366a7024e0b3f0aa3510c5b791eea6f3cba89/js/spotify-qx-header.js",
+      "repository": "app2smile/rules",
+      "http_status": 200,
+      "bytes": 135,
+      "sha256": "77267bc9bdcc8a2bc8eb1e70fffaeee0fb0c097a076bc9040b6c430acf051f3c"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js",
+      "url": "https://raw.githubusercontent.com/app2smile/rules/df6366a7024e0b3f0aa3510c5b791eea6f3cba89/js/tieba-json.js",
+      "repository": "app2smile/rules",
+      "http_status": 200,
+      "bytes": 9971,
+      "sha256": "91040c0d5bf906357829d8df344a3bdce00b59e6c24f255e54a2ef7a46d04c69"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js",
+      "url": "https://raw.githubusercontent.com/app2smile/rules/df6366a7024e0b3f0aa3510c5b791eea6f3cba89/js/tieba-proto.js",
+      "repository": "app2smile/rules",
+      "http_status": 200,
+      "bytes": 97069,
+      "sha256": "6015d737870b6d89c38a0181479ed715e07d11b5a2c3746f96f95e25835e8610"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/vgtime.js",
+      "url": "https://raw.githubusercontent.com/app2smile/rules/df6366a7024e0b3f0aa3510c5b791eea6f3cba89/js/vgtime.js",
+      "repository": "app2smile/rules",
+      "http_status": 200,
+      "bytes": 292,
+      "sha256": "489f711e41734a6c9a8749d79923c3dc3930c63239fc7e97cb3e25a29c9eafd3"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/51card.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/51card.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 536,
+      "sha256": "5f3708e56c28a2e7fec50f90f8b6768ed0e6b3d7b354bef0e32fd21f7a57a6c2"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/555Ad.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/555Ad.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 360,
+      "sha256": "9d8d59fe3cbd5bdeffe80c580fa210a94432bfedc6cb5e018feda761dcbcf681"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/PupuSplashAds.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 1799,
+      "sha256": "187189b01bd11dbd3fa992428facf680e73f26e5267cfe45dc24f53b788d9215"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/QuDa.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/QuDa.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 267,
+      "sha256": "a388141caa03a22decbe518fbdd670c806f0893a540daed142c9b0ba37636bd3"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/adrive/adrive.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/adrive/adrive.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 1105,
+      "sha256": "9d31582028a31ea605e69d09aa9e33949e57050006a8e0f3deb79b1c89933acd"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/baidumap.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/baidumap.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 80326,
+      "sha256": "26b1b805a73f0c4992e4b92025e09e5e3df18dd99f761ff690df925a323ad694"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/blued.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/blued.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 246,
+      "sha256": "5b39cca2a3debe6a73083f7781b6b0eb47d91755f597169db34109db3813a172"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/bohe/bohe_ads.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/bohe/bohe_ads.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 956,
+      "sha256": "493534355c02be962e06a75ad7eb51b1918c5c347122f40663ae9bc39a64cc1e"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/cainiao/cainiao.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 4973,
+      "sha256": "76fe899db1e045aaff2d71d6ff3c58cb665bac52a5996ff20e56079a02a6451c"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/caixin/caixinAd.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/caixin/caixinAd.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 1710,
+      "sha256": "0366e7eb1ffc341c472304e526f93bf6104a1cda668c85f50e8798fe0f035e4d"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cmschina/cmschina.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/cmschina/cmschina.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 408,
+      "sha256": "0d65a79b61b6ef85c88110538e21ca4f5aafe9b7acc6c3272b17ef7361c2c8b6"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/cnftp.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 31606,
+      "sha256": "4a95ce816c3e0bbaddf99e76c0f4b5ae3adb74318b9509e24ace40b675f11954"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/coolapk.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 2473,
+      "sha256": "58002f35b6ed5dbcb277e4571f231cc5491d9cd2d04f72ad9c63d4b35b15c003"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/dianyinglieshou.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/dianyinglieshou.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 1137,
+      "sha256": "50926e7d5f53278d37e0dc2d66b8159a1813537708c88b231159cfa2b201f198"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/didi/didiAds.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 2745,
+      "sha256": "c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/fenbi.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/fenbi.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 826,
+      "sha256": "bc6eff20278e7244bb5d11fd8698aa4195471f0df3cc68a28c598b8f60c232d5"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/fly.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/fly.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 488,
+      "sha256": "9642b1436e2ad10a35cb40ba33b8b1b5c72047a8d1bdfaaa87600cf3d6c1cd41"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/hengdian.json",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/hengdian.json",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 711,
+      "sha256": "38ddb4c372f1a221d5dc5a6af3066eb0ad4eebb8091d01053894f0939d9ecfc1"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/huifutianxia_ads.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/huifutianxia_ads.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 322,
+      "sha256": "5a97f31585d436c36413301a16b4862f62481923caf63f44b1e39eb3b7d1b11f"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/ithome/ithome.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/ithome/ithome.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 1311,
+      "sha256": "afa7249bf854abe582d6c6b73e0297d24a8ee2221db0982c8cb4ce90bb0d4872"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/jingdong/jingdong.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 10303,
+      "sha256": "3e7cc975f8985a4d2dbdbdefc405d0e3e6c9c07bf3c5361da1ecae206b6c04a1"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingxiAd.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/jingxiAd.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 285,
+      "sha256": "aa125c2689fba2cdd3ff1eb5aeb9e43bde2b1abab546cfcafdb67bd647d47b94"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/keep.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/keep.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 12394,
+      "sha256": "4efaba25017ff63e2e39e7fa55fac425e38262576bb31fe487b98ce5fce37f92"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/kuwo/kuwo.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/kuwo/kuwo.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 4640,
+      "sha256": "d5119438070518dcd250dba9d678d85b063db97db3a52bdce2ae34760469ae8a"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/lawson.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/lawson.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 1847,
+      "sha256": "ebf5ba4051ffeca870f3f0a15e6c9042649931c8d2b267e3bb51ef0545e3fb93"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/lvtusuishenting/ltsst-ad.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/lvtusuishenting/ltsst-ad.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 869,
+      "sha256": "d056e2f2ecb0a48ce09e324e7c5296b8e4fe54b0fbad0c68173bbd7717f3da49"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/maimai/maimai_ads.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/maimai/maimai_ads.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 861,
+      "sha256": "cdd9424de68aa4aad03ba5fda672ccf5e3d3344ee3886e72848bfb7b30977c28"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/meiyou/meiyou_ads.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/meiyou/meiyou_ads.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 13949,
+      "sha256": "5bfa31920f176ec0a992d6dfd3ee68d3ea3e416597f87af622665fe6b8cb626a"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/myBlockAds.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 7652,
+      "sha256": "4cf62100424886068a5470daecec319e93ccd034c647d79a9daaa72bbbc341bb"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/picc/picc_ads.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/picc/picc_ads.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 609,
+      "sha256": "07e5fa66a0efe225b0dae2beaab83a9f1f9ad4dd6d3748d571156db8e324300c"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/quark.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 14279,
+      "sha256": "a80632f4308d8971f2ee1b42cb1b2c3b72c90ec5619ed33849fcc0fcbf0f1bcc"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/reddit.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/reddit.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 742,
+      "sha256": "3178f057b758e8e5fa20477c8abde707fa367482f63553be833773dd33aec3ed"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/rrtv_json.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 25962,
+      "sha256": "4202921945c0ba616133ca833b034954c3b3b5f328199c809065ce25d16446a7"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/smzdm/Smzdm.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/smzdm/Smzdm.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 3220,
+      "sha256": "611b9fa8cb1022622d1df9a2952b0f0fa1a001069b5666cce7e09b87dbec8dff"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/smzdm/smzdm_ads.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/smzdm/smzdm_ads.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 1210,
+      "sha256": "8e8b27474b277b334b1b37b14b412330485140b0df1cb77112f66fa043c550db"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soda.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/soda.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 220,
+      "sha256": "a252569a8ff6317abedd2714fb4932d631cc07ce857a403aa88a83818661b78e"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/soul/soul_ads.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 15235,
+      "sha256": "a2987051900998f971fa9f9eba9b1ab96fa15fcfbc1848f7c96afa0dd038bdf1"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/template/req_replace_body.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/template/req_replace_body.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 353,
+      "sha256": "90adc7374f0c9a62b25bbea2027570e2c08002130bca22d909607fcfca642c70"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/umetrip/umetrip_ads.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/umetrip/umetrip_ads.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 215,
+      "sha256": "7a0f7976a4b8f47649684cc382832e425610e924e0fdc11ea2e06b1ebd2cbacf"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xiaotucc.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/xiaotucc.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 340,
+      "sha256": "197bc64c8ddf1188d1b876d7b980d5708a0bdb79a01be51a9f3b14adc936cc9d"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/youdao/dict-youdao-ad.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/youdao/dict-youdao-ad.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 1202,
+      "sha256": "07261d8faf3a9dd0591477679935b3a44fc1b044ed5ca849e01b04cc889f4c0c"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/yx.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/yx.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 134,
+      "sha256": "7a85dc4dabb4c048a2c9231c17580df96d94c478479a54e3be33346c64e7d6ec"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhangshanggongjiao.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/zhangshanggongjiao.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 688,
+      "sha256": "ee4e5a1ee5ce0817e0787578f7dd47874c65e9bd02bfda4b27527d4f6d59a44c"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/zhihu/zhihu.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 7358,
+      "sha256": "544fd88207b9d7005bb5cf427a1994028f91a95a65fde3db72a501983bff99f4"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhuanzhuan/zhuanzhuan.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/zhuanzhuan/zhuanzhuan.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 1020,
+      "sha256": "b8498e51290e0d0e83018d216b9cf44d602cef5392c39a509ca576c06937efaf"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/refs/heads/main/Scripts/miguvideo/miguvideo_ads.js",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/miguvideo/miguvideo_ads.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 13377,
+      "sha256": "869200a4759c7a9f3f89359fb36275121b0de0ae9772c5f0ce9765a5fcbec999"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js",
+      "url": "https://raw.githubusercontent.com/ishowshu/qx/bc8fd6fa9d7ddd6ff38bd7eefaf264a8e6d53dd7/script/goofish.js",
+      "repository": "ishowshu/qx",
+      "http_status": 200,
+      "bytes": 7810,
+      "sha256": "d76d0a65d975a523ad4bb62c5d90dc9898a5a93ad79cf03dea01150705792b20"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/d8afcfab97fbfb3d017cfdc759ac7c9c8d784b0d/js/12306.js",
+      "repository": "kokoryh/Script",
+      "http_status": 200,
+      "bytes": 357,
+      "sha256": "676fe92784297b1ec93e0dc128597af3e38f42e9a37772cbdb9bda4ab9eed3dd"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js",
+      "url": "https://raw.githubusercontent.com/zZPiglet/Task/0a70fbe27dfb072dac29423d661ed3c47cf66aab/asset/UnblockURLinWeChat.js",
+      "repository": "zZPiglet/Task",
+      "http_status": 200,
+      "bytes": 86443,
+      "sha256": "79098ac4d2eb7932c9b2b45ac7891469703626855e5d13ab4374af52cc48983e"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/51job.js",
+      "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/51job.js",
+      "repository": "zirawell/R-Store",
+      "http_status": 200,
+      "bytes": 1169,
+      "sha256": "85e2b927da9a653691d954775adbab6160e24ca8e6117b779d27c1924bec1af0"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/airchina.js",
+      "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/airchina.js",
+      "repository": "zirawell/R-Store",
+      "http_status": 200,
+      "bytes": 808,
+      "sha256": "b3ad5ac0f6bd2a53b93aa5476cb97d7dcc386952ee1f7fae48f4a9ce98f1a2eb"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/alicdn.js",
+      "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/alicdn.js",
+      "repository": "zirawell/R-Store",
+      "http_status": 200,
+      "bytes": 604,
+      "sha256": "e6ff8a29a82508abff43eab1e85c7d518002c6d810f5458d1b78a8219fc4cdcf"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/bilibiliManga.js",
+      "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/bilibiliManga.js",
+      "repository": "zirawell/R-Store",
+      "http_status": 200,
+      "bytes": 2295,
+      "sha256": "17035efc2c7b5d367a5f6e70ca2e0f7f23aa342c9edb3bf044587e5ee073f261"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/ccblife.js",
+      "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/ccblife.js",
+      "repository": "zirawell/R-Store",
+      "http_status": 200,
+      "bytes": 3262,
+      "sha256": "d4017e1658d35309671deda236c0e0bcc560fa604796562d2b39fcc6f69b4958"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/ddxq.js",
+      "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/ddxq.js",
+      "repository": "zirawell/R-Store",
+      "http_status": 200,
+      "bytes": 1836,
+      "sha256": "8ae52e7bccc43facf64dc9edaf8e6e1c1da564c6bbab242fb9e51a304e3a0b16"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/dianping.js",
+      "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/dianping.js",
+      "repository": "zirawell/R-Store",
+      "http_status": 200,
+      "bytes": 2257,
+      "sha256": "78971da6855858d1a6737872209cfc0aaaf7755fbe8da19f4115a03591820252"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/flyert.js",
+      "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/flyert.js",
+      "repository": "zirawell/R-Store",
+      "http_status": 200,
+      "bytes": 842,
+      "sha256": "9f7b49651ad956ae5fd7a17ad120c486c4f228ae2f7cfab21fcb4fccedfe2d98"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/foliday.js",
+      "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/foliday.js",
+      "repository": "zirawell/R-Store",
+      "http_status": 200,
+      "bytes": 972,
+      "sha256": "9e48b618be78330bbcd1d29e56bc5a407414d12a03a158a4d559f7857c74b976"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/freshippo.js",
+      "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/freshippo.js",
+      "repository": "zirawell/R-Store",
+      "http_status": 200,
+      "bytes": 2094,
+      "sha256": "edf71faccbca61b153bbce98f56b75e27313883cf520e5e315f6ba15ed52360d"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mafengwo.js",
+      "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/mafengwo.js",
+      "repository": "zirawell/R-Store",
+      "http_status": 200,
+      "bytes": 1044,
+      "sha256": "9944c174ff0270e9b4cb9a0b8ebf8b40d1a9232b633d7fbee57c171eda6397ea"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mdb.js",
+      "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/mdb.js",
+      "repository": "zirawell/R-Store",
+      "http_status": 200,
+      "bytes": 738,
+      "sha256": "f50cef7a5f3b3e3179f9c5a93f2ab937dd72d83ca4dc2c9e8a66937c38e3e9ab"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/qmai.js",
+      "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/qmai.js",
+      "repository": "zirawell/R-Store",
+      "http_status": 200,
+      "bytes": 2092,
+      "sha256": "b6823b14feaba4600fdc73438d91b35f1c5b166da3177b70da19dc97f850ce65"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/tuhu.js",
+      "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/tuhu.js",
+      "repository": "zirawell/R-Store",
+      "http_status": 200,
+      "bytes": 2610,
+      "sha256": "d4a8f475d9c24107644eadce1736e2d0db68974129809ca7f05c77e48abe4561"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/usmile.js",
+      "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/usmile.js",
+      "repository": "zirawell/R-Store",
+      "http_status": 200,
+      "bytes": 739,
+      "sha256": "afe656ce07d169fb9baf4d4484f77b0861341a88950fb64182cd30b45f70ce95"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/wechatApplet.js",
+      "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/wechatApplet.js",
+      "repository": "zirawell/R-Store",
+      "http_status": 200,
+      "bytes": 5966,
+      "sha256": "4e0a57585f4ce16bc2f655ec104d1b25d9d42864b78f3ca893b48e7c9e487bed"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zmqcherish/proxy-script/1d9f51bc9a0077d81998bb503ee6158ca83faa73/weibo_launch.js",
+      "repository": "zmqcherish/proxy-script",
+      "http_status": 200,
+      "bytes": 999,
+      "sha256": "1ebea73aa974503abf72371cd32bdda86975dbad9beaf4c6f648db6debb75fa6",
+      "original_url": "https://raw.githubusercontent.com/zmqcherish/proxy-script/1d9f51bc9a0077d81998bb503ee6158ca83faa73/weibo_launch.js"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/72dd30fb6d5e2ff7b5bcdbecf164d288f41d9dfa/Filters/AWAvenue-Ads-Rule-Clash-Classical-Only.Ads.yaml",
+      "repository": "TG-Twilight/AWAvenue-Ads-Rule",
+      "http_status": 200,
+      "bytes": 21453,
+      "sha256": "f489591ca904030b7a4f07f3b0521486e02797cd69251f6e552a4881ea1cbc27",
+      "original_url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/72dd30fb6d5e2ff7b5bcdbecf164d288f41d9dfa/Filters/AWAvenue-Ads-Rule-Clash-Classical-Only.Ads.yaml"
+    }
+  ]
+}

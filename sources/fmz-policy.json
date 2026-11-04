@@ -1,0 +1,2759 @@
+{
+  "source_sha256": "371ee2dee23f6aee74017f23e54d42a6d19a1b84f9fc7c63e2f70f59abbe4b9a",
+  "excluded": [
+    {
+      "line": 85,
+      "source": "^http?:\\/\\/tianqi\\.2345\\.com\\/api\\/content\\/getContentFeeds\\.php url reject-dict",
+      "reason": "内容信息流接口，整条拒绝会移除普通内容。"
+    },
+    {
+      "line": 88,
+      "source": "host-suffix, dl.2345.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 89,
+      "source": "host-suffix, download.2345.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 91,
+      "source": "host-suffix, houtai.2345.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 97,
+      "source": "host-suffix, update.minipage.2345.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 110,
+      "source": "host-suffix, dl.360safe.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 111,
+      "source": "host-suffix, kuaikan.netmon.360safe.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 112,
+      "source": "host-suffix, ini.update.360safe.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 113,
+      "source": "host-suffix, display.360totalsecurity.com, reject",
+      "reason": "360 Total Security 的 display 服务属于安全产品功能，整域阻断并非广告清理。"
+    },
+    {
+      "line": 118,
+      "source": "host-suffix, jspassport.ssl.qhimg.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 120,
+      "source": "host-suffix, hs.qhupdate.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 121,
+      "source": "host-suffix, res.qhupdate.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 122,
+      "source": "host-suffix, s.qhupdate.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 159,
+      "source": "^https?:\\/\\/api\\.u51\\.com\\/(generic-config-gateway|rs-resys)\\/api\\/v\\d\\/(creditpage-config|recommend) url reject-200",
+      "reason": "信用页配置与推荐接口被同一条规则整体拒绝，无法限定广告字段。"
+    },
+    {
+      "line": 252,
+      "source": "^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.fliggy\\.crm\\.screen\\.(allresource|predict) url reject-dict",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 255,
+      "source": "^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alimusic\\.common\\.mobileservice\\.startinit url reject-dict",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 386,
+      "source": "IP-CIDR, 203.107.1.1/24, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 390,
+      "source": "^https:\\/\\/api\\.alipan\\.com\\/adrive\\/v1\\/file\\/getTopFolders url reject-dict",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 391,
+      "source": "^https:\\/\\/api\\.alipan\\.com\\/apps\\/v2\\/users\\/home\\/(news|widgets) url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/adrive/adrive.js",
+      "reason": "已读上游 adrive.js：此绑定覆盖 home/widgets，脚本删除 album、coreFeatures、mainBackup、minorBackup、signIn 等正常功能及签到入口。"
+    },
+    {
+      "line": 393,
+      "source": "^https:\\/\\/member\\.alipan\\.com\\/v2\\/activity\\/sign_in_luckyBottle url reject-dict",
+      "reason": "签到、订单权益或实名状态接口，直接拒绝会影响账户权益/认证。"
+    },
+    {
+      "line": 407,
+      "source": "^https?:\\/\\/api\\.bjxkhc\\.com\\/index\\.php\\/app\\/ios\\/pay/ok$ url reject-dict",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 417,
+      "source": "host, api.iqiyi.com, reject",
+      "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+    },
+    {
+      "line": 435,
+      "source": "host-suffix, cm.passport.iqiyi.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 455,
+      "source": "host-suffix, policy.video.iqiyi.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 457,
+      "source": "IP-CIDR, 203.107.63.154/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 458,
+      "source": "IP-CIDR, 101.227.97.240/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 459,
+      "source": "IP-CIDR, 101.227.200.11/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 460,
+      "source": "IP-CIDR, 101.227.200.28/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 461,
+      "source": "IP-CIDR, 124.192.153.42/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 498,
+      "source": "^https?:\\/\\/b2baifanfan\\.baidu\\.com\\/crm\\/web\\/b2b\\/im\\/common\\/getConfigByDeviceNum url reject-200",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 522,
+      "source": "^https?:\\/\\/www\\.onstar\\.com\\.cn\\/mssos\\/sos\\/social\\/v1\\/community\\/article\\/page url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 523,
+      "source": "^https?:\\/\\/api\\.shanghaionstar\\.com\\/sos\\/contentinfo\\/v1\\/public\\/landingpage url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 535,
+      "source": "host-suffix, 3dns-2.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 536,
+      "source": "host-suffix, 3dns-3.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 537,
+      "source": "host-suffix, activate.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 538,
+      "source": "host-suffix, activate-sea.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 539,
+      "source": "host-suffix, activate-sjc0.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 540,
+      "source": "host-suffix, adobe-dns.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 541,
+      "source": "host-suffix, adobe-dns-2.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 542,
+      "source": "host-suffix, adobe-dns-3.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 543,
+      "source": "host-suffix, ereg.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 544,
+      "source": "host-suffix, get3.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 545,
+      "source": "host-suffix, hl2rcv.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 546,
+      "source": "host-suffix, practivate.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 547,
+      "source": "host-suffix, wip3.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 548,
+      "source": "host-suffix, wwis-dubc1-vip60.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 549,
+      "source": "host-suffix, lm.licenses.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 550,
+      "source": "host-suffix, na2m-pr.licenses.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 551,
+      "source": "host-suffix, na1r.services.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 552,
+      "source": "host-suffix, hlrcv.stage.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 553,
+      "source": "host-suffix, activate.wip3.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 554,
+      "source": "host-suffix, ereg.wip3.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 555,
+      "source": "host-suffix, lmlicenses.wip4.adobe.com, reject",
+      "reason": "Adobe 激活/许可/注册服务；阻断会影响合法授权。"
+    },
+    {
+      "line": 564,
+      "source": "host, geo2.adobe.com, reject",
+      "reason": "Adobe geo2 服务不是可识别的广告端点，整域拒绝过宽。"
+    },
+    {
+      "line": 575,
+      "source": "host-suffix, sdb.amazonaws.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 614,
+      "source": "host, lookup.api.bsb.baidu.com, reject",
+      "reason": "安全浏览/恶意网址查询与浏览器安全服务；不能作为去广告拒绝。"
+    },
+    {
+      "line": 615,
+      "source": "host, proxy.safebrowsing.apple, reject",
+      "reason": "安全浏览/恶意网址查询与浏览器安全服务；不能作为去广告拒绝。"
+    },
+    {
+      "line": 616,
+      "source": "host, safebrowsing.g.applimg.com, reject",
+      "reason": "安全浏览/恶意网址查询与浏览器安全服务；不能作为去广告拒绝。"
+    },
+    {
+      "line": 617,
+      "source": "host, safebrowsing.googleapis.com, reject",
+      "reason": "安全浏览/恶意网址查询与浏览器安全服务；不能作为去广告拒绝。"
+    },
+    {
+      "line": 618,
+      "source": "host, safebrowsing.urlsec.qq.com, reject",
+      "reason": "安全浏览/恶意网址查询与浏览器安全服务；不能作为去广告拒绝。"
+    },
+    {
+      "line": 619,
+      "source": "host, token.safebrowsing.apple, reject",
+      "reason": "安全浏览/恶意网址查询与浏览器安全服务；不能作为去广告拒绝。"
+    },
+    {
+      "line": 620,
+      "source": "host, vs6.bj2ct.u3.ucweb.com, reject",
+      "reason": "安全浏览/恶意网址查询与浏览器安全服务；不能作为去广告拒绝。"
+    },
+    {
+      "line": 621,
+      "source": "host-suffix, safebrowsing.apple, reject",
+      "reason": "安全浏览/恶意网址查询与浏览器安全服务；不能作为去广告拒绝。"
+    },
+    {
+      "line": 622,
+      "source": "host-suffix, u3.ucweb.com, reject",
+      "reason": "安全浏览/恶意网址查询与浏览器安全服务；不能作为去广告拒绝。"
+    },
+    {
+      "line": 647,
+      "source": "host-suffix, bce.baidu.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 653,
+      "source": "host-suffix, anquan.baidu.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 658,
+      "source": "host-suffix, antivirus.baidu.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 663,
+      "source": "host-suffix, cleaner.baidu.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 689,
+      "source": "host-suffix, dl.client.baidu.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 690,
+      "source": "host-suffix, dl.ops.baidu.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 691,
+      "source": "host-suffix, dl1sw.baidu.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 692,
+      "source": "host-suffix, dl2.bav.baidu.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 693,
+      "source": "host-suffix, dlsw.baidu.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 694,
+      "source": "host-suffix, dlsw.br.baidu.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 695,
+      "source": "host-suffix, dl-vip.bav.baidu.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 696,
+      "source": "host-suffix, dl-vip.pcfaster.baidu.co.th, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 697,
+      "source": "host-suffix, download.bav.baidu.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 698,
+      "source": "host-suffix, download.sd.baidu.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 714,
+      "source": "host-suffix, guanjia.baidu.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 740,
+      "source": "host-suffix, push.zhanzhang.baidu.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 742,
+      "source": "host-suffix, release.baidu.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 798,
+      "source": "^https?:\\/\\/fcvbjbcebos\\.baidu\\.com\\/.+.mp4 url reject",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 800,
+      "source": "^https?:\\/\\/fcvbjbcebos\\.baidu\\.com\\/.+?\\.mp4 url reject-img",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 804,
+      "source": "^https?:\\/\\/api\\d\\.tuisong\\.baidu\\.com url reject-img",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 812,
+      "source": "^https?:\\/\\/update\\.pan\\.baidu\\.com\\/statistics url reject",
+      "reason": "更新、补丁、安装包或版本检查接口；阻断与去广告无关。"
+    },
+    {
+      "line": 813,
+      "source": "^https?:\\/\\/log.+?baidu\\.com url reject",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 814,
+      "source": "^https?:\\/\\/sa\\d\\.tuisong\\.baidu\\.com url reject-img",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 815,
+      "source": "^https?:\\/\\/www.baidu.com\\/?action=static&ms=1&version=css_page_2@0.*? url reject",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 821,
+      "source": "host, httpdns.baidubce.com, reject",
+      "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+    },
+    {
+      "line": 829,
+      "source": "^https?:\\/\\/ss0\\.bdstatic\\.com/.+?_\\d{3}_\\d{4}\\.jpg url reject-200",
+      "reason": "通用图片或视频匹配未限定广告素材"
+    },
+    {
+      "line": 844,
+      "source": "^https?:\\/\\/mime\\.baidu\\.com\\/v5\\/hotpatch\\/check\\?hotpatch url reject",
+      "reason": "更新、补丁、安装包或版本检查接口；阻断与去广告无关。"
+    },
+    {
+      "line": 850,
+      "source": "^https?:\\/\\/mime\\.baidu\\.com\\/sapi\\/v1\\/lccorpus\\/(applist|pannellist)  url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 852,
+      "source": "^https?:\\/\\/mime\\.baidu\\.com\\/sapi\\/v1\\/circle\\/joinedlist url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 853,
+      "source": "^https?:\\/\\/mime\\.baidu\\.com\\/commer\\/pocket_api\\/enterprise_list url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 854,
+      "source": "^https?:\\/\\/mbd\\.baidu\\.com\\/ccs\\/v1\\/start\\/confsync\\?appname=baidu_input url reject-dict",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 859,
+      "source": "IP-CIDR, 180.76.76.200/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 869,
+      "source": "^https?:\\/\\/pan\\.baidu\\.com\\/act\\/v\\d\\/(bchannel|welfare)\\/list url reject",
+      "reason": "会员优惠券、福利领取或账户页面/资源；直接拒绝可能影响真实权益，不能按营销素材处理。"
+    },
+    {
+      "line": 870,
+      "source": "^https?:\\/\\/pan\\.baidu\\.com\\/act\\/api\\/activityentry url reject",
+      "reason": "会员优惠券、福利领取或账户页面/资源；直接拒绝可能影响真实权益，不能按营销素材处理。"
+    },
+    {
+      "line": 871,
+      "source": "^https?:\\/\\/pan\\.baidu\\.com\\/pmall\\/order\\/privilege\\/info url reject",
+      "reason": "签到、订单权益或实名状态接口，直接拒绝会影响账户权益/认证。"
+    },
+    {
+      "line": 873,
+      "source": "^https?:\\/\\/pan\\.baidu\\.com\\/api\\/useractivity\\/activity url reject",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 875,
+      "source": "^https?:\\/\\/pan\\.baidu\\.com\\/api\\/certuser\\/get url reject",
+      "reason": "签到、订单权益或实名状态接口，直接拒绝会影响账户权益/认证。"
+    },
+    {
+      "line": 876,
+      "source": "^https?:\\/\\/pan\\.baidu\\.com\\/component\\/view\\/(1510|1130)\\?vip url reject",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 881,
+      "source": "^https?:\\/\\/update\\.pan\\.baidu\\.com\\/statistics url reject",
+      "reason": "更新、补丁、安装包或版本检查接口；阻断与去广告无关。"
+    },
+    {
+      "line": 882,
+      "source": "^https?:\\/\\/fc-video\\.cdn\\.bcebos\\.com url reject",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 883,
+      "source": "^https?:\\/\\/rp\\.hpplay\\.cn\\/logouts url reject",
+      "reason": "路径为 logouts，可能涉及退出登录；直接拒绝不属于广告清理。"
+    },
+    {
+      "line": 918,
+      "source": "^https:\\/\\/api\\.boohee\\.com\\/app-interface\\/v1\\/search\\/search\\? url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 920,
+      "source": "^https:\\/\\/status\\.boohee\\.com\\/api\\/v1\\/merged_messages$ url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 936,
+      "source": "^https?:\\/\\/aimg\\.babytreeimg\\.com\\/group1\\/M00\\/*\\/*\\/.*.jpg url reject-200",
+      "reason": "通用图片或视频匹配未限定广告素材"
+    },
+    {
+      "line": 968,
+      "source": "host-suffix, config.baofeng.net, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 994,
+      "source": "host-suffix, resource.baomihua.com, reject",
+      "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+    },
+    {
+      "line": 1046,
+      "source": "^https?:\\/\\/i\\d\\.hdslb\\.com\\/bfs\\/fawkes url reject-dict",
+      "reason": "更新、补丁、安装包或版本检查接口；阻断与去广告无关。"
+    },
+    {
+      "line": 1050,
+      "source": "^https?:\\/\\/manga\\.bilibili\\.com\\/twirp\\/comic\\.v\\d\\.Shop\\/GetShopItems url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 1051,
+      "source": "^https?:\\/\\/manga\\.bilibili\\.com\\/twirp\\/user\\.v\\d\\.SeasonV\\d\\/GetSeasonInfo url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 1055,
+      "source": "^https?:\\/\\/manga\\.bilibili\\.com\\/twirp\\/user\\.v\\d\\.User\\/GetInitInfo url script-response-body https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/bilibiliManga.js",
+      "reason": "已读上游 bilibiliManga.js：GetInitInfo 分支把 had_follow_offcial 设为 true，伪造关注状态，并非广告过滤。"
+    },
+    {
+      "line": 1056,
+      "source": "^https?:\\/\\/manga\\.bilibili\\.com\\/twirp\\/comic\\.v\\d\\.Home\\/HomeFeed url script-response-body https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/bilibiliManga.js",
+      "reason": "已读上游 bilibiliManga.js：HomeFeed 分支除商品推荐外，还按 bvid 删除视频内容；混合绑定无法只保留营销清理。"
+    },
+    {
+      "line": 1057,
+      "source": "^https?:\\/\\/manga\\.bilibili\\.com\\/twirp\\/comic\\.v\\d\\.Comment\\/Main url script-response-body https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/bilibiliManga.js",
+      "reason": "已读上游 bilibiliManga.js：清空 top_replies，可能删除正常置顶评论。"
+    },
+    {
+      "line": 1076,
+      "source": "^https?:\\/\\/lens\\.leoao\\.com\\/lens\\/conduct\\/app\\/rpc\\/v2\\/com\\.lefit\\.dubbo\\.cms\\.api\\.bff\\.ClientFrontFacade\\/queryHomeMiddleInfo url reject-dict",
+      "reason": "整条响应或字段替换过宽，可能改动正常页面数据"
+    },
+    {
+      "line": 1094,
+      "source": "^https?:\\/\\/social\\.blued\\.cn\\/users\\/no_auth\\/benefit url reject-dict",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 1139,
+      "source": "^http:\\/\\/.+\\/amdc\\/mobileDispatch %E8%8F%9C%E9%B8%9F%E8%A3%B9%E8%A3%B9* url-and-header reject",
+      "reason": "HTTPDNS 或服务发现与广告展示无关"
+    },
+    {
+      "line": 1142,
+      "source": "^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.cncommunity\\.my\\.station\\.query\\.cn url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 1146,
+      "source": "^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.nbmensa\\.research\\.researchservice\\.(acquire|event|close)\\.cn url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 1148,
+      "source": "^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.nbpresentation\\.(pickup\\.empty\\.page|protocol\\.homepage)\\.get\\.cn url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js",
+      "reason": "菜鸟 pickup.empty.page / message.conversation.list 是取件/消息功能；同一绑定无精确广告条件，需拆出营销路径。"
+    },
+    {
+      "line": 1150,
+      "source": "^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.nbfriend\\.message\\.conversation\\.list\\.cn url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js",
+      "reason": "菜鸟 pickup.empty.page / message.conversation.list 是取件/消息功能；同一绑定无精确广告条件，需拆出营销路径。"
+    },
+    {
+      "line": 1154,
+      "source": "^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.com\\.cainiao\\.longquan\\.place\\.getpageresourcecontent\\.cn url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 1168,
+      "source": "^https?:\\/\\/learn\\.chaoxing\\.com\\/apis\\/service\\/appConfig\\? url reject",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 1235,
+      "source": "^https?:\\/\\/clubmed\\.bd\\.clubmedmnp\\.com\\/miniorder\\/api\\/basic\\/common url reject-dict",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 1278,
+      "source": "^https?:\\/\\/amdc\\.m\\.taobao\\.com\\/amdc\\/mobileDispatch\\?appkey=23782110 url reject",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 1282,
+      "source": "^https?:\\/\\/sdk\\.alibaba\\.com\\.ailbaba\\.me\\/xgapp\\.php\\/v\\d\\/version url reject-200",
+      "reason": "更新、补丁、安装包或版本检查接口；阻断与去广告无关。"
+    },
+    {
+      "line": 1286,
+      "source": "^https?:\\/\\/adservice\\.sigmob\\.cn\\/extconfig url response-body false response-body true",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 1301,
+      "source": "^https?:\\/\\/p\\.meituan\\.com\\/api\\/privacy\\/config url reject",
+      "reason": "隐私配置接口；拒绝会改变隐私功能行为。"
+    },
+    {
+      "line": 1307,
+      "source": "^https?:\\/\\/awp-assets\\.meituan\\.net\\/hfe\\/fep\\/\\w+\\.json url reject",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 1308,
+      "source": "^https?:\\/\\/s3plus\\.meituan\\.net\\/ocean-blk-index\\/index\\/blk_conf url reject",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 1309,
+      "source": "^https?:\\/\\/p\\d\\.meituan\\.net\\/nrpresourcevenus\\/\\w+\\.gif url reject-img",
+      "reason": "通用图片或视频匹配未限定广告素材"
+    },
+    {
+      "line": 1310,
+      "source": "^https?:\\/\\/p\\d\\.meituan\\.net\\/travelcube\\/(?!c129a661)\\w+\\.gif url reject-img",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 1330,
+      "source": "^https?:\\/\\/appdmkj\\.5idream\\.net\\/v2\\/login\\/message\\/tip url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 1337,
+      "source": "^https?:\\/\\/cdn\\.poizon\\.com\\/node-common\\/.*.jpg url reject-200",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 1342,
+      "source": "^https?:\\/\\/img\\.ddrk\\.me\\/cover\\.png url reject-img",
+      "reason": "通用图片或视频匹配未限定广告素材"
+    },
+    {
+      "line": 1343,
+      "source": "^https?:\\/\\/ddrk\\.me\\/image\\/logo_footer\\.png url reject-img",
+      "reason": "通用图片或视频匹配未限定广告素材"
+    },
+    {
+      "line": 1344,
+      "source": "^https?:\\/\\/ddrk\\.me\\/wp-content\\/plugins\\/advanced-floating-content-lite\\/public\\/images\\/close\\.png url reject-img",
+      "reason": "通用图片或视频匹配未限定广告素材"
+    },
+    {
+      "line": 1364,
+      "source": "^https?:\\/\\/as\\.xiaojukeji\\.com\\/ep\\/as\\/conf\\?ns=daijia-front&name= url reject-dict",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 1365,
+      "source": "^https?:\\/\\/daijia\\.kuaidadi\\.com\\/gateway\\?api=prado\\.cms\\.delivery\\.batch&apiVe url reject-dict",
+      "reason": "整条响应或字段替换过宽，可能改动正常页面数据"
+    },
+    {
+      "line": 1371,
+      "source": "ip-cidr, 203.107.1.1/24, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 1373,
+      "source": "^https?:\\/\\/pt-starimg\\.didistatic\\.com\\/static\\/starimg\\/node\\/.*.(jpg|png|gif) url reject-200",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 1375,
+      "source": "^https?:\\/\\/omgup[0-9]{1}\\.xiaojukeji\\.com\\/api url reject-200",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 1382,
+      "source": "^https?:\\/\\/capis(-?\\w*)?\\.didapinche\\.com\\/publish\\/api\\/upgrade url reject-dict",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 1420,
+      "source": "^https?:\\/\\/webcdn\\.m\\.qq\\.com\\/qiantu\\/upload\\/202[0-9]{5}\\/.*.(jpg|png) url reject-200",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 1446,
+      "source": "^https?:\\/\\/maicai\\.api\\.ddxq\\.mobi\\/homeApi\\/userLike url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 1466,
+      "source": "^https?:\\/\\/(gw|img)\\.alicdn\\.com\\/imgextra\\/.+\\/[\\w!]+\\d+-\\d+-.+-\\b([8-9]\\d{2,}|[1-9]\\d{3,})\\b-\\b([5-9]\\d{2,}|[1-9]\\d{3,})\\b url reject-dict",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 1478,
+      "source": "^https?:\\/\\/app\\.ceair\\.com\\/customize\\/security\\/update url reject-200",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 1508,
+      "source": "^https?:\\/\\/m\\.creditcard\\.ecitic\\.com\\/citiccard\\/mbk\\/appspace-getway\\/getWay\\/dkkj-system-web\\/system\\/v\\d\\/init-config url reject-200",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 1527,
+      "source": "^https?:\\/\\/capi\\.douyucdn\\.cn\\/api\\/ios_app\\/check_update url reject-img",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 1559,
+      "source": "IP-CIDR, 211.161.101.110/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 1566,
+      "source": "host-suffix, app-monitor.ele.me, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 1567,
+      "source": "host-suffix, client-api.ele.me, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 1568,
+      "source": "host-suffix, grand.ele.me, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 1569,
+      "source": "host-suffix, mobile-pubt.ele.me, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 1570,
+      "source": "host-suffix, newton-api.ele.me, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 1572,
+      "source": "^https?:\\/\\/elemecdn\\.com\\/.+\\/sitemap url reject",
+      "reason": "统计、站点地图或其他非广告服务被阻断；无证据表明只对应广告。"
+    },
+    {
+      "line": 1575,
+      "source": "^https?:\\/\\/fuss10\\.elemecdn\\.com\\/.+\\/w\\/640\\/h\\/\\d{3,4} url reject",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 1576,
+      "source": "^https?:\\/\\/fuss10\\.elemecdn\\.com\\/.+\\/w\\/750\\/h\\/\\d{3,4} url reject",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 1577,
+      "source": "^https?:\\/\\/fuss10\\.elemecdn\\.com\\/.+?\\.mp4 url reject-img",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 1578,
+      "source": "^https?:\\/\\/cube\\.elemecdn\\.com\\/[\\w\\/]+\\.jpeg\\?x-oss-process=image\\/resize,m_fill,w_1\\d{3},h_2\\d{3}\\/format,webp\\/ url reject",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 1579,
+      "source": "^https?:\\/\\/cube\\.elemecdn\\.com\\/[\\w\\/]+\\.jpeg\\?x-oss-process=image\\/resize,m_fill,w_6\\d{2},h_8\\d{2}\\/format,webp\\/ url reject",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 1580,
+      "source": "^https?:\\/\\/cube\\.elemecdn\\.com\\/[\\w\\/]+\\.jpeg\\?x-oss-process=image\\/resize,m_fill,w_\\d{3},h_\\d{4}\\/format,webp\\/ url reject",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 1581,
+      "source": "^https?:\\/\\/cube\\.elemecdn\\.com\\/\\w\\/\\w{2}\\/\\w+mp4\\.mp4\\? url reject",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 1583,
+      "source": "^https?:\\/\\/(nr-op|cube)\\.elemecdn\\.com\\/.+\\.jpeg\\?x-oss-process=image\\/resize,m_fill,w_\\d{4,},h_\\d{4,}\\/($|format,webp\\/$) url reject",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 1618,
+      "source": "host, security-lq.snssdk.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 1625,
+      "source": "host, msync-im1-vip6-std.easemob.com, reject",
+      "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+    },
+    {
+      "line": 1626,
+      "source": "host, apd-pcdnwxlogin.teg.tencent-cloud.net, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 1632,
+      "source": "IP-CIDR, 49.71.37.101/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 1633,
+      "source": "IP-CIDR, 117.71.105.23/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 1634,
+      "source": "IP-CIDR, 218.94.207.205/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 1635,
+      "source": "IP-CIDR, 117.92.229.188/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 1636,
+      "source": "IP-CIDR, 101.36.166.16/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 1637,
+      "source": "IP-CIDR, 180.96.2.114/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 1642,
+      "source": "^https?:\\/\\/.+\\.pglstatp-toutiao\\.com\\/.+\\/toutiao\\.mp4 url reject",
+      "reason": "通用图片或视频匹配未限定广告素材"
+    },
+    {
+      "line": 1646,
+      "source": "^https?:\\/\\/gurd\\.snssdk\\.com\\/src\\/server\\/v3\\/package url reject",
+      "reason": "穿山甲 SDK package 下载接口；阻断会改变软件组件更新，需以精确广告请求替代。"
+    },
+    {
+      "line": 1647,
+      "source": "^https?:\\/\\/.+\\.byteimg.com/tos-cn-i-1yzifmftcy\\/(.+)-jpeg\\.jpeg url reject",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 1657,
+      "source": "^https?:\\/\\/gateway-api\\.dushu365\\.com\\/chief-orch\\/config\\/config\\/v100\\/appConfig url reject",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 1681,
+      "source": "^https?:\\/\\/ptf\\.flyertrip\\.com\\/common\\/cf\\/.*.jpg url reject-200",
+      "reason": "通用图片或视频匹配未限定广告素材"
+    },
+    {
+      "line": 1700,
+      "source": "^https?:\\/\\/gw\\.alicdn\\.com\\/mt\\/ url reject",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 1701,
+      "source": "^https?:\\/\\/gw\\.alicdn\\.com\\/imgextra\\/\\w{2}\\/[\\w!]+-\\d-tps-\\d{3}-\\d{4}\\.(jpg|png)$ url reject",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 1715,
+      "source": "^https:\\/\\/external\\.fcbox\\.com\\/wxgw\\/post\\/suggestion\\/query url reject",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 1746,
+      "source": "host-suffix, api.iapps.ifeng.com, reject",
+      "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+    },
+    {
+      "line": 1767,
+      "source": "^https?:\\/\\/api\\.futunn\\.com\\/v2\\/optimus\\/my-homepage-config url reject-dict",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 1805,
+      "source": "host, icloud-amap.com, reject",
+      "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+    },
+    {
+      "line": 1819,
+      "source": "^https?:\\/\\/m5\\.amap\\.com\\/ws\\/valueadded\\/ url reject",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 1840,
+      "source": "^https?:\\/\\/pv\\.elife\\.icbc\\.com\\.cn\\/OFSTPV\\/utm\\.gif url reject-200",
+      "reason": "统计、站点地图或其他非广告服务被阻断；无证据表明只对应广告。"
+    },
+    {
+      "line": 1844,
+      "source": "^https?:\\/\\/elife\\.icbc\\.com\\.cn\\/OFSTNEWBASE\\/floorinfo\\/getMantlePages\\.do url reject-200",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 1903,
+      "source": "^https?:\\/\\/gsp\\.gacmotor\\.com\\/gateway\\/app-api\\/app\\/version\\/latestupdate\\?flatform=2&innerVersion= url reject-dict",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 1915,
+      "source": "^https?:\\/\\/fuwu\\.nhsa\\.gov\\.cn\\/ebus\\/fuwu\\/api\\/base\\/cms\\/iep\\/web\\/cms\\/hmpgcfg\\/queryAppHmpgCfgByApp url reject",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 1958,
+      "source": "host, safebrowsing.googleapis.com, reject",
+      "reason": "安全浏览/恶意网址查询与浏览器安全服务；不能作为去广告拒绝。"
+    },
+    {
+      "line": 2012,
+      "source": "^https?:\\/\\/.+\\.googleapis.com/.+log_event url reject-img",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 2061,
+      "source": "^http?:\\/\\/(discardrp|startup)\\.umetrip\\.com\\/gateway\\/api\\/umetrip\\/native url reject",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 2139,
+      "source": "^https?:\\/\\/games\\.mobileapi\\.hupu\\.com\\/.+?\\/(search|interfaceAdMonitor|status|hupuBbsPm)/(hotkey|init|hupuBbsPm)\\. url reject-img",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 2143,
+      "source": "^https?:\\/\\/i\\d\\.hoopchina\\.com\\.cn/blogfile\\//d+\\//d+\\/BbsImg\\.(?<=(big.(png|jpg)))$ url reject-img",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 2145,
+      "source": "^https?:\\/\\/i1\\.hoopchina\\.com\\.cn\\/blogfile\\/.+_\\d{3}x\\d{4} url reject-img",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 2162,
+      "source": "^https?:\\/\\/cdn\\.wup\\.huya\\.com\\/launch\\/queryHttpDns$ url reject",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 2225,
+      "source": "^https?:\\/\\/hweb-manager\\.huazhu\\.com\\/bundle\\/upgrade\\/check url reject-dict",
+      "reason": "更新、补丁、安装包或版本检查接口；阻断与去广告无关。"
+    },
+    {
+      "line": 2245,
+      "source": "^https?:\\/\\/m\\.prod\\.app\\.hsbcfts\\.com\\.cn\\/api\\/sapp\\/biz\\/config\\/open\\/queryappversion\\?channelCode= url reject-dict",
+      "reason": "会员优惠券、福利领取或账户页面/资源；直接拒绝可能影响真实权益，不能按营销素材处理。"
+    },
+    {
+      "line": 2272,
+      "source": "IP-CIDR, 114.119.160.0/21, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 2383,
+      "source": "^https?:\\/\\/p\\d\\.pstatp.com\\/origin url reject",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 2386,
+      "source": "^https?:\\/\\/pb\\d\\.pstatp.com\\/origin url reject",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 2427,
+      "source": "host-suffix, moupdate10332052.wps.cn, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 2448,
+      "source": "host-suffix, docer.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 2449,
+      "source": "host-suffix, iciba.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 2467,
+      "source": "host-suffix, policy.jd.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 2471,
+      "source": "host-suffix, mapi.m.jd.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 2475,
+      "source": "host, dns.jd.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 2476,
+      "source": "IP-CIDR, 101.124.19.122/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 2477,
+      "source": "IP6-CIDR, 2402:db40:5100:1011::5/128, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 2479,
+      "source": "^https:\\/\\/api\\.m\\.jd\\.com\\/client\\.action\\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js",
+      "reason": "脚本绑定覆盖普通内容、权益、会员或付费状态，须先取得广告专用实现"
+    },
+    {
+      "line": 2486,
+      "source": "^https?:\\/\\/jdread-api\\.jd\\.com\\/jdread\\/api\\/channel\\/module\\/opens url reject-200",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 2491,
+      "source": "^https?:\\/\\/m\\.360buyimg\\.com\\/babel\\/jfs\\/t1\\/[0-9]{6}\\/[0-9]{2}\\/[0-9]{5}\\/[0-9]{6}\\/.*.jpg url reject-200",
+      "reason": "通用图片或视频匹配未限定广告素材"
+    },
+    {
+      "line": 2496,
+      "source": "^https?:\\/\\/api\\.m\\.jd\\.com\\/client\\.action\\?functionId=start url reject-img",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 2621,
+      "source": "host-suffix, update.mobile.kugou.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 2646,
+      "source": "host-suffix, updatepage.kuwo.cn, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 2670,
+      "source": "^https?:\\/\\/p\\.kuaidi100\\.com\\/mobile\\/mobileapi\\.do url reject",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 2702,
+      "source": "^https:\\/\\/az2-api\\.ksapisrv\\.com\\/rest\\/n\\/taskCenter\\/task\\/report\\? url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 2738,
+      "source": "^https?:\\/\\/api\\.gotokeep\\.com\\/search\\/v\\d\\/default\\/keyword\\/list url reject",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 2740,
+      "source": "^https?:\\/\\/api\\.gotokeep\\.com\\/search\\/v\\d\\/hotword\\/list url reject",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 2742,
+      "source": "^https?:\\/\\/api\\.gotokeep\\.com\\/search\\/v\\d\\/hotCourse\\/list url reject",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 2748,
+      "source": "^https?:\\/\\/api\\.gotokeep\\.com\\/training\\/box\\/config url reject",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 2840,
+      "source": "host-suffix, api.game.letvstore.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 2841,
+      "source": "host-suffix, api.push.le.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 2842,
+      "source": "host-suffix, cn.api.push.le.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 2892,
+      "source": "^https?:\\/\\/www\\.1314zhilv\\.com\\/ltsstnew\\/(guideScenic\\/getRecentlyUpdatedScenic|city\\/getWeatherByCityName) url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 2911,
+      "source": "^https:\\/\\/obs\\.line-scdn\\.net\\/0h.+\\/\\d+p\\.mp4$ url reject",
+      "reason": "通用图片或视频匹配未限定广告素材"
+    },
+    {
+      "line": 2934,
+      "source": "^https:\\/\\/scdn\\.line-apps\\.com\\/appresources\\/moretab\\/list\\.json url reject",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 2995,
+      "source": "^https:\\/\\/mada-travel\\.17u\\.cn\\/mdapi\\/config\\/mine url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 2997,
+      "source": "^https:\\/\\/mada-travel\\.17u\\.cn\\/mdapi\\/config\\/tabAct url reject-dict",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 2999,
+      "source": "^http:\\/\\/ebk\\.17u\\.cn\\/tctrafficappversionadmin\\/api\\/getLatestVersionApp url reject-dict",
+      "reason": "更新、补丁、安装包或版本检查接口；阻断与去广告无关。"
+    },
+    {
+      "line": 3004,
+      "source": "^https?:\\/\\/mapi\\.mafengwo\\.cn\\/widget\\/note\\/get_widget_note url reject",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 3005,
+      "source": "^https?:\\/\\/mapi\\.mafengwo\\.cn\\/system\\/update\\/check_update url reject-dict",
+      "reason": "更新、补丁、安装包或版本检查接口；阻断与去广告无关。"
+    },
+    {
+      "line": 3006,
+      "source": "^https?:\\/\\/mapi\\.mafengwo\\.cn\\/system\\/config\\/(get|mark)_(push|alert)_config url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 3007,
+      "source": "^https?:\\/\\/mapi\\.mafengwo\\.cn\\/system\\/push\\/get_local_push_config url reject",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 3008,
+      "source": "^https?:\\/\\/mapi\\.mafengwo\\.cn\\/user\\/profile\\/get_(list|profile) url script-response-body https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mafengwo.js",
+      "reason": "已读上游 mafengwo.js：get_profile 分支关闭打卡提醒；与 get_list 推广过滤混绑，需拆分。"
+    },
+    {
+      "line": 3032,
+      "source": "^https?:\\/\\/creditcard\\.bankcomm\\.(com|cn)\\/tfimg\\/public00\\/M00\\/[a-zA-Z0-9]{2}\\/[a-zA-Z0-9]{2}\\/[a-zA-Z0-9-]{30}\\.(jpg|jpeg) url reject",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 3036,
+      "source": "^https?:\\/\\/creditcardapp\\.bankcomm\\.(com|cn)\\/mappweb_interaction\\/appInfo\\/appNewestVersion url reject-200",
+      "reason": "更新、补丁、安装包或版本检查接口；阻断与去广告无关。"
+    },
+    {
+      "line": 3046,
+      "source": "^https:\\/\\/(h3\\.)?open\\.taou\\.com\\/maimai\\/pay\\/v5\\/check_gift\\? url reject-dict",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 3052,
+      "source": "^https:\\/\\/(h3\\.)?open\\.taou\\.com\\/maimai\\/(feed|gossip)\\/v\\d\\/(focus_feed|gossip_detail_comment|feed_detail_comment?)\\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/maimai/maimai_ads.js",
+      "reason": "脚本绑定覆盖普通内容、权益、会员或付费状态，须先取得广告专用实现"
+    },
+    {
+      "line": 3109,
+      "source": "^https?:\\/\\/mobile\\.api\\.mgtv\\.com\\/v2\\/mobile\\/checkUpdate\\? url reject-dict",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 3149,
+      "source": "host-suffix, xiuxiu.android.dl.meitu.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 3181,
+      "source": "^https?:\\/\\/s3plus\\.meituan\\.net\\/v1\\/mss_\\w+\\/(brandcpt-vedio|waimai-alita)\\/\\w+\\.zip$ url reject-dict",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 3182,
+      "source": "^http:\\/\\/59\\.82\\.113\\.10\\/amdc\\/mobileDispatch\\?appkey=213807& url reject-dict",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 3215,
+      "source": "host-suffix, api-flow.flyme.cn, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 3221,
+      "source": "host-suffix, api-push.meizu.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 3232,
+      "source": "host-suffix, push.res.meizu.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 3289,
+      "source": "host-KEYWORD,me.api.moji.com, reject",
+      "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+    },
+    {
+      "line": 3297,
+      "source": "host-suffix, cdn.moji.com, reject",
+      "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+    },
+    {
+      "line": 3301,
+      "source": "host-suffix, cdn.moji002.com, reject",
+      "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+    },
+    {
+      "line": 3302,
+      "source": "host-suffix, cdn2.moji002.com, reject",
+      "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+    },
+    {
+      "line": 3309,
+      "source": "host-suffix, download.mackeeper.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 3360,
+      "source": "^https?:\\/\\/dispatcher\\.camera360\\.com\\/api\\/v\\d\\/list$ url reject",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 3389,
+      "source": "^https:\\/\\/ntt-app\\.benewtech\\.cn\\/v6\\/user\\/\\d+\\/messages\\/event url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 3396,
+      "source": "^https?:\\/\\/firefly\\.abchina\\.com\\.cn\\/firefly-collection\\/Collect url reject-200",
+      "reason": "统计、站点地图或其他非广告服务被阻断；无证据表明只对应广告。"
+    },
+    {
+      "line": 3411,
+      "source": "^https?:\\/\\/blog\\.nilbt\\.com\\/static\\/api\\/update url reject-200",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 3463,
+      "source": "host-suffix, cdn.outfit7.com, reject",
+      "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+    },
+    {
+      "line": 3464,
+      "source": "host-suffix, cdn-gcs.outfit7.com, reject",
+      "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+    },
+    {
+      "line": 3521,
+      "source": "^https?:\\/\\/api\\.pinduoduo\\.com\\/api\\/aquarius\\/hungary\\/global\\/homepage\\? url reject-dict",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 3527,
+      "source": "^https?:\\/\\/iobs\\.pingan\\.com\\.cn\\/download\\/bweb-per-sf-prd\\/bweb url reject-200",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 3549,
+      "source": "^http:\\/\\/139\\.196\\.12\\.179:8053\\/httpdns\\/ url REJECT",
+      "reason": "HTTPDNS 或服务发现与广告展示无关"
+    },
+    {
+      "line": 3550,
+      "source": "^http:\\/\\/106\\.55\\.220\\.18:8053\\/httpdns\\/ url REJECT",
+      "reason": "HTTPDNS 或服务发现与广告展示无关"
+    },
+    {
+      "line": 3551,
+      "source": "^http:\\/\\/54\\.222\\.159\\.138:8053\\/httpdns\\/ url REJECT",
+      "reason": "HTTPDNS 或服务发现与广告展示无关"
+    },
+    {
+      "line": 3552,
+      "source": "^http:\\/\\/101\\.42\\.130\\.147\\/httpdns\\/resolve\\/ url REJECT",
+      "reason": "HTTPDNS 或服务发现与广告展示无关"
+    },
+    {
+      "line": 3554,
+      "source": "^https:\\/\\/j1\\.pupuapi\\.com\\/client\\/member_card\\/index\\/my url REJECT",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 3558,
+      "source": "^https:\\/\\/j1\\.pupuapi\\.com\\/client\\/assets\\/discount\\/order url reject-dict",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 3564,
+      "source": "^https:\\/\\/j1\\.pupuapi\\.com\\/client\\/member_card\\/premium\\/user_center url reject-dict",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 3573,
+      "source": "^https:\\/\\/j1\\.pupuapi\\.com\\/client\\/order_settlement\\/detail url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 3575,
+      "source": "^https:\\/\\/j1\\.pupuapi\\.com\\/client\\/order\\/orders\\/list\\/v4 url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 3714,
+      "source": "host-suffix, push.app.autohome.com.cn, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 3723,
+      "source": "^https:\\/\\/webcast-open\\.douyin\\.com\\/webcast\\/openapi\\/feed\\/\\? url reject-dict",
+      "reason": "混合页面/配置/导航入口被整条拒绝或规则分支过宽；先拆出广告字段再纳入公开版。"
+    },
+    {
+      "line": 3735,
+      "source": "^https?:\\/\\/cupid\\.51job(app)?\\.com\\/open\\/noauth\\/index\\/last-version url reject-dict",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 3764,
+      "source": "^https?:\\/\\/open\\.qyer\\.com\\/qyer\\/config\\/get url reject",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 3770,
+      "source": "^https?:\\/\\/a\\.qiumibao\\.com\\/ios\\/config\\/\\?version_code= url reject",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 3785,
+      "source": "^https?:\\/\\/fmapp\\.chinafamilymart\\.com\\.cn\\/api\\/app\\/biz\\/base\\/appversion\\/latest url reject",
+      "reason": "更新、补丁、安装包或版本检查接口；阻断与去广告无关。"
+    },
+    {
+      "line": 3808,
+      "source": "^https?:\\/\\/m\\.qianbao\\.qq\\.com\\/pages\\/walletHome\\?invisible url reject",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 3844,
+      "source": "IP-CIDR, 120.222.240.171/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 3889,
+      "source": "^https?:\\/\\/api\\.rr\\.tv\\/user\\/privilege\\/list url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 3917,
+      "source": "^https?:\\/\\/(ec|c)api\\.lkcoffee\\.com\\/resource\\/m\\/eorder\\/product\\/popAppTagProductList url response-body \\{.+\\} response-body {\"status\":\"SUCCESS\"}",
+      "reason": "整条响应或字段替换过宽，可能改动正常页面数据"
+    },
+    {
+      "line": 3918,
+      "source": "^https?:\\/\\/m\\.lkcoffee\\.com\\/ecapi\\/resource\\/m\\/member\\/exchange\\/page url response-body \\{.+\\} response-body {\"status\":\"SUCCESS\"}",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 3936,
+      "source": "https://apis.lifeweek.com.cn/api/baseConfig/getIosNewConfig url reject",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 3942,
+      "source": "^https?:\\/\\/api-sams\\.walmartmobile\\.cn\\/api\\/v\\d\\/sams\\/configuration\\/personCenterEntrance\\/query url reject-dict",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 3943,
+      "source": "^https?:\\/\\/api-sams\\.walmartmobile\\.cn\\/api\\/v\\d\\/sams\\/trade\\/order\\/getOftenBuyGoods url reject-dict",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 3945,
+      "source": "^https?:\\/\\/api-sams\\.walmartmobile\\.cn\\/api\\/v\\d\\/sams\\/configuration\\/appVersionUpdate\\/getAppVersionUpdateInfo url reject-dict",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 3947,
+      "source": "^https?:\\/\\/api-sams\\.walmartmobile\\.cn\\/api\\/v1\\/sams\\/configuration\\/portal\\/beUpdate url reject-dict",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 4004,
+      "source": "^https?:\\/\\/user-api\\.smzdm\\.com\\/vip\\/creator_user_center url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/smzdm/smzdm_ads.js",
+      "reason": "creator_user_center 是创作者账户中心；整条绑定缺少仅广告内容的证明。"
+    },
+    {
+      "line": 4007,
+      "source": "^https?:\\/\\/app-api\\.smzdm\\.com\\/util\\/loading url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/smzdm/Smzdm.js",
+      "reason": "已读上游 Smzdm.js：/loading 分支删除整个 data，可能改变启动配置/页面功能。"
+    },
+    {
+      "line": 4009,
+      "source": "^https?:\\/\\/user-api\\.smzdm\\.com\\/vip\\/bottom_card_list url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/smzdm/Smzdm.js",
+      "reason": "已读上游 Smzdm.js：vip/bottom_card_list 分支删除全部 rows，可能移除真实会员卡片，不只营销广告。"
+    },
+    {
+      "line": 4010,
+      "source": "^https?:\\/\\/haojia-api\\.smzdm\\.com\\/home\\/list url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/smzdm/Smzdm.js",
+      "reason": "已读上游 Smzdm.js：home/list 与 v3/home 附带全局 services/functions 过滤，可能移除正常功能入口；需改为只处理营销字段。"
+    },
+    {
+      "line": 4011,
+      "source": "^https?:\\/\\/homepage-api\\.smzdm\\.com\\/v3\\/home url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/smzdm/Smzdm.js",
+      "reason": "已读上游 Smzdm.js：home/list 与 v3/home 附带全局 services/functions 过滤，可能移除正常功能入口；需改为只处理营销字段。"
+    },
+    {
+      "line": 4013,
+      "source": "^https?:\\/\\/qianbao\\.smzdm\\.com\\/v\\d\\/app\\/home url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/smzdm/Smzdm.js",
+      "reason": "已读上游 Smzdm.js：qianbao app/home 数据仅保留两个 ID，可能清除钱包功能。"
+    },
+    {
+      "line": 4082,
+      "source": "^https?:\\/\\/message\\.shuqireader\\.com\\/message\\/.+ url reject",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 4084,
+      "source": "^https?:\\/\\/feedback\\.uc\\.cn\\/feedback\\/api\\/get_unread_status url reject",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 4085,
+      "source": "^https?:\\/\\/.+\\.shuqireader\\.com\\/sapi\\/.+ url reject",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 4096,
+      "source": "^https?:\\/\\/ucmp\\.sf-express\\.com\\/proxy\\/esgcempcore\\/memberGoods\\/pointMallService\\/goodsList url reject-dict",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 4105,
+      "source": "^https?:\\/\\/ucmp\\.sf-express\\.com\\/proxy\\/esgcempcore\\/memberGoods\\/pointMallService\\/goodsList url reject-dict",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 4107,
+      "source": "^https?:\\/\\/ucmp\\.sf-express\\.com\\/proxy\\/esgcempcore\\/memberManage\\/memberEquity\\/queryRecommendEquity url reject-dict",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 4108,
+      "source": "^https?:\\/\\/ucmp\\.sf-express\\.com\\/proxy\\/esgcempcore\\/memberActLengthy\\/fullGiveActivityService\\/fullGiveInfo url reject-dict",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 4185,
+      "source": "host-suffix, config.push.sogou.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4186,
+      "source": "host-suffix, pull.push.sogou.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4195,
+      "source": "host-suffix, download.zhushou.sogou.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 4205,
+      "source": "host-suffix, dl.wan.sogoucdn.com, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 4210,
+      "source": "host-suffix, push-service-ios.sginput.qq.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4215,
+      "source": "^https?://(ios|android)\\.sogou\\.com/[^/]+/sogou_input_[^/]+/[^/]+/index\\.html url reject",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 4249,
+      "source": "^https?:\\/\\/(api|api-bk\\d+)\\.tv\\.sohu\\.com\\/agg\\/api\\/app\\/config\\/bootstrap url reject",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 4281,
+      "source": "^https?:\\/\\/luckman\\.suning\\.com\\/luck-web\\/policy\\/v\\d\\/msf\\/index\\.do url reject-200",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 4285,
+      "source": "^https?:\\/\\/szdmobile\\.suzhou\\.gov\\.cn\\/thirdapp-center\\/appUpdate\\/update url reject-dict",
+      "reason": "更新、补丁、安装包或版本检查接口；阻断与去广告无关。"
+    },
+    {
+      "line": 4313,
+      "source": "IP-CIDR, 47.56.131.76/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 4314,
+      "source": "IP-CIDR, 47.97.215.55/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 4315,
+      "source": "IP-CIDR, 47.99.42.29/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 4316,
+      "source": "IP-CIDR, 120.27.235.201/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 4317,
+      "source": "IP-CIDR, 121.196.197.147/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 4325,
+      "source": "^https?:\\/\\/chat-live\\.soulapp\\.cn\\/live\\/planet\\/recListV2 url reject-200",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 4326,
+      "source": "^https?:\\/\\/api-chat\\.soulapp\\.cn\\/chat\\/entrance\\/first url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 4333,
+      "source": "^https?:\\/\\/api-chat\\.soulapp\\.cn\\/chat\\/limitInfo url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 4337,
+      "source": "^https?:\\/\\/chat-live\\.soulapp\\.cn\\/chatroom\\/chatClassifyRoomList url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 4338,
+      "source": "^https?:\\/\\/gateway-mobile-gray\\.soulapp\\.cn\\/mobile\\/app\\/version\\/queryIos url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 4361,
+      "source": "^https://www\\.tailgdd\\.com/v8/smart/app/config/get$ url response-body \"data\":\\{.+\\} response-body \"data\":{}",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 4427,
+      "source": "^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alimusic\\.common\\.mobileservice\\.startinit url reject-dict",
+      "reason": "混合页面/配置/导航入口被整条拒绝或规则分支过宽；先拆出广告字段再纳入公开版。"
+    },
+    {
+      "line": 4433,
+      "source": "^https?:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.(volvo\\.secondfloor\\.getconfig|wireless\\.home\\.newface\\.awesome\\.get) url reject-dict",
+      "reason": "混合页面/配置/导航入口被整条拒绝或规则分支过宽；先拆出广告字段再纳入公开版。"
+    },
+    {
+      "line": 4453,
+      "source": "^https?:\\/\\/ccmsupport-sz\\.tenpay\\.com\\/cgi-bin\\/common\\/ccm_page_element.cgi url reject",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 4461,
+      "source": "^https?:\\/\\/btrace\\.qq\\.com url reject-200",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 4463,
+      "source": "^https?:\\/\\/\\w+\\.beacon\\.qq\\.com url reject",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 4466,
+      "source": "^https?:\\/\\/imgcache\\.qq\\.com\\/qqlive\\/ url reject-img",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 4467,
+      "source": "^https?:\\/\\/mtteve\\.beacon\\.qq\\.com\\/analytics url reject-img",
+      "reason": "统计、站点地图或其他非广告服务被阻断；无证据表明只对应广告。"
+    },
+    {
+      "line": 4542,
+      "source": "^https?:\\/\\/r\\.inews\\.qq\\.com\\/(adsBlacklist|getFullScreenPic|getQQNewsRemoteConfig) url reject",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 4560,
+      "source": "^https?:\\/\\/tfsmy\\.chengdu\\.gov\\.cn\\/api\\/v5\\/core\\/version url reject-200",
+      "reason": "更新、补丁、安装包或版本检查接口；阻断与去广告无关。"
+    },
+    {
+      "line": 4573,
+      "source": "^https?:\\/\\/chl\\.tf\\.cn\\/channelmg\\/sys\\/socso\\/order\\/queryOrderInfo url response-body \"imgUrl\" response-body \"imgUrl0\"",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 4574,
+      "source": "^https?:\\/\\/chl\\.tf\\.cn\\/channelmg\\/sys\\/socso\\/socsonew\\/queryIsRealNameAdertInfo url reject-dict",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 4581,
+      "source": "^https?:\\/\\/zconfig\\.alibabausercontent\\.com\\/zconfig url reject",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 4618,
+      "source": "^https?:\\/\\/t1\\.market\\.xiaomi\\.com\\/thumbnail\\/webp\\/w1170q100\\/ url reject",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 4629,
+      "source": "^https:\\/\\/tcmobileapi\\.17usoft\\.com\\/appindexnew\\/index\\/getindexlayoutcelllist url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 4632,
+      "source": "^https:\\/\\/mobileapi\\.ly\\.com\\/wlfrontend\\/app\\/scenicMain url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 4652,
+      "source": "^https?:\\/\\/iphone\\.ac\\.qq\\.com\\/.*\\/Support\\/(getSystemConf|bootScreen) url reject",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 4667,
+      "source": "^https?:\\/\\/(mkt-)?gateway\\.tuhu\\.cn(\\/mkt)?\\/mlp-product-search-api\\/search\\/helper\\/defaultAndHotWord url reject",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 4668,
+      "source": "^https?:\\/\\/(cl-)?gateway\\.tuhu\\.cn(\\/cl)?\\/ext-website-cl-beauty-api\\/beautyIndex\\/getBeautyIndex url reject",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 4670,
+      "source": "^https?:\\/\\/(cl-)?gateway\\.tuhu\\.cn(\\/cl)?\\/cl-common-api\\/api\\/personalCenter\\/getAutoSuperConfig url reject",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 4705,
+      "source": "host-suffix, liveupdate.mac.sandai.net, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 4818,
+      "source": "host-suffix, syndication.twitter.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4820,
+      "source": "host-suffix, urls.api.twitter.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4832,
+      "source": "host, safe.ucweb.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4835,
+      "source": "host, order.sm.cn, reject",
+      "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+    },
+    {
+      "line": 4837,
+      "source": "host, access.open.uc.cn, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4838,
+      "source": "host, uc.ucweb.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4839,
+      "source": "host, emoji.uc.cn, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4841,
+      "source": "host, voice-service.uc.cn, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4842,
+      "source": "host, v.uc.cn, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4845,
+      "source": "host, cartoonapi.uc.cn, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4846,
+      "source": "host, umessage-online-zb.uc.cn, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4847,
+      "source": "host, api.c.uc.cn, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4874,
+      "source": "host-suffix, rescn.u3.ucweb.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4875,
+      "source": "host, feedback.uc.cn, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4884,
+      "source": "host-suffix, api.mp.uc.cn, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4885,
+      "source": "host-suffix, api.open.uc.cn, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4889,
+      "source": "host-suffix, client.tv.uc.cn, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4890,
+      "source": "host-suffix, coral-task.uc.cn, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4891,
+      "source": "host-suffix, dispatcher.upmc.uc.cn, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4900,
+      "source": "host-suffix, woodpecker.uc.cn, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4912,
+      "source": "host-suffix, hk.napi.ucweb.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4913,
+      "source": "host-suffix, sea.napi.ucweb.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4914,
+      "source": "host-suffix, bjcu.u3.ucweb.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4915,
+      "source": "host-suffix, vs8.gzct.u3.ucweb.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4916,
+      "source": "host-suffix, vs19.gzcu.u3.ucweb.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4917,
+      "source": "host-suffix, vs2.gzcu.u3.ucweb.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 4988,
+      "source": "^https?:\\/\\/recite\\.perfectlingo\\.com\\/api\\/recite\\/content-recommend\\/v\\d\\/get-by-uid.+ url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 5000,
+      "source": "^https?:\\/\\/(?>csc|osg)-service\\.sgcc\\.com\\.cn:\\d+\\/emss-pfa-appset-front\\/appForceUpdate url reject",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 5001,
+      "source": "^https?:\\/\\/(?>csc|osg)-service\\.sgcc\\.com\\.cn:\\d+\\/emss-pfa-appset-front\\/appSync\\/getAppForceUpgrade url reject",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 5044,
+      "source": "host-suffix, push.yuedu.163.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 5050,
+      "source": "host-suffix, img1.126.net, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 5051,
+      "source": "host-suffix, img2.126.net, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 5052,
+      "source": "host-suffix, img3.126.net, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 5053,
+      "source": "host-suffix, img6.126.net, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 5054,
+      "source": "host-suffix, mimg.126.net, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 5055,
+      "source": "host-suffix, pimg1.126.net, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 5056,
+      "source": "host-suffix, push.126.net, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 5061,
+      "source": "host-suffix, android.push.126.net, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 5062,
+      "source": "host-suffix, news.push.126.net, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 5108,
+      "source": "^https?:\\/\\/p\\d\\.music\\.126\\.net\\/\\w+==\\/\\d+\\.jpg$ url reject",
+      "reason": "通用图片或视频匹配未限定广告素材"
+    },
+    {
+      "line": 5113,
+      "source": "^https?:\\/\\/c\\.m\\.163\\.com\\/nc\\/gl\\/ url reject",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 5120,
+      "source": "^https?:\\/\\/ok\\.166\\.net\\/reunionpub\\/202[2-9]{1}-[0-9]{2}-[0-9]{2}\\/ntesgod_cms\\/.*.jpg$ url reject-200",
+      "reason": "通用图片或视频匹配未限定广告素材"
+    },
+    {
+      "line": 5124,
+      "source": "^https?:\\/\\/kaola-haitao\\.oss\\.kaolacdn.com\\/.+?_\\d{3,4}_\\d{4}\\.jpg\\?x-oss-process=image\\/resize,m_mfit,w_\\d{3,4},h_\\d{4}\\/format,webp\\/quality,Q_85 url reject-200",
+      "reason": "通用图片或视频匹配未限定广告素材"
+    },
+    {
+      "line": 5135,
+      "source": "^https?:\\/\\/c\\.m\\.163\\.com\\/nc\\/gl\\/ url reject-200",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 5140,
+      "source": "https://support.you.163.com/appversync/check.do url reject",
+      "reason": "更新、补丁、安装包或版本检查接口；阻断与去广告无关。"
+    },
+    {
+      "line": 5142,
+      "source": "^https?:\\/\\/yanxuan\\.nosdn\\.127\\.net\\/.*\\.mp4 url reject",
+      "reason": "通用图片或视频匹配未限定广告素材"
+    },
+    {
+      "line": 5153,
+      "source": "^https?:\\/\\/dict\\.youdao\\.com\\/course\\/tab\\/translateTab url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 5157,
+      "source": "^https?:\\/\\/api-overmind\\.youdao\\.com\\/openapi\\/get\\/luna\\/dict\\/dict-mobile\\/prod\\/dictCommonConfig url reject-dict",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 5161,
+      "source": "^https?:\\/\\/dict\\.youdao\\.com\\/commonsearch url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 5163,
+      "source": "^https?:\\/\\/dict\\.youdao\\.com\\/vip\\/activity\\/couponinfo url reject-dict",
+      "reason": "会员优惠券、福利领取或账户页面/资源；直接拒绝可能影响真实权益，不能按营销素材处理。"
+    },
+    {
+      "line": 5165,
+      "source": "^https?:\\/\\/dict\\.youdao\\.com\\/dictusertask\\/system url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 5182,
+      "source": "https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/w?e?api\\/(side-bar\\/mini-program\\/music-service\\/account|delivery\\/(batch-deliver|deliver)|moment\\/tab\\/info\\/get|yunbei\\/account\\/entrance\\/get) url reject-dict",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 5183,
+      "source": "https?:\\/\\/interface\\d?\\.music\\.163\\.com\\/eapi\\/(resource\\/comments?\\/musiciansaid|community\\/friends\\/fans-group\\/artist\\/group\\/get|user\\/sub\\/artist|music\\/songshare\\/text\\/recommend\\/get|mine\\/applet\\/redpoint|resniche\\/position\\/play\\/new\\/get) url reject-dict",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 5184,
+      "source": "https?:\\/\\/interface\\d?\\.music\\.163.com\\/w?e?api\\/(search\\/(chart|default|rcmd\\/keyword|specialkeyword)|resource-exposure\\/|activity\\/bonus\\/playpage\\/time\\/query) url reject-dict",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 5185,
+      "source": "https?:\\/\\/interface\\d?\\.music\\.163.com\\/eapi\\/(mlivestream\\/entrance\\/playpage|link\\/(position\\/show\\/strategy|scene\\/show)|ios\\/version|v\\d\\/content\\/exposure\\/comment\\/banner) url reject-dict",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 5186,
+      "source": "https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/(batch|v\\d\\/resource\\/comment\\/floor\\/get) url script-response-body https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js",
+      "reason": "脚本绑定覆盖普通内容、权益、会员或付费状态，须先取得广告专用实现"
+    },
+    {
+      "line": 5187,
+      "source": "https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/link\\/home\\/framework\\/tab url script-response-body https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 5188,
+      "source": "https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/(homepage\\/block\\/page|link\\/page\\/rcmd\\/(resource\\/show|block\\/resource\\/multi\\/refresh)) url script-response-body https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 5189,
+      "source": "https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/link\\/page\\/discovery\\/resource\\/show url script-response-body https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 5190,
+      "source": "https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/song\\/play\\/more\\/list\\/v\\d url script-response-body https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 5191,
+      "source": "https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/link\\/position\\/show\\/resource url script-response-body https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 5192,
+      "source": "https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163\\.com\\/e?api\\/user\\/follow\\/users\\/mixed\\/get url script-response-body https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 5217,
+      "source": "^https\\:\\/\\/(weixin110\\.qq|security.wechat)\\.com\\/cgi-bin\\/mmspamsupport-bin\\/newredirectconfirmcgi\\? url script-response-body https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 5230,
+      "source": "^https?:\\/\\/mapi\\.appvipshop\\.com\\/vips-mobile\\/rest\\/layout\\/productList\\/eventData\\/v url reject-200",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 5232,
+      "source": "^https?:\\/\\/mapi\\.appvipshop\\.com\\/vips-mobile\\/rest\\/activity\\/coupon\\/float_entrance\\/get\\?api_key url reject-200",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 5282,
+      "source": "host-keyword, msg.push.51y5.net, reject",
+      "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+    },
+    {
+      "line": 5290,
+      "source": "host-keyword, login.push.51y5.net, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 5309,
+      "source": "host-suffix, secpay.wostore.cn, reject",
+      "reason": "沃商店安全支付、统一支付/升级及相关登录服务，拒绝会干扰支付或账户。"
+    },
+    {
+      "line": 5310,
+      "source": "host-suffix, unilog.wostore.cn, reject",
+      "reason": "沃商店安全支付、统一支付/升级及相关登录服务，拒绝会干扰支付或账户。"
+    },
+    {
+      "line": 5311,
+      "source": "host-suffix, unipaydl.wostore.cn, reject",
+      "reason": "沃商店安全支付、统一支付/升级及相关登录服务，拒绝会干扰支付或账户。"
+    },
+    {
+      "line": 5312,
+      "source": "host-suffix, unipayupg.wostore.cn, reject",
+      "reason": "沃商店安全支付、统一支付/升级及相关登录服务，拒绝会干扰支付或账户。"
+    },
+    {
+      "line": 5366,
+      "source": "host-suffix, open.ximalaya.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 5367,
+      "source": "host-suffix, upos-app.ximalaya.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 5373,
+      "source": "^https:\\/\\/(m|mwsa)\\.ximalaya\\.com\\/x-web-activity\\/signIn\\/getHomePageSignInInfo\\/ url reject-dict",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 5382,
+      "source": "^https:\\/\\/(mobile|mobilehera|mobwsa)\\.ximalaya\\.com\\/mobile-playpage\\/playpage\\/recommendContentV\\d\\/ url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 5384,
+      "source": "^https:\\/\\/(mobile|mobilehera|mobwsa)\\.ximalaya\\.com\\/firework-portal\\/v\\d+\\/sync\\? url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 5389,
+      "source": "^https:\\/\\/(mobile|mobilehera|mobwsa)\\.ximalaya\\.com\\/mobile-user\\/v\\d\\/homePage\\/ url jsonjq-response-body '.data.serviceModule.entrances |= map(select(.name == \"全部服务\"))'",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 5395,
+      "source": "^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.alimusic\\.common\\.mobileservice\\.startinit\\/ url reject",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 5400,
+      "source": "^http:\\/\\/res1\\.hubcloud\\.com\\.cn url reject-200",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 5405,
+      "source": "^http:\\/\\/.+\\/amdc\\/mobileDispatch %E9%97%B2%E9%B1%BC* url-and-header reject",
+      "reason": "HTTPDNS 或服务发现与广告展示无关"
+    },
+    {
+      "line": 5407,
+      "source": "^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlemtopsearch\\.item\\.search\\.activate\\/2\\.0 url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 5408,
+      "source": "^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlemtopsearch\\.search\\.discover\\/1\\.0 url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 5410,
+      "source": "^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.item\\.resell\\.recommendorhotcate\\/1\\.0 url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 5412,
+      "source": "^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlehome\\.idle\\.coin\\.nextfresh\\/1\\.0 url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 5414,
+      "source": "^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idle\\.item\\.buy\\.feeds url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 5420,
+      "source": "^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlemtopsearch\\.search\\.shade\\/ url jsonjq-response-body 'del(.data)'",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 5460,
+      "source": "^https?:\\/\\/client-api-v2\\.oray\\.com\\/materials\\/SLCC_IOS_DEVICE url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 5481,
+      "source": "^https:\\/\\/gw\\.xiaocantech\\.com\\/rpc BatchMatchPlacement|WaitClaimedPoints|GetBannerList url-and-header reject-dict",
+      "reason": "整条响应或字段替换过宽，可能改动正常页面数据"
+    },
+    {
+      "line": 5483,
+      "source": "^https:\\/\\/web2\\.realtech-inc\\.com\\/oss\\/xc-app-assets\\/configs\\/common\\/theme\\.json url reject-dict",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 5539,
+      "source": "^https?:\\/\\/res\\.xiaojukeji\\.com\\/resapi\\/activity\\/get(Ruled|Preload|PasMultiNotices) url reject",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 5556,
+      "source": "^https:\\/\\/mgesq\\.api\\.mgtv\\.com\\/search\\/goods\\/rank url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 5558,
+      "source": "^https:\\/\\/mgesq\\.api\\.mgtv\\.com\\/user\\/center\\/config url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 5566,
+      "source": "host-suffix, xmpush.xiaomi.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 5567,
+      "source": "host-suffix, image.box.xiaomi.com, reject",
+      "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+    },
+    {
+      "line": 5588,
+      "source": "host-suffix, security.browser.miui.com, reject",
+      "reason": "MIUI 浏览器安全、系统更新或安全服务；同一 sec.miui.com 下的 adv 广告域名另行保留。"
+    },
+    {
+      "line": 5589,
+      "source": "host-suffix, calopenupdate.comm.miui.com, reject",
+      "reason": "MIUI 浏览器安全、系统更新或安全服务；同一 sec.miui.com 下的 adv 广告域名另行保留。"
+    },
+    {
+      "line": 5593,
+      "source": "host-suffix, api.sec.miui.com, reject",
+      "reason": "MIUI 浏览器安全、系统更新或安全服务；同一 sec.miui.com 下的 adv 广告域名另行保留。"
+    },
+    {
+      "line": 5594,
+      "source": "host-suffix, info.sec.miui.com, reject",
+      "reason": "MIUI 浏览器安全、系统更新或安全服务；同一 sec.miui.com 下的 adv 广告域名另行保留。"
+    },
+    {
+      "line": 5595,
+      "source": "host-suffix, proxy.sec.miui.com, reject",
+      "reason": "MIUI 浏览器安全、系统更新或安全服务；同一 sec.miui.com 下的 adv 广告域名另行保留。"
+    },
+    {
+      "line": 5596,
+      "source": "host-suffix, logupdate.avlyun.sec.miui.com, reject",
+      "reason": "MIUI 浏览器安全、系统更新或安全服务；同一 sec.miui.com 下的 adv 广告域名另行保留。"
+    },
+    {
+      "line": 5597,
+      "source": "host-suffix, update.avlyun.sec.miui.com, reject",
+      "reason": "MIUI 浏览器安全、系统更新或安全服务；同一 sec.miui.com 下的 adv 广告域名另行保留。"
+    },
+    {
+      "line": 5598,
+      "source": "host-suffix, etl.xlmc.sec.miui.com, reject",
+      "reason": "MIUI 浏览器安全、系统更新或安全服务；同一 sec.miui.com 下的 adv 广告域名另行保留。"
+    },
+    {
+      "line": 5600,
+      "source": "host-suffix, api.ra2.xlmc.sec.miui.com, reject",
+      "reason": "MIUI 浏览器安全、系统更新或安全服务；同一 sec.miui.com 下的 adv 广告域名另行保留。"
+    },
+    {
+      "line": 5601,
+      "source": "host-suffix, api.tw06.xlmc.sec.miui.com, reject",
+      "reason": "MIUI 浏览器安全、系统更新或安全服务；同一 sec.miui.com 下的 adv 广告域名另行保留。"
+    },
+    {
+      "line": 5605,
+      "source": "host-suffix, lxcdn.dl.files.xiaomi.net, reject",
+      "reason": "软件或安全组件下载/更新域名；阻断会影响安装、补丁或更新。"
+    },
+    {
+      "line": 5606,
+      "source": "host-suffix, pdc.micloud.xiaomi.net, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 5607,
+      "source": "host-suffix, migrate.driveapi.micloud.xiaomi.net, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 5608,
+      "source": "host-suffix, resolver.msg.xiaomi.net, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 5616,
+      "source": "host-suffix, api.jr.mi.com, reject",
+      "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+    },
+    {
+      "line": 5636,
+      "source": "^https?:\\/\\/shopapi\\.io\\.mi\\.com\\/mtop\\/mf\\/resource\\/homePage\\/pageConfig url reject-200",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 5665,
+      "source": "^https?:\\/\\/portal-portm\\.meituan\\.com\\/horn_ios\\/mergeRequest url reject-dict",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 5681,
+      "source": "^https:\\/\\/www\\.xiaoxiongmeishu\\.com\\/api\\/(home\\/v1\\/config\\/appInit|s\\/v1\\/popup\\/createCouponPopup) url reject",
+      "reason": "整条响应或字段替换过宽，可能改动正常页面数据"
+    },
+    {
+      "line": 5686,
+      "source": "^https?://api.xiaoyi.com\\/v5\\/app\\/config\\?userid=.* url reject",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 5692,
+      "source": "^https?:\\/\\/api\\.xiaoyuzhoufm\\.com\\/v1\\/(related-episode|operation-resource)\\/list url jsonjq-response-body '.data = []'",
+      "reason": "整条响应或字段替换过宽，可能改动正常页面数据"
+    },
+    {
+      "line": 5698,
+      "source": "^https?:\\/\\/api\\.xiaoyuzhoufm\\.com\\/v\\d\\/search\\/get url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 5728,
+      "source": "IP-CIDR, 114.132.165.205/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 5748,
+      "source": "^https?:\\/\\/myusmile\\.online\\/user\\/version\\/requestAppUpdate url reject-dict",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 5750,
+      "source": "^https?:\\/\\/myusmile\\.online\\/user\\/version\\/requestFirmwareUpdate\\/ url reject",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 5760,
+      "source": "^https?:\\/\\/m\\.ctrip\\.com\\/restapi\\/soa2\\/[0-9]{5}\\/json\\/getTimeZoneServerIpList\\?__gw_os=IOS url reject-200",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 5866,
+      "source": "host-suffix, pay.mobile.sina.cn, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 5921,
+      "source": "^https?:\\/\\/file\\.cibfintech\\.com\\/file\\/M0[1-9]{1}\\/*\\/*\\/.*.zip url reject-img",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 5925,
+      "source": "^https?:\\/\\/images\\.cib\\.com\\.cn\\/commons\\/uploads\\/commons\\/[a-zA-Z0-9]{32}\\.jpg\\?ver=20221[1-2]{1} url reject-200",
+      "reason": "通用图片或视频匹配未限定广告素材"
+    },
+    {
+      "line": 5926,
+      "source": "^https?:\\/\\/images\\.cib\\.com\\.cn\\/commons\\/uploads\\/commons\\/[a-zA-Z0-9]{32}\\.jpg\\?ver=20230[1-9]{1} url reject-200",
+      "reason": "通用图片或视频匹配未限定广告素材"
+    },
+    {
+      "line": 5945,
+      "source": "^https:\\/\\/open\\.xueqiu\\.com\\/mpaas\\/config\\/content\\?.+home_visitor_relation_config url reject-dict",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 5948,
+      "source": "^https:\\/\\/api\\.xueqiu\\.com\\/ucprofile\\/api\\/user\\/batchGetUserBasicInfo\\.json url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 5951,
+      "source": "^https:\\/\\/open\\.xueqiu\\.com\\/mpaas\\/config\\/content\\?.+cube_detail_bottom_operation_trade_button url reject-dict",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 6060,
+      "source": "^https?:\\/\\/oneapp-api\\.faw-vw\\.com\\/search\\/firstPage\\/getPromptList\\/v1\\?.* url jsonjq-response-body '. = { returnStatus: \"SUCCEED\", hasMore: false, data: [] }'",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 6061,
+      "source": "^https?:\\/\\/oneapp-api\\.faw-vw\\.com\\/benefits\\/benefitsCard\\/getInfo\\/v1\\?.* url jsonjq-response-body '. = { returnStatus: \"SUCCEED\", hasMore: false, data: [] }'",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 6065,
+      "source": "^https?:\\/\\/oneapp-api\\.faw-vw\\.com\\/content\\/(customize\\/getCustomizePageName|recommend\\/getRecommendInfoFlows|activity\\/getSquareActivityList|theme\\/getThemeList|post\\/getPostsByTags|evaluate\\/getEvaluateCards)\\/v1\\?.* url jsonjq-response-body '. = { returnStatus: \"SUCCEED\", hasMore: false, data: [] }'",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 6066,
+      "source": "^https?:\\/\\/oneapp-api\\.faw-vw\\.com\\/content\\/(collection\\/getCollectionList)\\/v1\\?.* url jsonjq-response-body '. = { returnStatus: \"SUCCEED\", hasMore: false, data: {} }'",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 6078,
+      "source": "^https?:\\/\\/api\\.yikaobang\\.com\\.cn\\/index\\.php\\/version\\/version\\/check url reject",
+      "reason": "更新、补丁、安装包或版本检查接口；阻断与去广告无关。"
+    },
+    {
+      "line": 6107,
+      "source": "^https?:\\/\\/cheyouapi\\.ycapp\\.yiche\\.com\\/appforum\\/getusermessagecount url reject-img",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 6236,
+      "source": "^https?:\\/\\/acs\\.youku\\.com\\/gw\\/mtop\\.youku\\.columbus\\.(gateway\\.new\\.execute|home\\.feed|home\\.query|uc\\.query|ycp\\.query) url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js",
+      "reason": "已读上游 cnftp.js：columbus.gateway.new.execute 分支删除播放详情页正常 tab；此多路径绑定应拆分。"
+    },
+    {
+      "line": 6240,
+      "source": "^https?:\\/\\/acs\\.youku\\.com\\/gw\\/mtop\\.youku\\.haidai\\.lantern\\.appconfig\\.get url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js",
+      "reason": "已读上游 cnftp.js：过滤底部导航，只保留 HOME/NEW_UCENTER/VIP_MEMBER，移除搜索等正常入口。"
+    },
+    {
+      "line": 6242,
+      "source": "^https?:\\/\\/acs\\.youku\\.com\\/gw\\/mtop\\.youku\\.huluwa\\.dispatcher\\.youthmode\\.config2 url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js",
+      "reason": "已读上游 cnftp.js：将青少年模式配置 result 清空，属于安全/家长保护功能改变。"
+    },
+    {
+      "line": 6246,
+      "source": "^https?:\\/\\/acs\\.youku\\.com\\/gw\\/mtop\\.youku\\.soku\\.yksearch url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js",
+      "reason": "已读上游 cnftp.js：搜索页面仅保留部分节点，可能移除正常搜索组件。"
+    },
+    {
+      "line": 6250,
+      "source": "^https?:\\/\\/un-acs\\.youku\\.com\\/gw\\/mtop\\.youku\\.play\\.ups\\.appinfo\\.get url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js",
+      "reason": "已读上游 cnftp.js：播放配置分支同时删除 watermark，与广告清理无关。"
+    },
+    {
+      "line": 6264,
+      "source": "^https?:\\/\\/api\\.ulife\\.group\\/auth\\/account\\/getUpgradeStrategy url reject-dict",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 6266,
+      "source": "^https?:\\/\\/api\\.ulife\\.group\\/market\\/memberCard\\/listMemberCard\\?isShowSecondaryCard=1 url reject-dict",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 6267,
+      "source": "^https?:\\/\\/api\\.ulife\\.group\\/auth\\/account\\/entrance url reject-dict",
+      "reason": "整条接口为账户、权益、订单、支付或安全功能"
+    },
+    {
+      "line": 6294,
+      "source": "^https?:\\/\\/mcc.psbc.com:9090\\/mcc\\/resources\\/[0-9]+\\.(jpg|png) url reject-200",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 6296,
+      "source": "^https?:\\/\\/d\\.psbc\\.com:9091\\/mcc\\/resources\\/[0-9]+\\.(jpg|png|jpeg) url reject-200",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 6366,
+      "source": "host-suffix, mhdpay.1391.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 6383,
+      "source": "^https:\\/\\/gw3\\.ykccn\\.com\\/api\\/omp\\/mt\\/enterpriseWeChatConfig\\/app\\/queryCityConfig url reject-dict",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 6395,
+      "source": "host, cm-10-138.getui.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 6396,
+      "source": "host, sdk.open.talk.getui.net, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 6397,
+      "source": "host, sdk-conf.getui.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 6398,
+      "source": "host, switch.cup.com.cn, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 6430,
+      "source": "host-suffix, iframe.travel.yahoo.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 6442,
+      "source": "host-suffix, im.ov.yahoo.co.jp, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 6459,
+      "source": "^https:\\/\\/rr[\\w-]+\\.googlevideo\\.com\\/initplayback\\? url reject-dict",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 6492,
+      "source": "^https?:\\/\\/intellicc\\.bas\\.cmbchina\\.com\\/Edge\\/api\\/mlife\\.intelli\\.render\\.api\\.render\\/getDynamicDataSec url reject",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 6507,
+      "source": "^https?:\\/\\/book\\.img\\.ireader\\.com\\/group6\\/M00 url reject-img",
+      "reason": "按通用图片、视频、静态资源或尺寸匹配并拒绝，无法限定广告素材，会误伤正常内容或应用资源。"
+    },
+    {
+      "line": 6520,
+      "source": "^https?:\\/\\/mbmodule-openapi\\.paas\\.cmbchina\\.com\\/graphic\\/v2\\/module\\/graphic url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 6536,
+      "source": "^https?:\\/\\/apio\\.zhengqi100\\.com\\/forum\\/thread\\/listsHome url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 6550,
+      "source": "host, 118.89.204.198, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 6551,
+      "source": "IP-CIDR, 118.89.204.198/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 6552,
+      "source": "IP6-CIDR,2402:4e00:1200:ed00:0:9089:6dac:96b6/128, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 6561,
+      "source": "^https:\\/\\/api\\.zhihu\\.com\\/(moments\\/lastread|drama\\/hot-drama-list) url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 6569,
+      "source": "^https:\\/\\/api\\.zhihu\\.com\\/me\\/guides url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 6570,
+      "source": "^https:\\/\\/api\\.zhihu\\.com\\/unlimited\\/go\\/my_card url reject",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 6572,
+      "source": "^https:\\/\\/api\\.zhihu\\.com\\/search\\/preset_words url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 6574,
+      "source": "^https:\\/\\/www\\.zhihu\\.com\\/api\\/v4\\/search\\/related_queries\\/(article|answer)\\/\\d+ url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 6576,
+      "source": "^https:\\/\\/api\\.zhihu\\.com\\/comment_v5\\/(articles|answers)\\/\\d+\\/list-headers url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 6580,
+      "source": "^https:\\/\\/api\\.zhihu\\.com\\/v5\\.1\\/topics\\/answer\\/\\d+\\/relation url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 6583,
+      "source": "^https:\\/\\/api\\.zhihu\\.com\\/ab\\/api\\/v1\\/products\\/zhihu\\/platforms\\/ios\\/config url reject",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 6586,
+      "source": "^https:\\/\\/appcloud2\\.zhihu\\.com\\/v3\\/resource\\?group_name=mp url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 6593,
+      "source": "^https:\\/\\/www\\.zhihu\\.com\\/api\\/v4/(answers|questions)\\/\\d+/related-readings url reject",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 6595,
+      "source": "^https:\\/\\/zhuanlan\\.zhihu\\.com\\/api\\/articles\\/\\d+\\/recommendation url reject",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 6628,
+      "source": "host-suffix, api.zol.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 6640,
+      "source": "IP-CIDR, 122.229.8.47/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 6641,
+      "source": "IP-CIDR, 122.229.29.89/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 6673,
+      "source": "^https:\\/\\/m\\.airchina\\.com\\.cn\\/airchina\\/gateway\\/v\\d(\\.\\d)*\\/api\\/services url script-response-header https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/airchina.js",
+      "reason": "已读上游 airchina.js：按 procedure 处理 hasUpgrade、首页及重要消息，非纯广告。"
+    },
+    {
+      "line": 6681,
+      "source": "^https?:\\/\\/m\\.client\\.10010\\.com\\/mobileService\\/customer\\/getclientconfig\\.htm url reject-dict",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 6685,
+      "source": "^https?:\\/\\/res\\.mall\\.10010\\.cn\\/mall\\/common\\/js\\/fa\\.js?referer= url reject-img",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 6692,
+      "source": "^https?:\\/\\/zgrb\\.epicc\\.com\\.cn\\/G-HAPP\\/h\\/headlines\\/queryHeadlines url reject",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 6712,
+      "source": "^https?:\\/\\/e\\.weather\\.com\\.cn\\/weChat\\/typhoonNull\\.json url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 6716,
+      "source": "IP-CIDR, 120.240.95.37/32, reject",
+      "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+    },
+    {
+      "line": 6718,
+      "source": "^https?:\\/\\/client\\.app\\.coc\\.10086\\.cn\\/biz-orange\\/DN\\/init\\/startInit url reject",
+      "reason": "匹配配置、基础设施、首页混合响应或过宽接口；整段 reject 无广告字段约束，会妨碍正常功能。"
+    },
+    {
+      "line": 6728,
+      "source": "^https?:\\/\\/middle\\.yun\\.139\\.com\\/openapi\\/cardConfig\\/queryCardInfoV3 url reject-200",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 6730,
+      "source": "^https?:\\/\\/mrp\\.mcloud\\.139\\.com\\/mc\\/mc-client-service\\/openapi\\/letter\\/query url reject-dict",
+      "reason": "整条接口涉及服务、账号、内容、订单、权益或核心页面；直接拒绝整条响应超出营销展示清理。"
+    },
+    {
+      "line": 6737,
+      "source": "^https?:\\/\\/xyz\\.cnki\\.net\\/resourcev7\\/api\\/manualpush\\/SlidsList$ url reject-200",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 6741,
+      "source": "host-keyword, api.freed.so, reject",
+      "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+    },
+    {
+      "line": 6762,
+      "source": "^https?:\\/\\/hdgateway\\.zto\\.com\\/getApolloConfig url reject-dict",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 6763,
+      "source": "^https?:\\/\\/hdgateway\\.zto\\.com\\/track url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 6814,
+      "source": "^https?:\\/\\/app\\.zhuanzhuan\\.com\\/zzx\\/transfer\\/getConfigInfo url reject-dict",
+      "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+    },
+    {
+      "line": 6818,
+      "source": "^https?:\\/\\/app\\.zhuanzhuan\\.com\\/zz\\/transfer\\/userred\\?scene=homePage url reject-dict",
+      "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+    },
+    {
+      "line": 7028,
+      "source": "host-suffix, crashapi.growingio.com, reject",
+      "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+    },
+    {
+      "line": 7160,
+      "source": "host-suffix, api.share.mob.com, reject",
+      "reason": "域名承担账户、内容、通知、支付、云同步、基础网络或其他正常服务；整域 REJECT 无法只清理广告。"
+    },
+    {
+      "line": 7283,
+      "source": "host-suffix, cdn-settings.segment.com, reject",
+      "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+    },
+    {
+      "line": 7284,
+      "source": "host-suffix, mobile-service.segment.com, reject",
+      "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+    },
+    {
+      "line": 6544,
+      "source": "USER-AGENT,AVOS*, reject",
+      "reason": "整类 User-Agent 在所有 URL 上拒绝，缺少广告路径或字段约束，不能作为纯去广告规则公开启用。"
+    },
+    {
+      "line": 5532,
+      "source": "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d\\/note\\/comment\\/list url response-body red_id response-body fmz200",
+      "reason": "评论列表中的 red_id 字段整体重命名会改变普通身份数据，不属于广告内容过滤。"
+    }
+  ],
+  "replacements": [
+    {
+      "line": 506,
+      "source": "^https?:\\/\\/list-app-m\\.i4\\.cn\\/(adclickcb|getHotSearchList|getopfstadinfo)\\.xhtml url reject",
+      "replacement": "^https?:\\/\\/list-app-m\\.i4\\.cn\\/(adclickcb)\\.xhtml url reject",
+      "reason": "仅保留广告点击回调，排除热门搜索及未证实的信息接口。"
+    },
+    {
+      "line": 1049,
+      "source": "^https?:\\/\\/manga\\.bilibili\\.com\\/twirp\\/comic\\.v\\d\\.Comic\\/(?>Recommend|MoreRecommend|Flash|ListFlash|GetBubbles|GetActivityTab|GetCommonBanner|GetComicConfigPicList|SearchBanner|AppInit) url reject-200",
+      "replacement": "^https?:\\/\\/manga\\.bilibili\\.com\\/twirp\\/comic\\.v\\d\\.Comic\\/(GetCommonBanner|SearchBanner) url reject-200",
+      "reason": "仅保留名称明确的广告横幅接口；其他漫画内容与配置接口不再拒绝。"
+    },
+    {
+      "line": 1147,
+      "source": "^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.nbpresentation\\.(homepage\\.merge|tabbar\\.marketing)\\.get\\.cn url reject-dict",
+      "replacement": "^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.cainiao\\.nbpresentation\\.tabbar\\.marketing\\.get\\.cn url reject-dict",
+      "reason": "仅保留营销页签接口，首页合并接口属于混合页面。"
+    },
+    {
+      "line": 1285,
+      "source": "^https?:\\/\\/sdk\\.alibaba\\.com\\.ailbaba\\.me\\/(dsx|xgapp)\\.php\\/v\\d\\/(top_notice\\?|version|advert\\?position=[^2]+) url reject-200",
+      "replacement": "^https?:\\/\\/sdk\\.alibaba\\.com\\.ailbaba\\.me\\/(dsx|xgapp)\\.php\\/v\\d\\/advert\\?position=[^2]+ url reject-200",
+      "reason": "仅保留广告位置请求，排除版本与普通通知接口。"
+    },
+    {
+      "line": 2875,
+      "source": "https?:\\/\\/helper\\.2bulu\\.com\\/(greenPea\\/queryTasks|proSpecial\\/allData|saveSplashFrequencyStatistics|getPopInfo|getAppEntranceConfig|promote\\/list|getSplash|outing\\/reqFoundNewList|outing\\/reqIndex) url reject",
+      "replacement": "https?:\\/\\/helper\\.2bulu\\.com\\/(promote\\/list|getSplash) url reject",
+      "reason": "仅保留促销列表与开屏广告，排除任务、入口配置与普通活动内容。"
+    },
+    {
+      "line": 3057,
+      "source": "^https?:\\/\\/.*mangaapi\\.manhuaren\\.\\w{2,4}\\/v\\d\\/public\\/(getStartUpMessage|getStartPageAds|getShelfActivity) url reject",
+      "replacement": "^https?:\\/\\/.*mangaapi\\.manhuaren\\.\\w{2,4}\\/v\\d\\/public\\/getStartPageAds url reject",
+      "reason": "仅保留明确的开屏广告接口，排除启动消息与书架活动。"
+    },
+    {
+      "line": 3096,
+      "source": "^https?:\\/\\/[\\d\\.]+\\/odin\\/c1\\/(channel\\/ads|skin\\/config)\\? url reject-dict",
+      "replacement": "^https?:\\/\\/[\\d\\.]+\\/odin\\/c1\\/channel\\/ads\\? url reject-dict",
+      "reason": "仅保留广告频道，排除皮肤配置。"
+    },
+    {
+      "line": 3666,
+      "source": "^https?:\\/\\/magev6\\.if\\.qidian\\.com\\/argus\\/api\\/(v4\\/client\\/getsplashscreen|v2\\/deeplink\\/geturl|v1\\/(client\\/getconf|adv\\/getadvlistbatch\\?positions=iOS_tab|dailyrecommend\\/getdailyrecommend)) url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/qidian.js",
+      "replacement": "^https?:\\/\\/magev6\\.if\\.qidian\\.com\\/argus\\/api\\/(v1\\/adv\\/getadvlistbatch\\?positions=iOS_tab) url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/qidian.js",
+      "reason": "仅保留明确的广告列表位置，排除跳转、配置与每日推荐。"
+    },
+    {
+      "line": 4543,
+      "source": "^https?:\\/\\/r\\.inews\\.qq\\.com\\/(getBannerAds|getNewsRemoteConfig|getSplash|searchHotCatList|upLoadLoc) url reject",
+      "replacement": "^https?:\\/\\/r\\.inews\\.qq\\.com\\/getBannerAds url reject",
+      "reason": "仅保留明确的广告横幅接口；排除配置、搜索、位置上传与未证实的开屏接口。"
+    },
+    {
+      "line": 4626,
+      "source": "^https?:\\/\\/wx\\.17u\\.cn\\/xcxhomeapi\\/((aggregator\\/index)|(home\\/(screen|banner|converge)))$ url reject",
+      "replacement": "^https?:\\/\\/wx\\.17u\\.cn\\/xcxhomeapi\\/home\\/banner$ url reject",
+      "reason": "仅保留首页横幅，排除聚合、屏幕与合并服务。"
+    },
+    {
+      "line": 5115,
+      "source": "^https?:\\/\\/interface3?\\.music\\.163\\.com/eapi/(ad|abtest|sp|hot|store|mlog|search/(specialkeyword|defaultkeyword|hot)) url reject-img",
+      "replacement": "^https?:\\/\\/interface3?\\.music\\.163\\.com/eapi/ad url reject-img",
+      "reason": "仅保留广告接口，排除实验、商店、搜索及普通内容接口。"
+    },
+    {
+      "line": 5514,
+      "source": "^https?:\\/\\/www\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/(v\\d+\\/ads\\/resource|v\\d+\\/hey\\/\\w+\\/hey_gallery) url reject-dict",
+      "replacement": "^https?:\\/\\/www\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/ads\\/resource url reject-dict",
+      "reason": "仅保留广告资源接口，排除普通图库。"
+    },
+    {
+      "line": 6063,
+      "source": "^https?:\\/\\/oneapp-api\\.faw-vw\\.com\\/content\\/booth\\/getBoothList\\/v1\\?.*showPositionCode=VWAPP_(ICE|MEB)_(OPEN_SCREEN_ADS|CAR_ZHIHU_COLLEGE) url jsonjq-response-body '. = { returnStatus: \"SUCCEED\", hasMore: false, data: [] }'",
+      "replacement": "^https?:\\/\\/oneapp-api\\.faw-vw\\.com\\/content\\/booth\\/getBoothList\\/v1\\?.*showPositionCode=VWAPP_(ICE|MEB)_OPEN_SCREEN_ADS url jsonjq-response-body '. = { returnStatus: \"SUCCEED\", hasMore: false, data: [] }'",
+      "reason": "仅保留开屏广告位置，排除汽车知识内容。"
+    },
+    {
+      "line": 2551,
+      "source": "^https?:\\/\\/res\\.kfc\\.com.\\cn\\/advertisement\\/ url reject",
+      "replacement": "^https?:\\/\\/res\\.kfc\\.com\\.cn\\/advertisement\\/ url reject",
+      "reason": "修复上游域名转义笔误，仍只匹配肯德基 advertisement 路径。"
+    }
+  ],
+  "notes": [
+    "以指定 SHA-256 的完整启用规则为审查范围；line 为原始 snippet 的 1-based 行号。未列入 excluded 或 replacements 的条目默认保留，不按已安装 App 缩减。",
+    "域名与 IP 行、URL 拒绝/响应替换/脚本绑定均已纳入；注释、分号禁用行与末尾 hostname 声明不是启用拦截规则。",
+    "自营促销、营销推荐及明确广告接口保留；vip、购物、金融、登录路径等名称本身不构成排除理由。",
+    "混合脚本绑定需主代理核实并按已有广告专用补丁接线：160-161、265、467-494、861-863、1350-1360、2479、2656-2661、3211-3212、3666、4328-4338、5186-5192、6236-6250、6457。尤其 5186-5192 的同一远程脚本曾被查出改会员等级与到期时间；6236 和 6250 的上游脚本涉及普通导航或去水印。",
+    "既有实测补丁应由主代理在构建时优先于同用途上游脚本绑定；本清单只记录上游逐行政策，不声称已完成手机或 GitHub 验收。",
+    "裸 IP/CIDR 缺少稳定广告归属证据，已暂排除；主代理可在取得逐项用途证据后恢复广告专用地址。混合脚本效果仍须进一步核实。"
+  ]
+}

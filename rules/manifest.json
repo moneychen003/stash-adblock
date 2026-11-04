@@ -1,13 +1,13 @@
 {
-  "version": "2026.11.04.2",
-  "configuration_sha256": "176d6a3331ccc10c57f6ce1d976bdc97a6f8168b9db0f359a98e90d1b0bde927",
+  "version": "2026.11.04.3",
+  "configuration_sha256": "6f9027ee4c971703921bde55739a674518a718c1e018dbfa51eaae6cc3242a16",
   "counts": {
-    "rules": 2559,
-    "url_rewrites": 419,
-    "body_rewrites": 3,
-    "mitm_hosts": 329,
-    "script_bindings": 143,
-    "script_providers": 53
+    "rules": 2480,
+    "url_rewrites": 1085,
+    "body_rewrites": 29,
+    "mitm_hosts": 977,
+    "script_bindings": 157,
+    "script_providers": 76
   },
   "local_scripts": {
     "bilibili-splash.js": "89ef8f3c5c2807af4ef72bbfb25dff897442d4088e68ded48b90860b3aff56d9",

@@ -1,20 +1,37 @@
-# 维护与更新
+# 维护、升级与重建
 
-本仓库只维护 Stash 去广告覆写，不维护节点订阅和 App 安装包。
+公开构建不读取手机、个人目录或证书。输入均在仓库 `sources/`：
 
-1. 修改 `sources/config.json` 或 `scripts/`；不要直接编辑生成的覆写。
-2. `python -m pip install -r requirements.txt`。
-3. 执行 `python tools/build.py`，再执行 `python tools/validate.py`、`python tools/test_coverage.py` 和 `node tools/test_scripts.cjs`。
-4. 核对上游固定提交及许可；修改上游依赖时更新 `rules/upstream-lock.json` 的可用性、大小和 SHA-256。
-5. 至少做对应 App 的冷启动对照，注明版本、登录状态、缓存/重装步骤和实际观察窗口。一次没出现广告不代表所有页面和长期使用都无广告。
-6. 更新版本号、报告与变更记录，发布后用匿名请求检查主订阅和引用脚本能访问。
+- `upstream/fmz-rewrite.snippet`：完整固定上游原文及原作者信息。
+- `fmz-policy.json`：非广告排除、精确路径缩窄及拼写修正。
+- `fmz-script-policy.json`：脚本分支审查、兼容模式及广告专用替代。
+- `verified-repairs.json`：原有定向修复，优先于同用途上游规则。
+- `dependencies.json`、`version.json`：固定提交、大小、哈希和发布版本。
 
-公开内容只放规则、补丁、必要的复现说明和去个人信息的结果。设备清单、账号、证书、控制密钥、完整抓包、App 安装包及未遮盖个人信息的截图不应入库。
+## 本地检查
 
-## 本地验证范围
+```sh
+python -m pip install -r requirements.txt
+python tools/build.py
+python tools/validate.py
+python tools/test_coverage.py
+python tools/test_compiler.py
+node tools/test_scripts.cjs
+node tools/test_qx_transform.cjs
+node tools/test_fmz_video.cjs
+node tools/test_xiaohongshu.cjs
+node tools/test_media_ad_only.cjs
+```
 
-静态检查覆盖 YAML 结构、脚本引用、JavaScript 语法、配置重建一致性、无关响应放行、广告字段替换和大整数文本保留。它们不能替代 Stash 内核加载、证书信任或用户设备上的实际验收。
+Python 3.9+、Node 22+；有 `jq` 时会进一步检查原生表达式的语法与异常形状处理。GitHub Actions 运行同样的检查。生成文件不要手改：`sources/config.json`、主覆写、manifest、coverage、转换账本与依赖锁由编译器重建。
 
-`rules/coverage.json` 记录基线与公开版计数、非广告删除项和改成广告专用处理的绑定。每次改变保留／删除范围都要同步更新该清单。恢复广告规则时也需保留相应 MitM 主机，检查现有更高优先级的拒绝规则是否抢先拦住响应修复。上游许可和署名不能因规则转换丢失。
+## 更新顺序
 
-本仓库脚本也固定引用已经公开的提交，避免更新覆写后仍沿用旧脚本缓存。修改脚本时先发布对应脚本提交，再将 `sources/config.json` 内该脚本的 URL 指向新提交，同步更新锁文件中的大小和哈希后重建、检查、发布配置。用户的主覆写订阅仍指向 `main`，不需要跟着更换地址。
+1. 固定上游提交，替换完整源文件并核对 SHA-256；不要按机主安装清单过滤。
+2. 对源变化更新两份 policy。所有启用行必须有编译、拆窄、排除或实测补丁替代记录；未知语法会报错。
+3. 复核保留脚本的具体分支与许可证，不把会员、认证、下载／后台播放、水印或普通内容删改混入广告过滤。混合模块尽量换广告专用实现，不整段照搬。
+4. 修改本仓库脚本时，先在候选分支发布已检查的脚本提交，再将 `scripts_revision` 固定到该提交；更新固定依赖哈希。主订阅仍使用 `main`，读者不用换地址。
+5. 构建并运行检查，再做相应 App 冷启动对照。记下有效窗口、广告残留及登录／协议受阻；补丁保留不等于当前效果通过。
+6. 更新效果表与报告，推送主分支后用匿名请求核对主覆写和所有引用资源；等待 CI 通过。
+
+手机自己的 CA、私网、DNS、原始抓包、截图及安装包不应成为公开构建输入。私人部署只在本机额外合并，保留回滚，不能把设备文件复制进仓库。第三方独立脚本以原项目许可为准，固定 URL 引用不等于获得任意再分发许可。

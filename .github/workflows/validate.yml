@@ -18,4 +18,9 @@ jobs:
       - run: python -m pip install -r requirements.txt
       - run: python tools/validate.py
       - run: python tools/test_coverage.py
+      - run: python tools/test_compiler.py
       - run: node tools/test_scripts.cjs
+      - run: node tools/test_qx_transform.cjs
+      - run: node tools/test_fmz_video.cjs
+      - run: node tools/test_xiaohongshu.cjs
+      - run: node tools/test_media_ad_only.cjs
