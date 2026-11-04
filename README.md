@@ -28,6 +28,8 @@ https://raw.githubusercontent.com/moneychen003/stash-adblock/main/rules/stash-ad
 
 微博、哔哩哔哩、豆瓣、中国广电、拼多多、QQ 音乐、优酷及雪球的定向广告修复均保留。京东、酷安及其他 App／小程序的广告规则也保留，具体成功证据与观察边界见[逐项效果](docs/APP-STATUS.md)。**规则数量不等于已验证 App 数量。**
 
+[App 效果分类表](docs/APP-STATUS.md)已汇总 **13 款 App**：对应广告位已解决 5 款、部分改善 5 款、仅抽测未见广告 3 款。表内区分实机复测与使用者反馈，并列出残留和未验证范围。
+
 首版曾因过度裁剪而缺失不少广告规则，这版已改为从工作配置逐项保留。与原组合仍有差异的原因，以及每条删除的规则及理由，见[覆盖范围与差异](docs/COVERAGE.md)和[机器可读清单](rules/coverage.json)。
 
 ## 为什么装完还有旧开屏
