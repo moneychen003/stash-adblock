@@ -4,7 +4,7 @@
   "public_configuration_sha256": "6f9027ee4c971703921bde55739a674518a718c1e018dbfa51eaae6cc3242a16",
   "method": "目标App冷启动、9.5秒退出保护；实际采样时间留在私有记录。权限或加载受阻不算成功；画面不等于逐请求命中证据。未清理新的App缓存或删除App。",
   "attempted_app_count": 13,
-  "cold_start_windows": 16,
+  "cold_start_windows": 25,
   "runtime_checks": {
     "configuration_diagnostic": "本轮已观察到无配置警告",
     "apple_rule_request": "本轮已观察到成功响应",
@@ -32,13 +32,13 @@
       "app": "微博",
       "version": "16.10.3",
       "status": "variable_splash_and_promotion",
-      "finding": "首轮约2至5秒显示完整商业开屏，后续一轮冷启动未再见开屏并进入关注首页；现金推广入口仍在。表现有波动，不能认定稳定解决，也未证明缓存是唯一原因。"
+      "finding": "首轮曾显示完整商业开屏；后续两轮冷启动采样未再见开屏并进入关注首页，补测仍有刷博领现金悬浮入口。表现有波动，不能认定稳定解决，也未证明缓存是唯一原因。"
     },
     {
       "app": "拼多多",
       "version": "8.29.0",
       "status": "promotion_and_permission_prompt",
-      "finding": "首页可显示普通商品，但活动、补贴及自营入口仍在；剪贴板授权提示遮挡，未授权，未验收全部推荐与后续页面。"
+      "finding": "补测约2秒首页和商品位可显示，百亿补贴、领券及11.11入口仍在；约5秒出现剪贴板提示，未授权。采样未见独立开屏，后续受阻不能算全页面通过。"
     },
     {
       "app": "中国广电",
@@ -49,20 +49,20 @@
     {
       "app": "优酷",
       "version": "11.2.21",
-      "status": "home_ad_and_permission_prompt",
-      "finding": "本轮11.2.21采样未见独立商业开屏，首页出现带关闭广告按钮的商业推广；剪贴板权限提示遮挡，未授权，未验证独立播放。"
+      "status": "home_ad_playback_observed",
+      "finding": "补测冷启动未见独立商业开屏；约5至8秒首页显示明确广告标记、摇一摇跳转和关闭按钮。另点入剧集后约5秒出现正片、后续画面持续变化；本次短窗口未见前贴片，但后来画中画出现商品推广片段，不能认定播放全程无广告。会员促销仍在。"
     },
     {
       "app": "酷安",
       "version": "16.7.1",
       "status": "ad_placeholder_reproduced",
-      "finding": "约2秒出现黑屏、广告标记、滑动/点击跳转提示和跳过倒计时，约7.5秒进入首页；本轮开屏未通过。"
+      "finding": "补测再次在约2至5秒出现黑色广告占位、滑动/点击跳转提示和跳过倒计时，约8秒进入首页；开屏未通过。"
     },
     {
       "app": "京东",
       "version": "171135",
       "status": "promotion_and_permission_prompt",
-      "finding": "未见独立商业开屏，首页商品可加载；补贴、领券、悬浮领奖等促销仍在，剪贴板权限提示遮挡，未作深层页面验收。"
+      "finding": "补测首轮受优酷画中画遮挡，仅记有限观察；结束播放后另行冷启动，首页商品可加载，未见独立开屏，补贴、领券、悬浮领奖及底部促销条仍在；约5秒再次出现剪贴板提示，未授权，未验收深层页面。"
     },
     {
       "app": "雪球",
@@ -73,8 +73,8 @@
     {
       "app": "小红书",
       "version": "9.52",
-      "status": "permission_prompt_limited",
-      "finding": "发现页有内容刷新，采样未见独立开屏；剪贴板权限提示持续遮挡，未验证后续信息流广告全部去除。"
+      "status": "sample_no_splash",
+      "finding": "前轮受剪贴板提示遮挡；补测约2至8秒发现页正常刷新，无权限弹窗，采样未见独立商业开屏或明确首屏广告；未滚动核验更多信息流及内页。"
     },
     {
       "app": "知乎",
@@ -85,14 +85,14 @@
     {
       "app": "网易云音乐",
       "version": "9.6.15",
-      "status": "promotion_and_permission_prompt",
-      "finding": "采样未见独立商业开屏，推荐首页可见会员双11入口；剪贴板提示持续遮挡，未授权，未测试歌曲播放或付费功能。"
+      "status": "promotion_and_operational_popup",
+      "finding": "补测无剪贴板弹窗，约2秒推荐首页正常加载，仍有会员双11入口；约5秒出现徽章运营弹窗。未见独立商业开屏；未测试歌曲播放或付费功能。"
     },
     {
       "app": "YouTube",
       "version": "21.43.5",
-      "status": "loading_incomplete",
-      "finding": "开始受上一App剪贴板提示影响，末帧仍是首页加载占位；没有有效播放画面，播放器广告与Shorts本轮未验收。"
+      "status": "home_sponsored_ad_reproduced",
+      "finding": "前轮未加载完成；补测约8秒首页已加载，首卡明确标注赞助商广告。首页去广告未通过；播放器和Shorts未作实机验收。"
     },
     {
       "app": "QQ 音乐",
@@ -100,5 +100,13 @@
       "status": "skipped_by_request",
       "finding": "此前使用者已要求停止继续复测；保留官方重装后四次启动未见商业开屏的历史结果，不写成本轮验收。"
     }
-  ]
+  ],
+  "supplemental_observation": {
+    "date": "2026-11-04",
+    "app_count": 8,
+    "cold_start_windows": 9,
+    "playback_windows": 1,
+    "maximum_window_seconds": 9.5,
+    "note": "包含一轮受画中画遮挡的京东观察，结束播放后另行冷启动。另一次小红书启动未取得窗口内有效截图，不计入有效采样。未更改规则或清理缓存。"
+  }
 }
