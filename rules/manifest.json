@@ -1,22 +1,37 @@
 {
-  "version": "2026.11.04.2",
-  "configuration_sha256": "176d6a3331ccc10c57f6ce1d976bdc97a6f8168b9db0f359a98e90d1b0bde927",
+  "version": "2026.11.04.4",
+  "configuration_sha256": "e8a9b59ba039fd3a2169369127d3798e5858c127c024cace443ec9403c7161a1",
+  "common_source_sha256": "29b980ed95d9a1d127ad44d0380e0930fa77ad3b7016b07ef160ce98666327cc",
   "counts": {
-    "rules": 2559,
-    "url_rewrites": 419,
-    "body_rewrites": 3,
-    "mitm_hosts": 329,
-    "script_bindings": 143,
-    "script_providers": 53
+    "rules": 3148,
+    "url_rewrites": 1164,
+    "body_rewrites": 29,
+    "mitm_hosts": 1025,
+    "script_bindings": 235,
+    "script_providers": 99,
+    "static_responses": 3
+  },
+  "products": {
+    "stash-adblock.stoverride": {
+      "sha256": "e8a9b59ba039fd3a2169369127d3798e5858c127c024cace443ec9403c7161a1",
+      "bytes": 318554
+    },
+    "stash-adblock.shadowrocket.module": {
+      "sha256": "d2286b2295ede51e79353a40c76bbf4a6898e60968fd526b43807e63c936a789",
+      "bytes": 312830
+    }
   },
   "local_scripts": {
     "bilibili-splash.js": "89ef8f3c5c2807af4ef72bbfb25dff897442d4088e68ded48b90860b3aff56d9",
     "broadnet.js": "99b0fe6c148a976030fa930bac107d2919041326f7d527b051bb81e9b1dda487",
     "coolapk.js": "14d87416d34ea0307fc55d33466f5f149c0c0139041991535409b75f2f4c241e",
     "douban.js": "e7eb5d7a9adac3197835726bf62266c40d5924182800f447f50bfb4db0611c22",
+    "fmz-video-ad-only.js": "b144f2103c43957e3933a3588c96a6cbb39c8f84caaaeab2b83dcef21926318a",
     "jd-splash.js": "65d4d8931d92746e797edfdfce4abac7f85272277c1abb91bfbc859c202d809f",
     "pinduoduo.js": "45f12cca6fe12a35eed8595617e379642a28f562aeefbe178b96fb1893c92c20",
+    "qx-body-transform.js": "614573a7540b1d130992cbf5462db7c1c296dce8fd44db69601b607a876c3000",
     "weibo.js": "3aed7db15d48c3c9e9f370a78b0e3fe93168e4461b9cefb10f3f44d93520db1f",
-    "youku-ad-only.js": "86998fc1d58289a4885457ac6f03cc3a854e739d162b08b31074ac706ffa1a64"
+    "youku-ad-only.js": "86998fc1d58289a4885457ac6f03cc3a854e739d162b08b31074ac706ffa1a64",
+    "zhihu-ad-only.js": "44408c2098167283969bbe4c823868404c0b1ff6e0f7f7616b75ee4276900b85"
   }
 }

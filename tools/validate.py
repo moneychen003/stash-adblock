@@ -1,45 +1,44 @@
-"""Static release checks; this does not replace real-device acceptance."""
+"""Release checks for the common source and both clients; not device acceptance."""
 from pathlib import Path
-import json,re,subprocess,urllib.parse
+import json,re,subprocess,urllib.parse,hashlib,shutil
 import yaml
 from build import build,ROOT
-assert not list(ROOT.rglob('*.ipa')), 'App installation packages must not be published'
-m=build(True);s=yaml.safe_load((ROOT/'rules/stash-adblock.stoverride').read_text())
-assert set(s)=={'name','desc','rule-providers','rules','http','script-providers'}
-assert not any(k in s['http'] for k in ['ca','ca-passphrase'])
-assert all(h not in ['*','*.*','*.com','*.cn','*.net'] for h in s['http']['mitm'])
-ad_rewrite_exceptions={'DOMAIN,sdkapp.uve.weibo.com,DIRECT','DOMAIN,wbapp.uve.weibo.com,DIRECT','DOMAIN,bootpreload.uve.weibo.com,DIRECT'}
-assert all(r.endswith((',REJECT',',REJECT-DROP')) or r in ad_rewrite_exceptions for r in s['rules'])
-assert all(b['name'] in s['script-providers'] for b in s['http']['script'])
-assert all(0<b.get('timeout',10)<=60 and (b.get('max-size',1)==-1 or b.get('max-size',1)>0) for b in s['http']['script'])
-assert not any('music-vip-membership' in b['match'] or 'vipauth' in b['match'] for b in s['http']['script'])
-assert not any('Teenagers' in b['match'] or 'youthmode' in b['match'] for b in s['http']['script'])
-assert {b['name'] for b in s['http']['script']}==set(s['script-providers']), 'Orphan or missing provider'
+m=build(True);c=json.loads((ROOT/'sources/config.json').read_text());h=c['http']
+assert set(c)=={'name','desc','rule-providers','rules','http','script-providers'}
+assert not any(k in h for k in ['ca','ca-passphrase'])
+assert all(host not in ['*','*.*','*.com','*.cn','*.net'] for host in h['mitm'])
+exceptions={'DOMAIN,sdkapp.uve.weibo.com,DIRECT','DOMAIN,wbapp.uve.weibo.com,DIRECT','DOMAIN,bootpreload.uve.weibo.com,DIRECT'}
+assert all(rule.removesuffix(',no-resolve').endswith((',REJECT',',REJECT-DROP')) or rule in exceptions for rule in c['rules'])
+assert all(0<b.get('timeout',10)<=60 and (b.get('max-size',1)==-1 or b.get('max-size',1)>0) for b in h['script'])
+assert not any(any(x in b['match'] for x in ['music-vip-membership','vipauth','Teenagers','youthmode']) for b in h['script'])
+assert {b['name'] for b in h['script']}==set(c['script-providers'])
 coverage=json.loads((ROOT/'rules/coverage.json').read_text())
-assert len(s['rules'])==coverage['published_counts']['rules']
-assert len(s['http']['url-rewrite'])==coverage['published_counts']['url_rewrite']
-assert len(s['http']['script'])==coverage['published_counts']['script_bindings']
-assert len(s['http']['mitm'])==coverage['published_counts']['mitm_hosts']
-for item in coverage['removed_non_ad_rules']:assert item['rule'] not in s['rules']
-for item in coverage['removed_non_ad_url_rewrites']:assert item['rule'] not in s['http']['url-rewrite']
-for item in coverage['removed_non_ad_script_bindings']:
- assert not any(b['match']==item['match'] and b['name']=='cq.upstream.'+item['name'] for b in s['http']['script'])
-for item in s['http']['url-rewrite']+s['http']['body-rewrite']:re.compile(item.split()[0])
-for item in s['http']['script']+s['http'].get('mock',[]):re.compile(item['match'])
+for key,value in {'rules':len(c['rules']),'url_rewrite':len(h['url-rewrite']),'body_rewrite':len(h['body-rewrite']),'script_bindings':len(h['script']),'mitm_hosts':len(h['mitm'])}.items():assert coverage['published_counts'][key]==value
+ledger=json.loads((ROOT/'rules/conversion-ledger.json').read_text())['statements']
+assert len(ledger)==coverage['source_statement_count']==len({x['line'] for x in ledger})
+for x in h['url-rewrite']+h['body-rewrite']:re.compile(x.split()[0])
+for b in h['script']+h.get('mock',[]):re.compile(b['match'])
 for p in (ROOT/'scripts').glob('*.js'):subprocess.run(['node','--check',str(p)],check=True)
-patterns=[r'/Users/[^\s]+',r'00008150-[A-Fa-f0-9]+',r'192\.168\.\d+\.\d+',r'127\.0\.0\.1',r'BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY',r'Authorization:\s*Bearer\s+\S+',r'(?i)ca-passphrase\s*:',r'(?i)external-controller\s*:']
+assert shutil.which('jq'),'jq 1.7+ is required to compile the response expressions'
+for entry in h['body-rewrite']:
+ expression=entry.split(' response-jq ',1)[1]
+ result=subprocess.run(['jq','-n',expression],capture_output=True,text=True,timeout=3)
+ assert result.returncode==0,'Invalid JQ expression: '+result.stderr[:160]
+locks=json.loads((ROOT/'rules/upstream-lock.json').read_text())['dependencies'];locked={d['url']:d for d in locks}
+for name,p in c['script-providers'].items():
+ u=urllib.parse.urlsplit(p['url']);assert u.scheme=='https' and not u.username and not u.query
+ assert p['url'] in locked,'Missing locked dependency: '+name
+ d=locked[p['url']]
+ if d['repository']=='moneychen003/stash-adblock':
+  local=ROOT/'scripts'/u.path.rsplit('/',1)[-1];assert hashlib.sha256(local.read_bytes()).hexdigest()==d['sha256']
+  assert d['http_status'] in [None,200]
+ else:assert d['http_status']==200
+for rule in c['rules']:assert not any(term in rule for term in ['safebrowsing','passport','pay.mobile','security.browser'])
+patterns=[r'/Users/[^\s]+',r'00008150-[A-Fa-f0-9]+',r'192\.168\.\d+\.\d+',r'127\.0\.0\.1',r'BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY',r'Authorization:\s*Bearer\s+\S+',r'(?i)ca-passphrase\s*:',r'(?i)external-controller\s*:',r'tskey-(?:auth|api|client)-[A-Za-z0-9_-]{20,}']
 for p in ROOT.rglob('*'):
  if not p.is_file() or any(x in p.parts for x in ['.git','__pycache__','.venv']):continue
- assert p.suffix.lower() not in ['.ipa','.pcap','.p12','.pfx','.pem','.key','.har','.log'],f'Forbidden artifact: {p.name}'
- t=p.read_text()
- # Scanner source necessarily contains detection expressions, never real data.
+ assert p.suffix.lower() not in ['.ipa','.pcap','.p12','.pfx','.pem','.key','.har','.log'],p.name
+ text=p.read_text()
  if p==Path(__file__).resolve():continue
- for pattern in patterns:assert not re.search(pattern,t),f'Private material: {p.relative_to(ROOT)}'
-for name,v in s['script-providers'].items():
- u=urllib.parse.urlsplit(v['url']);assert u.scheme=='https' and not u.username and not u.query
-for r in s['rules']:assert not any(x in r for x in ['safebrowsing','passport','pay.mobile','security.browser'])
-locked={d['url'] for d in json.loads((ROOT/'rules/upstream-lock.json').read_text())['dependencies']}
-for v in list(s['script-providers'].values())+list(s['rule-providers'].values()):
- if not v['url'].startswith('https://raw.githubusercontent.com/moneychen003/stash-adblock/main/'):
-  assert v['url'] in locked,'External dependency missing from lock file'
-print('PASS: reproducible YAML, coverage accounting, retained handlers, regex syntax, provider references and public-data checks')
+ for pattern in patterns:assert not re.search(pattern,text),'Private material in '+str(p.relative_to(ROOT))
+print('PASS: reproducible dual build, complete source accounting, JS/JQ/regex checks, dependency hashes and public-data scan')

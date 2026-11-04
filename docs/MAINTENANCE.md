@@ -1,20 +1,30 @@
-# 维护与更新
+# 维护与发布双端规则
 
-本仓库只维护 Stash 去广告覆写，不维护节点订阅和 App 安装包。
+依赖 Python 3.9+、PyYAML、Node.js 22 与 jq 1.7+。只维护共同输入与补丁，目标文件由构建生成。
 
-1. 修改 `sources/config.json` 或 `scripts/`；不要直接编辑生成的覆写。
-2. `python -m pip install -r requirements.txt`。
-3. 执行 `python tools/build.py`，再执行 `python tools/validate.py`、`python tools/test_coverage.py` 和 `node tools/test_scripts.cjs`。
-4. 核对上游固定提交及许可；修改上游依赖时更新 `rules/upstream-lock.json` 的可用性、大小和 SHA-256。
-5. 至少做对应 App 的冷启动对照，注明版本、登录状态、缓存/重装步骤和实际观察窗口。一次没出现广告不代表所有页面和长期使用都无广告。
-6. 更新版本号、报告与变更记录，发布后用匿名请求检查主订阅和引用脚本能访问。
+## 本地构建
 
-公开内容只放规则、补丁、必要的复现说明和去个人信息的结果。设备清单、账号、证书、控制密钥、完整抓包、App 安装包及未遮盖个人信息的截图不应入库。
+```sh
+python -m pip install -r requirements.txt
+python tools/build.py
+python tools/validate.py
+python tools/test_dual.py
+python tools/test_coverage.py
+node tools/test_scripts.cjs
+node tools/test_qx_transform.cjs
+node tools/test_fmz_video.cjs
+```
 
-## 本地验证范围
+编译器会检查上游快照哈希、政策中的原始行文本、兼容性说明、完整语句台账与旧版覆盖。新上游出现未支持语法或未锁定脚本时直接失败，不能静默丢弃。更新上游需要重新核对政策与依赖。
 
-静态检查覆盖 YAML 结构、脚本引用、JavaScript 语法、配置重建一致性、无关响应放行、广告字段替换和大整数文本保留。它们不能替代 Stash 内核加载、证书信任或用户设备上的实际验收。
+`tools/build.py` 输出 Stash 覆写、Shadowrocket 模块及各自哈希；`tools/test_dual.py` 验证完整映射。变更版本号后同步更新文档，不用规则数量推算支持／成功 App 数量。
 
-`rules/coverage.json` 记录基线与公开版计数、非广告删除项和改成广告专用处理的绑定。每次改变保留／删除范围都要同步更新该清单。恢复广告规则时也需保留相应 MitM 主机，检查现有更高优先级的拒绝规则是否抢先拦住响应修复。上游许可和署名不能因规则转换丢失。
+## 发布顺序
 
-本仓库脚本也固定引用已经公开的提交，避免更新覆写后仍沿用旧脚本缓存。修改脚本时先发布对应脚本提交，再将 `sources/config.json` 内该脚本的 URL 指向新提交，同步更新锁文件中的大小和哈希后重建、检查、发布配置。用户的主覆写订阅仍指向 `main`，不需要跟着更换地址。
+1. 先检查差异、许可与隐私，得到对应发布授权。
+2. 先公开包含自有脚本的提交，再把 `sources/version.json` 的 scripts_revision 固定到该提交。
+3. 匿名下载这批脚本，核对本地 SHA-256；将已验证 URL 与哈希记入 `sources/published-scripts.json`，再重建最终产物。未公开脚本的锁记录 http_status 为 null，不能伪称 HTTP 下载通过。
+4. 发布最终配置和文档，检查两个主文件及所有引用依赖能匿名下载且哈希一致，确认 CI 通过。
+5. 做客户端加载与对应广告位的冷启动回归，注明版本、登录、缓存与实际观察。构建成功不能替代手机验收。
+
+不发布证书、私钥、设备清单、账号、控制密钥、原始抓包、App 安装包或私人网络配置。需要回滚时使用 Git 历史发布版本，并同时恢复相应脚本引用。

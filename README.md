@@ -1,52 +1,54 @@
-# Stash 去广告覆写 · 完整版
+# 上游广告规则＋实测补丁：Shadowrocket 与 Stash
 
-**版本：2026.11.04.2**
+**版本：2026.11.04.4｜本地发布候选，尚未更新公开订阅。**
 
-给已经在使用 **Stash 3.6+** 的朋友准备的去广告订阅。保留工作配置中的通用广告拦截、App／小程序广告处理，以及已验证的定向修复；只清理个人信息、个人网络设置和与广告无关的功能改写。**包含自营营销与推广展示清理，不等于所有 App 的每个广告位都已实测成功。**
+同一份合并规则，分别生成 **Shadowrocket 模块**和 **Stash 覆写**。输入包含固定版本的 fmz200 上游广告合集、此前已审核的 2026.11.04.2 规则，以及你的定向实测修复。精确修复放在前面，避免再次被上游的拒绝规则抢先拦住。两端共用来源、删除策略与补丁，不维护两份各自变化的规则。
 
-## 直接使用
+## 两个版本
 
-复制主订阅地址，在 Stash 的「覆写」中添加**远程覆写**，启用并更新应用：
+| 客户端 | 生成文件 | 导入位置 |
+| --- | --- | --- |
+| Shadowrocket | [stash-adblock.shadowrocket.module](rules/stash-adblock.shadowrocket.module) | 配置 → 模块 |
+| Stash | [stash-adblock.stoverride](rules/stash-adblock.stoverride) | 远程覆写 |
+
+**候选文件已构建，但新增脚本提交还未公开。发布前不要将候选当作已经可在线安装的正式订阅。**发布后计划使用下面两个地址，Stash 的原地址保持不变：
 
 ```text
+https://raw.githubusercontent.com/moneychen003/stash-adblock/main/rules/stash-adblock.shadowrocket.module
 https://raw.githubusercontent.com/moneychen003/stash-adblock/main/rules/stash-adblock.stoverride
 ```
 
-也可在 iPhone 上打开[一键安装链接](https://link.stash.ws/install-override/raw.githubusercontent.com/moneychen003/stash-adblock/main/rules/stash-adblock.stoverride)。一键服务若返回 403 或跳转失败，使用上面的地址手动导入即可。**原有订阅地址不变，已安装首版的用户更新这一个覆写即可。**
+本项目不提供节点，不替换你的节点订阅和普通分流。不要同时启用本合并版、上游原版广告合集和旧定制广告模块；运行合并版不依赖 Script Hub 转换工具。安装分别见 [Shadowrocket](docs/INSTALL_SHADOWROCKET.md) 和 [Stash](docs/INSTALL.md)。
 
-本项目不提供代理节点，无需替换节点配置。广告域名拦截以外的 HTTPS 改写需要按[安装说明](docs/INSTALL.md)启用相关功能，并在自己的设备上生成、安装和信任自己的 Stash CA。不要导入别人分享的证书。
+## 合并范围
 
-## 这版保留了什么
-
-| 类型 | 当前数量／内容 |
+| 项目 | 两端共用的内容 |
 | --- | --- |
-| 分流规则 | 2559 条，另引用 AWA 通用广告域名规则集 |
-| URL／响应正文改写 | 419 条 URL 改写、3 条正文改写 |
-| 脚本绑定 | 143 条，53 个 provider；上游脚本使用固定版本引用 |
-| 本仓库脚本 | 8 个：原有七个处理器及剔除无关功能的优酷广告处理器 |
-| HTTPS 主机范围 | 329 个主机条目；含指定域名下的通配条目，无全局 `*` |
+| 分流 | 3148 条；固定 AWA 广告条目已内联，避免把 Clash YAML 交给小火箭读取 |
+| URL／正文改写 | 1164 条 URL 改写、29 条正文改写 |
+| 脚本 | 235 条绑定、99 个 provider；保留二进制、正文、超时与参数信息 |
+| 静态响应 | 3 项；两端核对响应字节与头部 |
+| HTTPS 范围 | 1025 个主机条目，包含原上游的有限域名通配，无全局 `*` |
 
-微博、哔哩哔哩、豆瓣、中国广电、拼多多、QQ 音乐、优酷及雪球的定向广告修复均保留。京东、酷安及其他 App／小程序的广告规则也保留，具体成功证据与观察边界见[逐项效果](docs/APP-STATUS.md)。**规则数量不等于已验证 App 数量。**
+上游快照中 **4383 条有效语句**均有编译、拆窄、排除或补丁替代记录，见 [conversion-ledger.json](rules/conversion-ledger.json)。此前已审核规则也参与取并集；精确重复项去重，广告覆盖不按 App 类型整组删除。具体来源和计数见 [coverage.json](rules/coverage.json)。
 
-[App 效果分类表](docs/APP-STATUS.md)已汇总 **13 款 App**：对应广告位已解决 5 款、部分改善 5 款、仅抽测未见广告 3 款。表内区分实机复测与使用者反馈，并列出残留和未验证范围。
+保留微博、B站、豆瓣、广电、拼多多、雪球、QQ音乐和优酷等定向处理，京东、酷安及其他 App／小程序的原有广告处理也保留。**规则数和上游声称的支持数量，不等于实测成功的 App 数。**对应广告位已解决、部分改善与仅抽测未见广告，仍按 [13 款 App 实测分类表](docs/APP-STATUS.md)区分。
 
-首版曾因过度裁剪而缺失不少广告规则，这版已改为从工作配置逐项保留。与原组合仍有差异的原因，以及每条删除的规则及理由，见[覆盖范围与差异](docs/COVERAGE.md)和[机器可读清单](rules/coverage.json)。
+## 去掉哪些内容
 
-## 为什么装完还有旧开屏
+不带入个人证书、私钥、认证密钥、节点、设备清单、抓包、家庭路由或私人 DNS 偏好。会员／鉴权篡改、支付与激活阻断、安全检查和更新阻断等非广告功能排除；过宽的正常内容拒绝与混合脚本分支有逐条理由。广告专用视频处理保留播放流、付费状态、水印、普通导航及青少年配置。没有把历史私人配置原样分享出去。
 
-有些 App 会保留已经下载的广告素材或旧状态。更新覆写后，先完全退出 App 再启动；仍有旧广告时，按[缓存与重装指南](docs/CACHE-AND-REINSTALL.md)排查。**部分 App 可能需要彻底删除后从官方商店重装；iOS「卸载 App」保留数据，不能当作干净重装。**
+## 缓存与验证边界
 
-QQ 音乐 20.9.6 干净重装后，四次启动观察未见此前的商业开屏；优酷 11.2.19 则由使用者确认手动重装后去广告成功。重装会删除本地数据，需要先同步或备份下载、设置及未同步内容；这些结果也不能证明缓存是唯一原因。
+部分 App 会保留旧广告素材或状态，可能需要清缓存或重装。先确认规则与证书正常，再依照[缓存与重装指南](docs/CACHE-AND-REINSTALL.md)处理；删除 App 前同步或备份本地内容。QQ音乐重装后的四次观察、优酷使用者确认等历史结果，不等于这次双端合并版已重新实机验收。
+
+当前已验证共同来源的重建一致性、两种输出的完整对应、关键修复优先级、JS／JQ／正则语法、普通功能与二进制样例。**双端合并候选尚未做手机回归，也未完成发布后的匿名下载校验。**
 
 ## 文档与反馈
 
-- [安装与更新](docs/INSTALL.md)
-- [缓存、删除与重新安装](docs/CACHE-AND-REINSTALL.md)
-- [测试报告](docs/REPORT.md) · [逐项效果](docs/APP-STATUS.md)
-- [覆盖范围及与原配置的差异](docs/COVERAGE.md)
-- [故障排查与反馈格式](docs/TROUBLESHOOTING.md)
+- [Shadowrocket 安装](docs/INSTALL_SHADOWROCKET.md) · [Stash 安装](docs/INSTALL.md)
+- [双端构建与差异](docs/DUAL-CLIENT.md) · [实测分类](docs/APP-STATUS.md)
+- [缓存与重装](docs/CACHE-AND-REINSTALL.md) · [故障反馈](docs/TROUBLESHOOTING.md)
 - [来源与许可](THIRD_PARTY.md) · [维护方法](docs/MAINTENANCE.md)
 
-功能异常时先关闭本覆写做对照，并到 [GitHub Issues](https://github.com/moneychen003/stash-adblock/issues) 提交 App 版本、广告位置及遮盖个人信息的截图。不要上传原始抓包、账号、证书、控制密钥、IPA 或完整个人 App 清单。
-
-本仓库原创内容和已注明的 GPL 衍生补丁按 GPL-3.0-or-later 发布；第三方独立代码仍遵循各自声明。第三方脚本仅引用上游 URL 的，不因本仓库许可而获得再分发许可。
+本仓库原创内容及注明的 GPL 衍生内容按 GPL-3.0-or-later 发布；原作者署名保留，第三方独立脚本按原项目声明，仅引用固定 URL。反馈时不要上传账号、证书、密钥、原始抓包或完整个人应用清单。

@@ -1,0 +1,734 @@
+{
+  "source_sha256": "371ee2dee23f6aee74017f23e54d42a6d19a1b84f9fc7c63e2f70f59abbe4b9a",
+  "exclusions": [
+    {
+      "line": 172,
+      "source": "^https?:\\/\\/[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+){1,3}(:\\d+)?\\/api\\/v\\d\\/movie\\/index_recommend url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/555Ad.js",
+      "reason": "电影推荐接口整页修改；缺少广告节点条件。"
+    },
+    {
+      "line": 476,
+      "source": "^https?:\\/\\/comment-card\\.iqiyi\\.com\\/views_comment\\/3\\.0\\/long_video_comments\\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js",
+      "reason": "爱奇艺评论资源卡缺少稳定广告判别；广告专用脚本保留普通评论和资源内容。"
+    },
+    {
+      "line": 478,
+      "source": "^https?:\\/\\/iface2\\.iqiyi\\.com\\/aggregate\\/3\\.0\\/getMyMenus\\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js",
+      "reason": "爱奇艺菜单分支仅删除问卷入口，属于普通菜单功能。"
+    },
+    {
+      "line": 480,
+      "source": "^https?:\\/\\/iface2\\.iqiyi\\.com\\/control\\/3\\.0\\/init_proxy\\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js",
+      "reason": "爱奇艺 init_proxy 分支仅删除天气图标，属于普通功能。"
+    },
+    {
+      "line": 488,
+      "source": "^https?:\\/\\/iface2\\.iqiyi\\.com\\/views\\/3\\.0\\/(bottom_theme|home_top_menu)\\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js",
+      "reason": "爱奇艺 bottom_theme/home_top_menu 改普通导航。"
+    },
+    {
+      "line": 492,
+      "source": "^https?:\\/\\/search\\.video\\.iqiyi\\.com\\/q\\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js",
+      "reason": "爱奇艺搜索接口替换正常搜索内容与刷新间隔。"
+    },
+    {
+      "line": 1054,
+      "source": "^https?:\\/\\/manga\\.bilibili\\.com\\/twirp\\/user\\.v\\d\\.User\\/UCenterConf url script-response-body https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/bilibiliManga.js",
+      "reason": "UCenterConf 只保留少数账户菜单并更改福利入口，超出广告展示。"
+    },
+    {
+      "line": 1300,
+      "source": "^https?:\\/\\/img\\.meituan\\.net\\/(?>dpmobile|goodsawardpic)\\/ url script-response-body https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/dianping.js",
+      "reason": "大众点评按通用图片路径与请求头拒绝资源，无法判定仅广告。"
+    },
+    {
+      "line": 1312,
+      "source": "^https?:\\/\\/ddplus\\.meituan\\.net\\/v\\d\\/mss_\\w+\\/picassovc url script-response-body https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/dianping.js",
+      "reason": "大众点评替换普通组件函数名，非广告过滤。"
+    },
+    {
+      "line": 2656,
+      "source": "^https?:\\/\\/(mgxhtj|nmobi|searchrecterm)\\.kuwo\\.cn\\/(mgxh|mobi|recterm)\\.s url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/kuwo/kuwo.js",
+      "reason": "酷我脚本同一绑定还修改 userinfolabel；不能直接保留混合 XML 分支。"
+    },
+    {
+      "line": 2658,
+      "source": "^https?:\\/\\/audiobookpay\\.kuwo\\.cn\\/a\\.p url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/kuwo/kuwo.js",
+      "reason": "酷我 /a.p 改 playright/downright 与 VIP 包，属于付费播放权限。"
+    },
+    {
+      "line": 2659,
+      "source": "^https?:\\/\\/musicpay\\.kuwo\\.cn\\/music\\.pay url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/kuwo/kuwo.js",
+      "reason": "酷我 music.pay 伪造歌曲购买与播放权限。"
+    },
+    {
+      "line": 2660,
+      "source": "^https?:\\/\\/vip1\\.kuwo\\.cn\\/vip\\/(enc\\/user\\/vip\\?op=ui|v\\d\\/theme\\?op=gd) url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/kuwo/kuwo.js",
+      "reason": "酷我 VIP 接口替换付费状态。"
+    },
+    {
+      "line": 2661,
+      "source": "^https?:\\/\\/vip1\\.kuwo\\.cn\\/vip\\/v\\d\\/user\\/vip\\?op=ui url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/kuwo/kuwo.js",
+      "reason": "酷我 VIP 接口替换付费状态。"
+    },
+    {
+      "line": 2752,
+      "source": "^https?:\\/\\/api\\.gotokeep\\.com\\/athena\\/v\\d\\/people\\/my$ url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/keep.js",
+      "reason": "Keep 清空个人页 floatingInfo，未限定广告。"
+    },
+    {
+      "line": 2756,
+      "source": "^https?:\\/\\/api\\.gotokeep\\.com\\/homepage\\/v\\d\\/tab url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/keep.js",
+      "reason": "Keep 改底部导航并写死首页入口。"
+    },
+    {
+      "line": 2758,
+      "source": "^https?:\\/\\/api\\.gotokeep\\.com\\/nuocha\\/course\\/v\\d/\\w+\\/preview url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/keep.js",
+      "reason": "Keep 课程预览分支涉及正常课程内容。"
+    },
+    {
+      "line": 2760,
+      "source": "^https?:\\/\\/api\\.gotokeep\\.com\\/sportpage\\/sport\\/v\\d\\/mysport url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/keep.js",
+      "reason": "Keep 运动页分支涉及正常运动功能。"
+    },
+    {
+      "line": 3104,
+      "source": "^https?:\\/\\/mob-st\\.bz\\.mgtv\\.com\\/odin\\/c1\\/channel\\/index\\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js",
+      "reason": "芒果首页分支删 childslideicon 普通按钮；无广告条件。"
+    },
+    {
+      "line": 3111,
+      "source": "^https?:\\/\\/mobile\\.api\\.mgtv\\.com\\/v10\\/video\\/info\\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js",
+      "reason": "芒果视频详情分支删除普通片段、推荐和 VIP 分类；没有广告节点过滤。"
+    },
+    {
+      "line": 3115,
+      "source": "^https?:\\/\\/mobileso\\.bz\\.mgtv\\.com\\/mobile\\/recommend\\/v2\\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js",
+      "reason": "芒果搜索推荐分支替换普通搜索提示与推荐词。"
+    },
+    {
+      "line": 3211,
+      "source": "^https:\\/\\/config-service\\.seeyouyima\\.com\\/api\\/configs\\/batch\\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/meiyou/meiyou_ads.js",
+      "reason": "美柚配置分支修改 HTTP DNS 和普通导航。"
+    },
+    {
+      "line": 3212,
+      "source": "^https:\\/\\/config-service\\.seeyouyima\\.com\\/api\\/configs\\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/meiyou/meiyou_ads.js",
+      "reason": "美柚配置分支修改 HTTP DNS、启动与通知配置。"
+    },
+    {
+      "line": 3750,
+      "source": "^https?:\\/\\/cupid\\.51job(app)?\\.com\\/open\\/my-page\\/ url script-response-body https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/51job.js",
+      "reason": "51job 我的页把 vipInfo.isVip 设为 true，伪造会员状态并删除求职工具；首页 adsTabFeeds 绑定另行保留。"
+    },
+    {
+      "line": 3877,
+      "source": "^https?:\\/\\/api\\.rr\\.tv\\/\\w{3}\\/level\\/info url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js",
+      "reason": "人人视频 level/info 改用户等级，非广告。"
+    },
+    {
+      "line": 3883,
+      "source": "https://api.rr.tv/v3plus/index/channel\\?pageNum=1&position=CHANNEL_INDEX url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js",
+      "reason": "人人视频首页分支还删除 SHORT_VIDEO 正常内容。"
+    },
+    {
+      "line": 3885,
+      "source": "^https?:\\/\\/api\\.rr\\.tv\\/app\\/config\\/h5NativeBar url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js",
+      "reason": "人人视频 h5NativeBar 重写普通导航。"
+    },
+    {
+      "line": 3887,
+      "source": "^https?:\\/\\/api\\.rr\\.tv\\/v3plus\\/index\\/channel\\?pageNum=1&position=CHANNEL_MY url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js",
+      "reason": "人人视频我的频道分支改变普通内容。"
+    },
+    {
+      "line": 3893,
+      "source": "^https?:\\/\\/api\\.rr\\.tv\\/drama\\/app\\/get_combined_drama_detail url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js",
+      "reason": "人人视频剧集详情分支改播放或内容状态。"
+    },
+    {
+      "line": 3895,
+      "source": "https://api.rr.tv/watch/v4 url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js",
+      "reason": "人人视频 watch/v4 涉及播放功能。"
+    },
+    {
+      "line": 3897,
+      "source": "https://api.rr.tv/user/profile url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js",
+      "reason": "人人视频 user/profile 涉及账户状态。"
+    },
+    {
+      "line": 4328,
+      "source": "^https?:\\/\\/api-account\\.soulapp\\.cn\\/teenager\\/config url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js",
+      "reason": "Soul teenager/config 属青少年模式。"
+    },
+    {
+      "line": 4329,
+      "source": "^https?:\\/\\/api-a\\.soulapp\\.cn\\/v2\\/post\\/gift\\/list url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js",
+      "reason": "Soul 礼物列表清空，属于正常社交功能。"
+    },
+    {
+      "line": 4330,
+      "source": "^https?:\\/\\/api-a\\.soulapp\\.cn\\/official\\/scene\\/module url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js",
+      "reason": "Soul 官方模块整段清空，无法限定广告。"
+    },
+    {
+      "line": 4331,
+      "source": "^https?:\\/\\/api-user\\.soulapp\\.cn\\/furion\\/position\\/content url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js",
+      "reason": "Soul 内容位整段清空，无法限定广告。"
+    },
+    {
+      "line": 4332,
+      "source": "^https?:\\/\\/api-user\\.soulapp\\.cn\\/v\\d\\/planet\\/config url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js",
+      "reason": "Soul 星球配置删除普通游戏入口。"
+    },
+    {
+      "line": 4334,
+      "source": "^https?:\\/\\/post\\.soulapp\\.cn\\/hot\\/soul\\/rank url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js",
+      "reason": "Soul 热榜整段清空，属于正常内容。"
+    },
+    {
+      "line": 4335,
+      "source": "^https?:\\/\\/post\\.soulapp\\.cn\\/v\\d\\/post\\/homepage\\/guide\\/card url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js",
+      "reason": "Soul 首页引导卡整段清空，缺少广告判别。"
+    },
+    {
+      "line": 4336,
+      "source": "^https?:\\/\\/post\\.soulapp\\.cn\\/v\\d\\/post\\/recSquare\\/subTabs url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js",
+      "reason": "Soul 广场 tabs 涉及普通导航。"
+    },
+    {
+      "line": 4339,
+      "source": "^https?:\\/\\/47\\.110\\.187\\.87\\/winterfell\\/v2\\/getIpByDomain url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js",
+      "reason": "Soul 域名解析配置整段清空，涉及网络功能。"
+    },
+    {
+      "line": 4347,
+      "source": "^https:\\/\\/(spclient\\.wg\\.spotify\\.com|.*-spclient\\.spotify\\.com(:443)?)\\/user-customization-service\\/v1\\/customize$ url script-request-header https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-qx-header.js",
+      "reason": "Spotify 仅删除 If-None-Match 缓存请求头，非广告。"
+    },
+    {
+      "line": 4348,
+      "source": "^https:\\/\\/(spclient\\.wg\\.spotify\\.com|.*-spclient\\.spotify\\.com(:443)?)\\/(bootstrap\\/v1\\/bootstrap|user-customization-service\\/v1\\/customize)$ url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js",
+      "reason": "Spotify protobuf 改 premium、离线、歌词与 player-license，涉及会员及播放授权。"
+    },
+    {
+      "line": 4349,
+      "source": "^https:\\/\\/(spclient\\.wg\\.spotify\\.com|.*-spclient\\.spotify\\.com(:443)?)\\/(artistview\\/v1\\/artist|album-entity-view\\/v2\\/album)\\/ url script-request-header https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js",
+      "reason": "Spotify 改 platform=iphone 为 ipad，非广告。"
+    },
+    {
+      "line": 5517,
+      "source": "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(hint|trending)\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "reason": "小红书清空搜索提示与趋势，属于普通搜索。"
+    },
+    {
+      "line": 5518,
+      "source": "^https?:\\/\\/(so|edith)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/notes\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "reason": "小红书搜索结果按 model_type 整类删，可能删普通结果。"
+    },
+    {
+      "line": 5520,
+      "source": "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/config\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "reason": "小红书全局配置删除主题、商店等普通功能。"
+    },
+    {
+      "line": 5523,
+      "source": "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/note\\/widgets url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "reason": "小红书笔记组件删除 generic/widget_list，未限广告。"
+    },
+    {
+      "line": 5527,
+      "source": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/note\\/(imagefeed|live_photo\\/save) url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "reason": "小红书图文与 live_photo 分支改下载权限、水印及原图。"
+    },
+    {
+      "line": 5528,
+      "source": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/(followfeed|homefeed)\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "reason": "小红书关注/首页流分支混合删普通推荐。"
+    },
+    {
+      "line": 5529,
+      "source": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/(v2\\/note\\/feed|v3\\/note\\/videofeed)\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "reason": "小红书视频流分支改下载权限和水印。"
+    },
+    {
+      "line": 5530,
+      "source": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/(v4\\/note\\/videofeed|v10\\/note\\/video\\/save)\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "reason": "小红书视频保存分支改下载权限和水印。"
+    },
+    {
+      "line": 5756,
+      "source": "^https?:\\/\\/www\\.myusmile\\.online\\/user\\/plaqueTopic\\/selectByType url script-response-body https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/usmile.js",
+      "reason": "usmile 按 tok 请求头返回 204，可能拦截鉴权请求。"
+    },
+    {
+      "line": 6248,
+      "source": "^https?:\\/\\/push\\.m\\.youku\\.com\\/collect-api\\/get_push_interval_config_wx\\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js",
+      "reason": "优酷弹窗广告已由本地 cq.youku-ad-only 覆盖，避免 cnftp 原脚本重新绑定。"
+    },
+    {
+      "line": 6457,
+      "source": "^https:\\/\\/youtubei\\.googleapis\\.com\\/youtubei\\/v1\\/(browse|next|player|search|reel\\/reel_watch_sequence|guide|account\\/get_setting|get_watch) url script-response-body https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js",
+      "reason": "YouTube 脚本默认 blockUpload，并处理 Shorts/沉浸界面；混合功能无法仅作为广告脚本保留。"
+    },
+    {
+      "line": 6554,
+      "source": "^https:\\/\\/api\\.zhihu\\.com\\/(answers|articles)\\/v2\\/\\d+ url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js",
+      "reason": "知乎回答/文章分支清空相关问题，属于普通内容。"
+    },
+    {
+      "line": 6560,
+      "source": "^https:\\/\\/api\\.zhihu\\.com\\/feed\\/render\\/tab\\/config\\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js",
+      "reason": "知乎过滤普通首页导航。"
+    },
+    {
+      "line": 6562,
+      "source": "^https:\\/\\/api\\.zhihu\\.com\\/(moments_v3|topstory\\/hot-lists\\/total|topstory\\/recommend) url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js",
+      "reason": "知乎 moments/hot 分支删除普通推荐内容。"
+    },
+    {
+      "line": 6564,
+      "source": "^https:\\/\\/api\\.zhihu\\.com\\/v2\\/topstory\\/hot-lists\\/everyone-seeing\\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js",
+      "reason": "知乎热榜分支可能删除普通内容。"
+    },
+    {
+      "line": 6567,
+      "source": "^https:\\/\\/api\\.zhihu\\.com\\/bazaar\\/vip_tab\\/header\\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js",
+      "reason": "知乎会员页头部涉及真实会员入口。"
+    },
+    {
+      "line": 6577,
+      "source": "^https:\\/\\/api\\.zhihu\\.com\\/next-(bff|data|render)\\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js",
+      "reason": "知乎 next 系列同时按推荐标题删普通内容。"
+    },
+    {
+      "line": 6579,
+      "source": "^https:\\/\\/api\\.zhihu\\.com\\/questions\\/\\d+(\\/answers|\\/feeds|\\?include=) url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js",
+      "reason": "知乎问题页分支删除普通回答/推荐。"
+    },
+    {
+      "line": 6581,
+      "source": "^https:\\/\\/www\\.zhihu\\.com\\/api\\/v4\\/(articles|answers)\\/\\d+\\/recommendations?\\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js",
+      "reason": "知乎文章/回答推荐接口删除普通内容。"
+    },
+    {
+      "line": 6585,
+      "source": "^https:\\/\\/appcloud2\\.zhihu\\.com\\/v3\\/config url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js",
+      "reason": "知乎配置分支修改 DNS、灰度、导航和同步。"
+    },
+    {
+      "line": 6588,
+      "source": "^https:\\/\\/m-cloud\\.zhihu\\.com\\/api\\/cloud\\/config\\/all\\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js",
+      "reason": "知乎全局配置修改主题与背景图。"
+    }
+  ],
+  "replacements": [
+    {
+      "line": 3105,
+      "source": "^https?:\\/\\/dc2?\\.bz\\.mgtv\\.com\\/dynamic\\/v1\\/channel\\/(index|vrsList)\\/\\w url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js",
+      "replacement": "^https?:\\/\\/dc2?\\.bz\\.mgtv\\.com\\/dynamic\\/v1\\/channel\\/index\\/\\w url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js",
+      "reason": "仅保留芒果首页 index 的明确广告字段，vrsList 普通导航不进入脚本。"
+    },
+    {
+      "line": 5516,
+      "source": "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(banner_list|hot_list) url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "replacement": "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/banner_list url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "reason": "仅保留搜索广告 banner，热搜列表是普通内容。"
+    }
+  ],
+  "overrides": [
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js",
+      "provider": "cq.fmz-video-ad-only",
+      "reason": "GPL 上游混合广告和导航/会员/水印修改；本地脚本按请求路径只删明确广告字段。排除行须先于 URL 覆盖生效；优酷由已有 cq.youku-ad-only 接管。"
+    }
+  ],
+  "compatibility": [
+    {
+      "original_url": "https://github.com/fmz200/wool_scripts/raw/main/Scripts/mlxx/mlxx.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "内置 Env/MagicJS 有 $httpClient 或 Stash/Surge 兼容路径；仅按保留的 URL 分支判断，设备端待验。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/NobyDa/Script/master/Bahamut/BahamutAnimeAds.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "Stash 可走 $httpClient 原生分支；m3u8 错误重试含 25 秒等待，不用 10 秒超时判失败。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/xjsp.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/wnbz.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/xmApp.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/adsense.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/qidian.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/qq-news.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js",
+      "mode": "native",
+      "binary_mode": true,
+      "reason": "显式非 QX 分支读取 $response.body 并用 $done({body:Uint8Array}) 返回 protobuf；绑定需要 binary-mode:true。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/vgtime.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/51card.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/QuDa.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/adrive/adrive.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/baidumap.js",
+      "mode": "native",
+      "binary_mode": true,
+      "reason": "显式非 QX 分支读取 $response.body 并用 $done({body:Uint8Array}) 返回 protobuf；绑定需要 binary-mode:true。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/blued.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/bohe/bohe_ads.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/caixin/caixinAd.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cmschina/cmschina.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/dianyinglieshou.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/fenbi.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/fly.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/huifutianxia_ads.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/ithome/ithome.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingxiAd.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/lawson.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/lvtusuishenting/ltsst-ad.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/maimai/maimai_ads.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/picc/picc_ads.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/reddit.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "内置 Env/MagicJS 有 $httpClient 或 Stash/Surge 兼容路径；仅按保留的 URL 分支判断，设备端待验。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/smzdm/Smzdm.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/smzdm/smzdm_ads.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soda.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/template/req_replace_body.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/umetrip/umetrip_ads.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xiaotucc.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/youdao/dict-youdao-ad.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/yx.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhangshanggongjiao.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhuanzhuan/zhuanzhuan.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/refs/heads/main/Scripts/miguvideo/miguvideo_ads.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "内置 Env/MagicJS 有 $httpClient 或 Stash/Surge 兼容路径；仅按保留的 URL 分支判断，设备端待验。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "虽有 $task 检测，Stash 原生分支返回 $done({response:{body}})。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/51job.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/alicdn.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/ccblife.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/ddxq.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/flyert.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/foliday.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/freshippo.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mdb.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/qmai.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/tuhu.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/wechatApplet.js",
+      "mode": "native",
+      "binary_mode": false,
+      "reason": "固定版本使用 Stash 可用的 $request/$response/$done 路径；未在设备端实测。"
+    }
+  ],
+  "notes": [
+    "按上游启用原行和固定远程正文审查；与 sources/fmz-policy.json 联用，已有排除行不重复收录。",
+    "应用顺序：既有行级排除、本文件 exclusions、replacements、再按 original_url overrides；被排除的优酷 cnftp 行由现有 cq.youku-ad-only 提供广告过滤。",
+    "http://$4 是动态跳转占位，不是可下载脚本资源。",
+    "Stash 原生标识基于固定版本静态分支；代理请求、加密协议与真实客户端广告效果仍需主代理集成及设备验收。",
+    "QX-only 脚本如后续恢复，先用通用兼容桥处理 $task/$prefs/bodyBytes，不复制未授权远程正文。",
+    "本轮保留的固定脚本未发现必须使用 qx-bridge 才能执行的分支；已排除的混合脚本不做兼容桥兜底。"
+  ]
+}
