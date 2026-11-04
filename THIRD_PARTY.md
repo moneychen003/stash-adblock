@@ -2,7 +2,7 @@
 
 本版以**奶思（fmz200）**的完整 [rewrite.snippet](https://github.com/fmz200/wool_scripts/blob/4b7830670baf235ed945085cb926dc499cf619e0/QuantumultX/rewrite/rewrite.snippet)为编译输入，保留其 GPL-3.0 许可、作者信息与固定版本。原文存放于 [sources/upstream](sources/upstream/fmz-rewrite.snippet)，逐条策略和转换结果可重建。早期 cleanup 合集属于历史参考，不作为本轮完整输入。
 
-本仓库原创代码及 GPL 衍生补丁默认以 **GPL-3.0-or-later** 发布，见 [LICENSE](LICENSE)。`scripts/youtube-ad-only.js` 单独采用 **Apache-2.0**，依据文件 SPDX；完整许可见 [LICENSES/Apache-2.0.txt](LICENSES/Apache-2.0.txt)。本声明不替第三方独立代码重新授权。
+本仓库原创代码默认以 **GPL-3.0-or-later** 发布，见 [LICENSE](LICENSE)。上游原文及其衍生部分仍遵循原来源的 GPL-3.0 与版本声明，不扩展原作者授予的范围。`scripts/youtube-ad-only.js` 单独采用 **Apache-2.0**，依据文件 SPDX；完整许可见 [LICENSES/Apache-2.0.txt](LICENSES/Apache-2.0.txt)。本声明不替第三方独立代码重新授权。
 
 ## 本仓库的广告专用实现
 
