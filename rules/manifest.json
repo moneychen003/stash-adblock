@@ -1,7 +1,7 @@
 {
   "version": "2026.11.04.4",
-  "configuration_sha256": "e8a9b59ba039fd3a2169369127d3798e5858c127c024cace443ec9403c7161a1",
-  "common_source_sha256": "29b980ed95d9a1d127ad44d0380e0930fa77ad3b7016b07ef160ce98666327cc",
+  "configuration_sha256": "7c719411845651733884ca3ff09c2e6a35d87ebbfdcb936a81efe43f2fddf45a",
+  "common_source_sha256": "3fa4a38bfda0cc13b1a437dd375cb4c74a4038a57ef1870d3ca8ea1527d68f5e",
   "counts": {
     "rules": 3148,
     "url_rewrites": 1164,
@@ -13,12 +13,12 @@
   },
   "products": {
     "stash-adblock.stoverride": {
-      "sha256": "e8a9b59ba039fd3a2169369127d3798e5858c127c024cace443ec9403c7161a1",
-      "bytes": 318554
+      "sha256": "7c719411845651733884ca3ff09c2e6a35d87ebbfdcb936a81efe43f2fddf45a",
+      "bytes": 318950
     },
     "stash-adblock.shadowrocket.module": {
-      "sha256": "d2286b2295ede51e79353a40c76bbf4a6898e60968fd526b43807e63c936a789",
-      "bytes": 312830
+      "sha256": "88b4af4e8199748111ac7b5a176b1fa23fef569eaaf4fd6f587776f3da1d8e4e",
+      "bytes": 314486
     }
   },
   "local_scripts": {
