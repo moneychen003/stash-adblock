@@ -1,0 +1,2 @@
+# Preserve the pinned upstream snapshot byte-for-byte, including its original whitespace.
+sources/upstream/fmz-rewrite.snippet -whitespace
