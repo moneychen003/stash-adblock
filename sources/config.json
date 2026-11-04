@@ -7173,39 +7173,39 @@
   },
   "script-providers": {
     "cq.douban": {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/6861576dee7b9c9084262cb208d4490a8ff6d2a3/scripts/douban.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/douban.js",
       "interval": 86400
     },
     "cq.weibo": {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/6861576dee7b9c9084262cb208d4490a8ff6d2a3/scripts/weibo.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/weibo.js",
       "interval": 86400
     },
     "cq.pinduoduo": {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/6861576dee7b9c9084262cb208d4490a8ff6d2a3/scripts/pinduoduo.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/pinduoduo.js",
       "interval": 86400
     },
     "cq.broadnet": {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/6861576dee7b9c9084262cb208d4490a8ff6d2a3/scripts/broadnet.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/broadnet.js",
       "interval": 86400
     },
     "cq.jd-splash": {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/6861576dee7b9c9084262cb208d4490a8ff6d2a3/scripts/jd-splash.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/jd-splash.js",
       "interval": 86400
     },
     "cq.coolapk": {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/6861576dee7b9c9084262cb208d4490a8ff6d2a3/scripts/coolapk.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/coolapk.js",
       "interval": 86400
     },
     "cq.youku-ad-only": {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/6861576dee7b9c9084262cb208d4490a8ff6d2a3/scripts/youku-ad-only.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/youku-ad-only.js",
       "interval": 86400
     },
     "cq.bilibili-splash": {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/6861576dee7b9c9084262cb208d4490a8ff6d2a3/scripts/bilibili-splash.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/bilibili-splash.js",
       "interval": 86400
     },
     "cq.zhihu-ad-only": {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/6861576dee7b9c9084262cb208d4490a8ff6d2a3/scripts/zhihu-ad-only.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/zhihu-ad-only.js",
       "interval": 86400
     },
     "cq.upstream.wool-weibo__weibo_launch_105": {
@@ -7217,7 +7217,7 @@
       "interval": 86400
     },
     "cq.fmz-video-ad-only": {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/6861576dee7b9c9084262cb208d4490a8ff6d2a3/scripts/fmz-video-ad-only.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/fmz-video-ad-only.js",
       "interval": 86400
     },
     "cq.fmz.72a3959c3d33": {
@@ -7237,7 +7237,7 @@
       "interval": 86400
     },
     "cq.qx-body-transform": {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/6861576dee7b9c9084262cb208d4490a8ff6d2a3/scripts/qx-body-transform.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/qx-body-transform.js",
       "interval": 86400
     },
     "cq.fmz.0e2d069e63ad": {
@@ -7365,7 +7365,7 @@
       "interval": 86400
     },
     "cq.xiaohongshu-ad-only": {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/6861576dee7b9c9084262cb208d4490a8ff6d2a3/scripts/xiaohongshu-ad-only.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/xiaohongshu-ad-only.js",
       "interval": 86400
     },
     "cq.fmz.99ceb44382c7": {
@@ -7381,7 +7381,7 @@
       "interval": 86400
     },
     "cq.youtube-ad-only": {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/6861576dee7b9c9084262cb208d4490a8ff6d2a3/scripts/youtube-ad-only.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/youtube-ad-only.js",
       "interval": 86400
     },
     "cq.fmz.11817b47b49c": {

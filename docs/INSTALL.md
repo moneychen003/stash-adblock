@@ -1,4 +1,4 @@
-> 双端合并版 2026.11.04.4 当前为发布候选；新增脚本尚未公开。本文安装地址在对应版本正式发布后使用。Shadowrocket 请看[单独说明](INSTALL_SHADOWROCKET.md)。
+> 当前为 2026.11.04.4 双端合并版，Stash 原订阅地址保持不变；Shadowrocket 请看[单独说明](INSTALL_SHADOWROCKET.md)。
 
 # 安装 Stash 覆写
 

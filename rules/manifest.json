@@ -1,7 +1,7 @@
 {
   "version": "2026.11.04.4",
-  "configuration_sha256": "b724b279ce87f72d69055546b7d62ff79396d45a7e7885f332b8623bf660152d",
-  "common_source_sha256": "57074d4d403523bbc29768b70f3abd461ac50427d67579de90b6fcc23dc5a923",
+  "configuration_sha256": "4d4d4925050ae747dfbf3b3133176c4584e4ca00f4f93dd81f83cfd3e38c65ca",
+  "common_source_sha256": "d78827f33224b93f127aeacd408c3ef449796ff3d7f6284428f014adb2838454",
   "counts": {
     "rules": 3098,
     "url_rewrites": 1150,
@@ -13,11 +13,11 @@
   },
   "products": {
     "stash-adblock.stoverride": {
-      "sha256": "b724b279ce87f72d69055546b7d62ff79396d45a7e7885f332b8623bf660152d",
+      "sha256": "4d4d4925050ae747dfbf3b3133176c4584e4ca00f4f93dd81f83cfd3e38c65ca",
       "bytes": 313182
     },
     "stash-adblock.shadowrocket.module": {
-      "sha256": "e470b086d2ed5679661e0dac397308c6957cb2b1af4d78a3c8e520ca10078077",
+      "sha256": "14f6a10c91ba052303efe3cd2b20b554f978ab984c984c65f26f85b27c5444c9",
       "bytes": 308163
     }
   },

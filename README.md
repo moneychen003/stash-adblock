@@ -1,6 +1,6 @@
 # 上游广告规则＋实测补丁：Shadowrocket 与 Stash
 
-**版本：2026.11.04.4｜本地发布候选，尚未更新公开订阅。**
+**版本：2026.11.04.4｜Shadowrocket 模块与 Stash 覆写**
 
 同一份合并规则，分别生成 **Shadowrocket 模块**和 **Stash 覆写**。输入包含固定版本的 fmz200 上游广告合集、此前已审核的 2026.11.04.2 规则，以及你的定向实测修复。精确修复放在前面，避免再次被上游的拒绝规则抢先拦住。两端共用来源、删除策略与补丁，不维护两份各自变化的规则。
 
@@ -11,7 +11,7 @@
 | Shadowrocket | [stash-adblock.shadowrocket.module](rules/stash-adblock.shadowrocket.module) | 配置 → 模块 |
 | Stash | [stash-adblock.stoverride](rules/stash-adblock.stoverride) | 远程覆写 |
 
-**候选文件已构建，但新增脚本提交还未公开。发布前不要将候选当作已经可在线安装的正式订阅。**发布后计划使用下面两个地址，Stash 的原地址保持不变：
+下面两个地址分别用于两个客户端，Stash 的原地址保持不变：
 
 ```text
 https://raw.githubusercontent.com/moneychen003/stash-adblock/main/rules/stash-adblock.shadowrocket.module
@@ -42,7 +42,7 @@ https://raw.githubusercontent.com/moneychen003/stash-adblock/main/rules/stash-ad
 
 部分 App 会保留旧广告素材或状态，可能需要清缓存或重装。先确认规则与证书正常，再依照[缓存与重装指南](docs/CACHE-AND-REINSTALL.md)处理；删除 App 前同步或备份本地内容。QQ音乐重装后的四次观察、优酷使用者确认等历史结果，不等于这次双端合并版已重新实机验收。
 
-当前已验证共同来源的重建一致性、两种输出的完整对应、关键修复优先级、JS／JQ／正则语法、普通功能与二进制样例。**双端合并候选尚未做手机回归，也未完成发布后的匿名下载校验。**
+当前已验证共同来源的重建一致性、两种输出的完整对应、关键修复优先级、JS／JQ／正则语法、普通功能与二进制样例。固定版本脚本与外部依赖均按内容哈希核对，记录见 [external-validation.json](rules/external-validation.json)，两个产物的哈希见 [manifest.json](rules/manifest.json)。**这次双端合并版本尚未完成手机回归。**
 
 ## 文档与反馈
 

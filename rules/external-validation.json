@@ -1,6 +1,6 @@
 {
   "checked_date": "2026-11-04",
-  "own_scripts_skipped": true,
+  "own_scripts_skipped": false,
   "dependencies": [
     {
       "url": "https://github.com/Biliverse/ADBlock/releases/download/v0.7.5/config.bundle.js",
@@ -28,13 +28,6 @@
       "status": 200,
       "bytes": 2462,
       "sha256": "99ec4f40821f4eaf88caf98c1608a76b3c9d99d2a5e268c5e28767f11fd52901",
-      "verified": true
-    },
-    {
-      "url": "https://raw.githubusercontent.com/Maasea/sgmodule/65075cdb388fc5e3094afd7e7314c67b243f3525/Script/Youtube/youtube.response.js",
-      "status": 200,
-      "bytes": 132973,
-      "sha256": "f98483d5f5017514f82502253c0db5ce2d4ffb7839887aa2cadc22666f5a7f12",
       "verified": true
     },
     {
@@ -444,13 +437,6 @@
       "verified": true
     },
     {
-      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/xiaohongshu/xiaohongshu.js",
-      "status": 200,
-      "bytes": 28643,
-      "sha256": "318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498",
-      "verified": true
-    },
-    {
       "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/xiaotucc.js",
       "status": 200,
       "bytes": 340,
@@ -521,13 +507,6 @@
       "verified": true
     },
     {
-      "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/bilibiliManga.js",
-      "status": 200,
-      "bytes": 2295,
-      "sha256": "17035efc2c7b5d367a5f6e70ca2e0f7f23aa342c9edb3bf044587e5ee073f261",
-      "verified": true
-    },
-    {
       "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/ccblife.js",
       "status": 200,
       "bytes": 3262,
@@ -539,13 +518,6 @@
       "status": 200,
       "bytes": 1836,
       "sha256": "8ae52e7bccc43facf64dc9edaf8e6e1c1da564c6bbab242fb9e51a304e3a0b16",
-      "verified": true
-    },
-    {
-      "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/dianping.js",
-      "status": 200,
-      "bytes": 2257,
-      "sha256": "78971da6855858d1a6737872209cfc0aaaf7755fbe8da19f4115a03591820252",
       "verified": true
     },
     {
@@ -602,6 +574,97 @@
       "status": 200,
       "bytes": 999,
       "sha256": "1ebea73aa974503abf72371cd32bdda86975dbad9beaf4c6f648db6debb75fa6",
+      "verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/douban.js",
+      "status": 200,
+      "bytes": 888,
+      "sha256": "e7eb5d7a9adac3197835726bf62266c40d5924182800f447f50bfb4db0611c22",
+      "verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/weibo.js",
+      "status": 200,
+      "bytes": 5469,
+      "sha256": "3aed7db15d48c3c9e9f370a78b0e3fe93168e4461b9cefb10f3f44d93520db1f",
+      "verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/pinduoduo.js",
+      "status": 200,
+      "bytes": 5368,
+      "sha256": "45f12cca6fe12a35eed8595617e379642a28f562aeefbe178b96fb1893c92c20",
+      "verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/broadnet.js",
+      "status": 200,
+      "bytes": 1744,
+      "sha256": "99b0fe6c148a976030fa930bac107d2919041326f7d527b051bb81e9b1dda487",
+      "verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/jd-splash.js",
+      "status": 200,
+      "bytes": 5288,
+      "sha256": "65d4d8931d92746e797edfdfce4abac7f85272277c1abb91bfbc859c202d809f",
+      "verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/coolapk.js",
+      "status": 200,
+      "bytes": 2342,
+      "sha256": "14d87416d34ea0307fc55d33466f5f149c0c0139041991535409b75f2f4c241e",
+      "verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/youku-ad-only.js",
+      "status": 200,
+      "bytes": 3811,
+      "sha256": "86998fc1d58289a4885457ac6f03cc3a854e739d162b08b31074ac706ffa1a64",
+      "verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/bilibili-splash.js",
+      "status": 200,
+      "bytes": 9598,
+      "sha256": "89ef8f3c5c2807af4ef72bbfb25dff897442d4088e68ded48b90860b3aff56d9",
+      "verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/zhihu-ad-only.js",
+      "status": 200,
+      "bytes": 3308,
+      "sha256": "44408c2098167283969bbe4c823868404c0b1ff6e0f7f7616b75ee4276900b85",
+      "verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/fmz-video-ad-only.js",
+      "status": 200,
+      "bytes": 4304,
+      "sha256": "b144f2103c43957e3933a3588c96a6cbb39c8f84caaaeab2b83dcef21926318a",
+      "verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/qx-body-transform.js",
+      "status": 200,
+      "bytes": 3282,
+      "sha256": "614573a7540b1d130992cbf5462db7c1c296dce8fd44db69601b607a876c3000",
+      "verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/xiaohongshu-ad-only.js",
+      "status": 200,
+      "bytes": 7003,
+      "sha256": "015ef932a18255a62ca66f3babae2e28819d164adf529e4dc5c887da96d33f65",
+      "verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/youtube-ad-only.js",
+      "status": 200,
+      "bytes": 10346,
+      "sha256": "14a5b75e950fa4445e51fd7622e7f0a2106a40dd5b7b1ad80a8aaa6e26b3ca2b",
       "verified": true
     }
   ]

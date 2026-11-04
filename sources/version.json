@@ -1,7 +1,7 @@
 {
   "version": "2026.11.04.4",
   "name": "陈前 · 上游与实测修复合并去广告",
-  "scripts_revision": "6861576dee7b9c9084262cb208d4490a8ff6d2a3",
+  "scripts_revision": "3411b2f87a85161dbb9f82e2d19e96881c6b013b",
   "upstream_commit": "4b7830670baf235ed945085cb926dc499cf619e0",
   "upstream_sha256": "371ee2dee23f6aee74017f23e54d42a6d19a1b84f9fc7c63e2f70f59abbe4b9a"
 }

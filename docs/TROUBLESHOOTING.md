@@ -1,4 +1,4 @@
-> 双端合并候选请注明使用 Stash 还是 Shadowrocket，并先阅读[双端说明](DUAL-CLIENT.md)。候选未发布时，新增脚本链接可能尚不能访问。
+> 当前为双端合并版，反馈请注明使用 Stash 还是 Shadowrocket，并先阅读[双端说明](DUAL-CLIENT.md)。
 
 # 故障排查与反馈
 
