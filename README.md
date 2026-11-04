@@ -1,46 +1,58 @@
-# Stash 去广告：fmz 全源适配与实测补丁
+# 上游广告规则＋实测补丁：Shadowrocket 与 Stash
 
-**版本：2026.11.04.3｜更新：2026-11-04**
+**版本：2026.11.04.4｜Shadowrocket 模块与 Stash 覆写**
 
-以奶思（fmz200）的完整 `rewrite.snippet` 为输入，逐条适配去广告部分，再叠加此前实测的修复。**不按已安装 App 白名单缩减；也不把原文里的会员、去水印、安全检查和普通功能改写一起带入。**这是完整源文件的去广告适配，不是原文全部功能照搬，更不是全部 App 已实测无广告。
+同一份合并规则，分别生成 **Shadowrocket 模块**和 **Stash 覆写**。输入包含固定版本的 fmz200 上游广告合集、此前已审核的 2026.11.04.2 规则，以及你的定向实测修复。精确修复放在前面，避免再次被上游的拒绝规则抢先拦住。两端共用来源、删除策略与补丁，不维护两份各自变化的规则。
 
-## 直接安装
+## 两个版本
 
-复制地址，在 **Stash → 覆写 → 从 URL 安装**中添加并启用：
+| 客户端 | 生成文件 | 导入位置 |
+| --- | --- | --- |
+| Shadowrocket | [stash-adblock.shadowrocket.module](rules/stash-adblock.shadowrocket.module) | 配置 → 模块 |
+| Stash | [stash-adblock.stoverride](rules/stash-adblock.stoverride) | 远程覆写 |
+
+下面两个地址分别用于两个客户端，Stash 的原地址保持不变：
 
 ```text
+https://raw.githubusercontent.com/moneychen003/stash-adblock/main/rules/stash-adblock.shadowrocket.module
 https://raw.githubusercontent.com/moneychen003/stash-adblock/main/rules/stash-adblock.stoverride
 ```
 
-也可打开[一键安装链接](https://link.stash.ws/install-override/raw.githubusercontent.com/moneychen003/stash-adblock/main/rules/stash-adblock.stoverride)。一键服务若提示 403 或无法跳转，使用上面的地址手动添加。已安装旧版时，更新同一个远程覆写即可，**不要叠加多份本项目副本**。
+本项目不提供节点，不替换你的节点订阅和普通分流。不要同时启用本合并版、上游原版广告合集和旧定制广告模块；运行合并版不依赖 Script Hub 转换工具。安装分别见 [Shadowrocket](docs/INSTALL_SHADOWROCKET.md) 和 [Stash](docs/INSTALL.md)。
 
-本项目不提供代理节点，无需替换节点订阅。需要 Stash 3.6+、正常的改写／脚本功能，以及你自己设备上安装并信任的 CA，详见[安装说明](docs/INSTALL.md)。公开文件没有共享 CA、账号、私人 DNS 或家庭路由。
+## 合并范围
 
-## 来源与覆盖
-
-| 内容 | 本版 |
+| 项目 | 两端共用的内容 |
 | --- | --- |
-| 完整源审查 | 4383 条启用语句，均有处理记录 |
-| 分流规则 | 2480 条，另引用 AWA 广告规则集 |
-| URL 及正文改写 | 1085 条 URL、29 条正文改写 |
-| 脚本 | 157 条绑定、76 个 provider，其中 13 个本仓库处理器 |
-| HTTPS 匹配 | 977 个指定主机／有限域名通配条目，无全局 `*` |
+| 分流 | 3098 条；固定 AWA 广告条目已内联，避免把 Clash YAML 交给小火箭读取 |
+| URL／正文改写 | 1150 条 URL 改写、29 条正文改写 |
+| 脚本 | 225 条绑定、97 个 provider；保留二进制、正文、超时与参数信息 |
+| 静态响应 | 3 项；两端核对响应字节与头部 |
+| HTTPS 范围 | 1025 个主机条目，包含原上游的有限域名通配，无全局 `*` |
 
-小红书、爱奇艺、芒果 TV、喜马拉雅、Keep、起点读书等原先缺失的定向处理已纳入。微博、豆瓣、哔哩哔哩、中国广电、拼多多、QQ 音乐、优酷、雪球及知乎的已有修复保留在高优先级。**包含规则不等于该 App 已通过实机验收。**
+上游快照中 **4383 条有效语句**均有编译、拆窄、排除或补丁替代记录，见 [conversion-ledger.json](rules/conversion-ledger.json)。此前已审核规则也参与取并集；精确重复项去重，广告覆盖不按 App 类型整组删除。具体来源和计数见 [coverage.json](rules/coverage.json)。
 
-原文固定为 [fmz 4b7830670baf235ed945085cb926dc499cf619e0](https://github.com/fmz200/wool_scripts/blob/4b7830670baf235ed945085cb926dc499cf619e0/QuantumultX/rewrite/rewrite.snippet)，文件标注更新时间为 2026-10-31。其“约730款App/小程序”是上游覆盖声明，不是本项目测试成功数。固定版本不会自动跟随上游 `main` 更新。
+保留微博、B站、豆瓣、广电、拼多多、雪球、QQ音乐和优酷等定向处理，京东、酷安及其他 App／小程序的原有广告处理也保留。**规则数和上游声称的支持数量，不等于实测成功的 App 数。**旧版成功、本轮波动、仍有推广及受阻项目，继续在 [App 逐项观察与历史记录](docs/APP-STATUS.md)中区分。
 
-## 看真实效果
+## 去掉哪些内容
 
-[App 效果表](docs/APP-STATUS.md)将本轮结果与历史成功分开：开屏／占位再次复现就明确写未通过，短时间没看到广告只记采样结果，不沿用旧成功结论。本文已记录13款App的25轮冷启动限时观察，另有1轮优酷短时播放观察；QQ音乐按此前要求不继续复测。完整过程和范围见[测试报告](docs/REPORT.md)。
+不带入个人证书、私钥、认证密钥、节点、设备清单、抓包、家庭路由或私人 DNS 偏好。会员／鉴权篡改、支付与激活阻断、安全检查和更新阻断等非广告功能排除；过宽的正常内容拒绝与混合脚本分支有逐条理由。广告专用视频处理保留播放流、付费状态、水印、普通导航及青少年配置。没有把历史私人配置原样分享出去。
 
-部分 App 会保留旧开屏素材或本地状态。先确认规则生效，再按[缓存与重装指南](docs/CACHE-AND-REINSTALL.md)排查；**部分 App 可能需要彻底删除后从官方商店重装，但不能保证有效，也不能把所有问题都归因缓存。**删除会丢失本地内容，请先同步或备份。iOS“卸载 App”保留文稿数据，不等于干净重装。
+## 已有实机记录
+
+[App 效果表](docs/APP-STATUS.md)将 2026.11.04.3 的本轮结果与历史成功分开：开屏／占位再次复现就明确写未通过，短时间没看到广告只记采样结果，不沿用旧成功结论。已记录13款App的25轮冷启动限时观察，另有1轮优酷短时播放观察；QQ音乐按此前要求不继续复测。完整过程和范围见[测试报告](docs/REPORT.md)。这些记录不是 2026.11.04.4 双端合并版的手机验收结果。
+
+## 缓存与验证边界
+
+部分 App 会保留旧广告素材或状态，可能需要清缓存或重装。先确认规则与证书正常，再依照[缓存与重装指南](docs/CACHE-AND-REINSTALL.md)处理；删除 App 前同步或备份本地内容。QQ音乐重装后的四次观察、优酷使用者确认等历史结果，不等于这次双端合并版已重新实机验收。
+
+当前已验证共同来源的重建一致性、两种输出的完整对应、关键修复优先级、JS／JQ／正则语法、普通功能与二进制样例。固定版本脚本与外部依赖均按内容哈希核对，记录见 [external-validation.json](rules/external-validation.json)，两个产物的哈希见 [manifest.json](rules/manifest.json)。**这次双端合并版本尚未完成手机回归。**
 
 ## 文档与反馈
 
-- [安装与更新](docs/INSTALL.md) · [缓存与重装](docs/CACHE-AND-REINSTALL.md)
-- [本轮 App 效果](docs/APP-STATUS.md) · [测试报告](docs/REPORT.md) · [旧版历史](docs/HISTORY-2026-11-04.md)
-- [覆盖、排除与适配](docs/COVERAGE.md) · [逐条转换记录](rules/conversion-ledger.json)
-- [故障排查](docs/TROUBLESHOOTING.md) · [来源许可](THIRD_PARTY.md) · [维护与重建](docs/MAINTENANCE.md)
+- [Shadowrocket 安装](docs/INSTALL_SHADOWROCKET.md) · [Stash 安装](docs/INSTALL.md)
+- [双端构建与差异](docs/DUAL-CLIENT.md) · [实测分类](docs/APP-STATUS.md)
+- [缓存与重装](docs/CACHE-AND-REINSTALL.md) · [故障反馈](docs/TROUBLESHOOTING.md)
+- [来源与许可](THIRD_PARTY.md) · [维护方法](docs/MAINTENANCE.md)
 
-功能异常时，先关闭本覆写对照，再到 [Issues](https://github.com/moneychen003/stash-adblock/issues)反馈 App 版本、广告位置和遮盖个人信息的截图。不要上传完整个人应用清单、原始抓包、账号、设备标识、证书、控制密钥或私人网络配置。
+本仓库原创内容按各文件 SPDX 发布，包含 GPL-3.0-or-later 与单独的 Apache-2.0 实现；上游及衍生内容保留其原许可范围；原作者署名保留，第三方独立脚本按原项目声明，仅引用固定 URL。反馈时不要上传账号、证书、密钥、原始抓包或完整个人应用清单。

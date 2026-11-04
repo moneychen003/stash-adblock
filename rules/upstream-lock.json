@@ -2,6 +2,34 @@
   "checked_date": "2026-11-04",
   "dependencies": [
     {
+      "url": "https://github.com/Biliverse/ADBlock/releases/download/v0.7.5/config.bundle.js",
+      "repository": "Biliverse/ADBlock",
+      "http_status": 200,
+      "bytes": 6885,
+      "sha256": "c347cebab974702b49c1ee1905f90b72fd97f33ede5bee40138d1f9a11168e1d"
+    },
+    {
+      "url": "https://github.com/Biliverse/ADBlock/releases/download/v0.7.5/request.bundle.js",
+      "repository": "Biliverse/ADBlock",
+      "http_status": 200,
+      "bytes": 215238,
+      "sha256": "47d002c07da40357110c8ae5406f117bc608812d075eb54a54b2cbd768ea5b1a"
+    },
+    {
+      "url": "https://github.com/Biliverse/ADBlock/releases/download/v0.7.5/response.bundle.js",
+      "repository": "Biliverse/ADBlock",
+      "http_status": 200,
+      "bytes": 1091042,
+      "sha256": "e8768eb5c75bbfaea78f5798ac7827c431f81a61416a7877753f36dd36b9cb60"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Keywos/rule/a06d921d370ad6fca9e972a3f76e64d90bc8cfae/script/weibo_us/js/index.js",
+      "repository": "Keywos/rule",
+      "http_status": 200,
+      "bytes": 2462,
+      "sha256": "99ec4f40821f4eaf88caf98c1608a76b3c9d99d2a5e268c5e28767f11fd52901"
+    },
+    {
       "url": "https://raw.githubusercontent.com/NobyDa/Script/0b8d083d444f4476700cb9d5d059c07b42da85eb/Bahamut/BahamutAnimeAds.js",
       "repository": "NobyDa/Script",
       "http_status": 200,
@@ -16,6 +44,13 @@
       "sha256": "6fc5d0aa5b7d70febfc7081b95d16f15cf1664767286a9ca0c5939d5c8187859"
     },
     {
+      "url": "https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/502cf03f7db2e077d96c07c2cb151a8f0b152a80/scripts/replace-body.js",
+      "repository": "Script-Hub-Org/Script-Hub",
+      "http_status": 200,
+      "bytes": 2143,
+      "sha256": "1f02ab57c96cffe522bb0ad30acef049d9fb8d35b0132c57552bbe7e26779175"
+    },
+    {
       "url": "https://raw.githubusercontent.com/Sliverkiss/QuantumultX/89b9ae1c9e1554976464e6b56739fc80d390bdb1/AdBlock/xmApp/wnbz.js",
       "repository": "Sliverkiss/QuantumultX",
       "http_status": 200,
@@ -28,13 +63,6 @@
       "http_status": 200,
       "bytes": 340,
       "sha256": "319c650370f0c4086a6aea0f0d9efa0677c4ac9829d07830218dac69c174164a"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/72dd30fb6d5e2ff7b5bcdbecf164d288f41d9dfa/Filters/AWAvenue-Ads-Rule-Clash-Classical-Only.Ads.yaml",
-      "repository": "TG-Twilight/AWAvenue-Ads-Rule",
-      "http_status": 200,
-      "bytes": 21453,
-      "sha256": "f489591ca904030b7a4f07f3b0521486e02797cd69251f6e552a4881ea1cbc27"
     },
     {
       "url": "https://raw.githubusercontent.com/app2smile/rules/df6366a7024e0b3f0aa3510c5b791eea6f3cba89/js/adsense.js",
@@ -79,6 +107,55 @@
       "sha256": "489f711e41734a6c9a8749d79923c3dc3930c63239fc7e97cb3e25a29c9eafd3"
     },
     {
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/0cddbb6bc31344315afba773ebb4e7ce29f7fd8f/amap.js",
+      "repository": "ddgksf2013/Scripts",
+      "http_status": 200,
+      "bytes": 11559,
+      "sha256": "936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/0cddbb6bc31344315afba773ebb4e7ce29f7fd8f/amdc.js",
+      "repository": "ddgksf2013/Scripts",
+      "http_status": 200,
+      "bytes": 633,
+      "sha256": "8217f2150f8d12ae04d2c49b5da0a838e83f4de68b34df71c2da16cc1267898f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/0cddbb6bc31344315afba773ebb4e7ce29f7fd8f/cainiao_json.js",
+      "repository": "ddgksf2013/Scripts",
+      "http_status": 200,
+      "bytes": 1805,
+      "sha256": "508701b04e3289d37d9baa649dce8a317329b21ebd4433872dc7906866bcdd5c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/0cddbb6bc31344315afba773ebb4e7ce29f7fd8f/smzdm_json.js",
+      "repository": "ddgksf2013/Scripts",
+      "http_status": 200,
+      "bytes": 2631,
+      "sha256": "cbcabf770447117a66358314950a4233448eeb86274ccfb96d148294d327eece"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/0cddbb6bc31344315afba773ebb4e7ce29f7fd8f/weibo_json.js",
+      "repository": "ddgksf2013/Scripts",
+      "http_status": 200,
+      "bytes": 15462,
+      "sha256": "1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/0cddbb6bc31344315afba773ebb4e7ce29f7fd8f/weibo_search_info.json",
+      "repository": "ddgksf2013/Scripts",
+      "http_status": 200,
+      "bytes": 130,
+      "sha256": "5404166f304ace3d4749e18500d595acadaf5c913d13c5b196657a05149872ac"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/0cddbb6bc31344315afba773ebb4e7ce29f7fd8f/weibo_search_topic.json",
+      "repository": "ddgksf2013/Scripts",
+      "http_status": 200,
+      "bytes": 378,
+      "sha256": "57881f577f253467924a5ce8698997bdc1dfaa102ca93c2538065d44a564215d"
+    },
+    {
       "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/51card.js",
       "repository": "fmz200/wool_scripts",
       "http_status": 200,
@@ -100,11 +177,32 @@
       "sha256": "a388141caa03a22decbe518fbdd670c806f0893a540daed142c9b0ba37636bd3"
     },
     {
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/T3.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 91,
+      "sha256": "ab1ca9af4dd9b294f585335856de51d6df2b61c31d9a3d1982a5b091355da25a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/X/X_ads.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 15446,
+      "sha256": "c6cd92e41ccc24cda6fbadcc3cefb1538294353ad809c40855cb1224f8bf2a6a"
+    },
+    {
       "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/adrive/adrive.js",
       "repository": "fmz200/wool_scripts",
       "http_status": 200,
       "bytes": 1105,
       "sha256": "9d31582028a31ea605e69d09aa9e33949e57050006a8e0f3deb79b1c89933acd"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/applet.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 601,
+      "sha256": "7bc20d06caec86eeb2f70ba817efe7341091ceba4dbdfb7a64dbe881e3fc04b3"
     },
     {
       "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/baidumap.js",
@@ -168,6 +266,13 @@
       "http_status": 200,
       "bytes": 2745,
       "sha256": "c4f17a8ca8b27e15b7332460c83b5ba19aeded4c21e8f31beff8cefc54425ab7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/ems.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 196,
+      "sha256": "2208e4945d8781e5bc9d20a436fc141629a7e4dc9fd516f9fe917196010cf5bc"
     },
     {
       "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/fenbi.js",
@@ -261,6 +366,13 @@
       "sha256": "07e5fa66a0efe225b0dae2beaab83a9f1f9ad4dd6d3748d571156db8e324300c"
     },
     {
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/qingju.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 107,
+      "sha256": "122b32e793476983ae7315b4b7411d2abdd3cf71a11a8ee4018b1ed6a98e0784"
+    },
+    {
       "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/quark.js",
       "repository": "fmz200/wool_scripts",
       "http_status": 200,
@@ -315,6 +427,13 @@
       "http_status": 200,
       "bytes": 215,
       "sha256": "7a0f7976a4b8f47649684cc382832e425610e924e0fdc11ea2e06b1ebd2cbacf"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/watsons.js",
+      "repository": "fmz200/wool_scripts",
+      "http_status": 200,
+      "bytes": 90,
+      "sha256": "20eb0dcaeb258ced382d3cff90378f1286b8622199e34f31e76d1561226c3882"
     },
     {
       "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/xiaotucc.js",
@@ -457,93 +576,106 @@
       "sha256": "1ebea73aa974503abf72371cd32bdda86975dbad9beaf4c6f648db6debb75fa6"
     },
     {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/e65ac74bd660c228e0afb03359338f63fef54d6d/scripts/douban.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/douban.js",
       "repository": "moneychen003/stash-adblock",
       "http_status": 200,
+      "verification": "anonymous-http-sha256",
       "bytes": 888,
       "sha256": "e7eb5d7a9adac3197835726bf62266c40d5924182800f447f50bfb4db0611c22"
     },
     {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/e65ac74bd660c228e0afb03359338f63fef54d6d/scripts/weibo.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/weibo.js",
       "repository": "moneychen003/stash-adblock",
       "http_status": 200,
+      "verification": "anonymous-http-sha256",
       "bytes": 5469,
       "sha256": "3aed7db15d48c3c9e9f370a78b0e3fe93168e4461b9cefb10f3f44d93520db1f"
     },
     {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/e65ac74bd660c228e0afb03359338f63fef54d6d/scripts/pinduoduo.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/pinduoduo.js",
       "repository": "moneychen003/stash-adblock",
       "http_status": 200,
+      "verification": "anonymous-http-sha256",
       "bytes": 5368,
       "sha256": "45f12cca6fe12a35eed8595617e379642a28f562aeefbe178b96fb1893c92c20"
     },
     {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/e65ac74bd660c228e0afb03359338f63fef54d6d/scripts/broadnet.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/broadnet.js",
       "repository": "moneychen003/stash-adblock",
       "http_status": 200,
+      "verification": "anonymous-http-sha256",
       "bytes": 1744,
       "sha256": "99b0fe6c148a976030fa930bac107d2919041326f7d527b051bb81e9b1dda487"
     },
     {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/e65ac74bd660c228e0afb03359338f63fef54d6d/scripts/jd-splash.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/jd-splash.js",
       "repository": "moneychen003/stash-adblock",
       "http_status": 200,
+      "verification": "anonymous-http-sha256",
       "bytes": 5288,
       "sha256": "65d4d8931d92746e797edfdfce4abac7f85272277c1abb91bfbc859c202d809f"
     },
     {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/e65ac74bd660c228e0afb03359338f63fef54d6d/scripts/coolapk.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/coolapk.js",
       "repository": "moneychen003/stash-adblock",
       "http_status": 200,
+      "verification": "anonymous-http-sha256",
       "bytes": 2342,
       "sha256": "14d87416d34ea0307fc55d33466f5f149c0c0139041991535409b75f2f4c241e"
     },
     {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/e65ac74bd660c228e0afb03359338f63fef54d6d/scripts/youku-ad-only.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/youku-ad-only.js",
       "repository": "moneychen003/stash-adblock",
       "http_status": 200,
+      "verification": "anonymous-http-sha256",
       "bytes": 3811,
       "sha256": "86998fc1d58289a4885457ac6f03cc3a854e739d162b08b31074ac706ffa1a64"
     },
     {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/e65ac74bd660c228e0afb03359338f63fef54d6d/scripts/bilibili-splash.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/bilibili-splash.js",
       "repository": "moneychen003/stash-adblock",
       "http_status": 200,
+      "verification": "anonymous-http-sha256",
       "bytes": 9598,
       "sha256": "89ef8f3c5c2807af4ef72bbfb25dff897442d4088e68ded48b90860b3aff56d9"
     },
     {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/e65ac74bd660c228e0afb03359338f63fef54d6d/scripts/zhihu-ad-only.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/zhihu-ad-only.js",
       "repository": "moneychen003/stash-adblock",
       "http_status": 200,
+      "verification": "anonymous-http-sha256",
       "bytes": 3308,
       "sha256": "44408c2098167283969bbe4c823868404c0b1ff6e0f7f7616b75ee4276900b85"
     },
     {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/e65ac74bd660c228e0afb03359338f63fef54d6d/scripts/fmz-video-ad-only.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/fmz-video-ad-only.js",
       "repository": "moneychen003/stash-adblock",
       "http_status": 200,
+      "verification": "anonymous-http-sha256",
       "bytes": 4304,
       "sha256": "b144f2103c43957e3933a3588c96a6cbb39c8f84caaaeab2b83dcef21926318a"
     },
     {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/e65ac74bd660c228e0afb03359338f63fef54d6d/scripts/qx-body-transform.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/qx-body-transform.js",
       "repository": "moneychen003/stash-adblock",
       "http_status": 200,
-      "bytes": 3171,
-      "sha256": "87e4006c5d62ef102492c227c837904b30f10dcf95186a5225ce131b39ad01ba"
+      "verification": "anonymous-http-sha256",
+      "bytes": 3282,
+      "sha256": "614573a7540b1d130992cbf5462db7c1c296dce8fd44db69601b607a876c3000"
     },
     {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/e65ac74bd660c228e0afb03359338f63fef54d6d/scripts/xiaohongshu-ad-only.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/xiaohongshu-ad-only.js",
       "repository": "moneychen003/stash-adblock",
       "http_status": 200,
+      "verification": "anonymous-http-sha256",
       "bytes": 7003,
       "sha256": "015ef932a18255a62ca66f3babae2e28819d164adf529e4dc5c887da96d33f65"
     },
     {
-      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/e65ac74bd660c228e0afb03359338f63fef54d6d/scripts/youtube-ad-only.js",
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/youtube-ad-only.js",
       "repository": "moneychen003/stash-adblock",
       "http_status": 200,
+      "verification": "anonymous-http-sha256",
       "bytes": 10346,
       "sha256": "14a5b75e950fa4445e51fd7622e7f0a2106a40dd5b7b1ad80a8aaa6e26b3ca2b"
     }

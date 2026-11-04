@@ -1,37 +1,35 @@
-# 维护、升级与重建
+# 维护与发布双端规则
 
-公开构建不读取手机、个人目录或证书。输入均在仓库 `sources/`：
+依赖 Python 3.9+、PyYAML、Node.js 22 与 jq 1.7+。只维护共同输入与补丁，目标文件由构建生成。
 
-- `upstream/fmz-rewrite.snippet`：完整固定上游原文及原作者信息。
-- `fmz-policy.json`：非广告排除、精确路径缩窄及拼写修正。
-- `fmz-script-policy.json`：脚本分支审查、兼容模式及广告专用替代。
-- `verified-repairs.json`：原有定向修复，优先于同用途上游规则。
-- `dependencies.json`、`version.json`：固定提交、大小、哈希和发布版本。
-
-## 本地检查
+## 本地构建
 
 ```sh
 python -m pip install -r requirements.txt
 python tools/build.py
 python tools/validate.py
-python tools/test_coverage.py
+python tools/test_dual.py
 python tools/test_compiler.py
+python tools/test_coverage.py
 node tools/test_scripts.cjs
 node tools/test_qx_transform.cjs
 node tools/test_fmz_video.cjs
-node tools/test_xiaohongshu.cjs
 node tools/test_media_ad_only.cjs
+node tools/test_xiaohongshu.cjs
 ```
 
-Python 3.9+、Node 22+；有 `jq` 时会进一步检查原生表达式的语法与异常形状处理。GitHub Actions 运行同样的检查。生成文件不要手改：`sources/config.json`、主覆写、manifest、coverage、转换账本与依赖锁由编译器重建。
+编译器会检查上游快照哈希、政策中的原始行文本、兼容性说明、完整语句台账与旧版覆盖。新上游出现未支持语法或未锁定脚本时直接失败，不能静默丢弃。更新上游需要重新核对政策与依赖。
 
-## 更新顺序
+`tools/build.py` 输出 Stash 覆写、Shadowrocket 模块及各自哈希；`tools/test_dual.py` 验证完整映射。变更版本号后同步更新文档，不用规则数量推算支持／成功 App 数量。
 
-1. 固定上游提交，替换完整源文件并核对 SHA-256；不要按机主安装清单过滤。
-2. 对源变化更新两份 policy。所有启用行必须有编译、拆窄、排除或实测补丁替代记录；未知语法会报错。
-3. 复核保留脚本的具体分支与许可证，不把会员、认证、下载／后台播放、水印或普通内容删改混入广告过滤。混合模块尽量换广告专用实现，不整段照搬。
-4. 修改本仓库脚本时，先在候选分支发布已检查的脚本提交，再将 `scripts_revision` 固定到该提交；更新固定依赖哈希。主订阅仍使用 `main`，读者不用换地址。
-5. 构建并运行检查，再做相应 App 冷启动对照。记下有效窗口、广告残留及登录／协议受阻；补丁保留不等于当前效果通过。
-6. 更新效果表与报告，推送主分支后用匿名请求核对主覆写和所有引用资源；等待 CI 通过。
+## 发布顺序
 
-手机自己的 CA、私网、DNS、原始抓包、截图及安装包不应成为公开构建输入。私人部署只在本机额外合并，保留回滚，不能把设备文件复制进仓库。第三方独立脚本以原项目许可为准，固定 URL 引用不等于获得任意再分发许可。
+1. 先检查差异、许可与隐私，得到对应发布授权。
+2. 先公开包含自有脚本的提交，再把 `sources/version.json` 的 scripts_revision 固定到该提交。
+3. 匿名下载这批脚本，核对本地 SHA-256；将已验证 URL 与哈希记入 `sources/published-scripts.json`，再重建最终产物。未公开脚本的锁记录 http_status 为 null，不能伪称 HTTP 下载通过。
+4. 发布最终配置和文档，检查两个主文件及所有引用依赖能匿名下载且哈希一致，确认 CI 通过。
+5. 做客户端加载与对应广告位的冷启动回归，注明版本、登录、缓存与实际观察。构建成功不能替代手机验收。
+
+不发布证书、私钥、设备清单、账号、控制密钥、原始抓包、App 安装包或私人网络配置。需要回滚时使用 Git 历史发布版本，并同时恢复相应脚本引用。
+
+固定的 fmz 原始快照保留作者的原始空白，不能为了格式化破坏哈希；`.gitattributes` 仅对该快照关闭空白提示，其他源码与生成文件仍检查差异。

@@ -1,3 +1,5 @@
+> 当前为 2026.11.04.4 双端合并版，Stash 原订阅地址保持不变；Shadowrocket 请看[单独说明](INSTALL_SHADOWROCKET.md)。
+
 # 安装 Stash 覆写
 
 **更新：2026-11-04**

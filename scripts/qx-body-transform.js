@@ -11,7 +11,9 @@
   }
 
   try {
-    const options = typeof $argument === 'string' ? JSON.parse($argument) : $argument;
+    const raw = typeof $argument === 'string' && !/^\s*[\[{]/.test($argument)
+      ? decodeURIComponent($argument) : $argument;
+    const options = typeof raw === 'string' ? JSON.parse(raw) : raw;
     if (!options || typeof options !== 'object' || Array.isArray(options)) return done({});
 
     if (options.kind === 'regex') {

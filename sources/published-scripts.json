@@ -1,0 +1,80 @@
+{
+  "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/bilibili-splash.js": {
+    "sha256": "89ef8f3c5c2807af4ef72bbfb25dff897442d4088e68ded48b90860b3aff56d9",
+    "bytes": 9598,
+    "http_status": 200,
+    "checked_date": "2026-11-04"
+  },
+  "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/broadnet.js": {
+    "sha256": "99b0fe6c148a976030fa930bac107d2919041326f7d527b051bb81e9b1dda487",
+    "bytes": 1744,
+    "http_status": 200,
+    "checked_date": "2026-11-04"
+  },
+  "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/coolapk.js": {
+    "sha256": "14d87416d34ea0307fc55d33466f5f149c0c0139041991535409b75f2f4c241e",
+    "bytes": 2342,
+    "http_status": 200,
+    "checked_date": "2026-11-04"
+  },
+  "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/douban.js": {
+    "sha256": "e7eb5d7a9adac3197835726bf62266c40d5924182800f447f50bfb4db0611c22",
+    "bytes": 888,
+    "http_status": 200,
+    "checked_date": "2026-11-04"
+  },
+  "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/fmz-video-ad-only.js": {
+    "sha256": "b144f2103c43957e3933a3588c96a6cbb39c8f84caaaeab2b83dcef21926318a",
+    "bytes": 4304,
+    "http_status": 200,
+    "checked_date": "2026-11-04"
+  },
+  "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/jd-splash.js": {
+    "sha256": "65d4d8931d92746e797edfdfce4abac7f85272277c1abb91bfbc859c202d809f",
+    "bytes": 5288,
+    "http_status": 200,
+    "checked_date": "2026-11-04"
+  },
+  "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/pinduoduo.js": {
+    "sha256": "45f12cca6fe12a35eed8595617e379642a28f562aeefbe178b96fb1893c92c20",
+    "bytes": 5368,
+    "http_status": 200,
+    "checked_date": "2026-11-04"
+  },
+  "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/qx-body-transform.js": {
+    "sha256": "614573a7540b1d130992cbf5462db7c1c296dce8fd44db69601b607a876c3000",
+    "bytes": 3282,
+    "http_status": 200,
+    "checked_date": "2026-11-04"
+  },
+  "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/weibo.js": {
+    "sha256": "3aed7db15d48c3c9e9f370a78b0e3fe93168e4461b9cefb10f3f44d93520db1f",
+    "bytes": 5469,
+    "http_status": 200,
+    "checked_date": "2026-11-04"
+  },
+  "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/xiaohongshu-ad-only.js": {
+    "sha256": "015ef932a18255a62ca66f3babae2e28819d164adf529e4dc5c887da96d33f65",
+    "bytes": 7003,
+    "http_status": 200,
+    "checked_date": "2026-11-04"
+  },
+  "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/youku-ad-only.js": {
+    "sha256": "86998fc1d58289a4885457ac6f03cc3a854e739d162b08b31074ac706ffa1a64",
+    "bytes": 3811,
+    "http_status": 200,
+    "checked_date": "2026-11-04"
+  },
+  "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/youtube-ad-only.js": {
+    "sha256": "14a5b75e950fa4445e51fd7622e7f0a2106a40dd5b7b1ad80a8aaa6e26b3ca2b",
+    "bytes": 10346,
+    "http_status": 200,
+    "checked_date": "2026-11-04"
+  },
+  "https://raw.githubusercontent.com/moneychen003/stash-adblock/3411b2f87a85161dbb9f82e2d19e96881c6b013b/scripts/zhihu-ad-only.js": {
+    "sha256": "44408c2098167283969bbe4c823868404c0b1ff6e0f7f7616b75ee4276900b85",
+    "bytes": 3308,
+    "http_status": 200,
+    "checked_date": "2026-11-04"
+  }
+}

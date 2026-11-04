@@ -7,6 +7,7 @@ from pathlib import Path
 from copy import deepcopy
 from collections import Counter
 import hashlib,json,re
+from merge_reviewed import merge_reviewed
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'sources/upstream/fmz-rewrite.snippet'
@@ -74,7 +75,9 @@ def compile_source(check=False):
             assert item['line'] in original and original[item['line']]['source']==item['source'],('Policy/source drift',item['line'])
             (excluded if kind=='excluded' else replacements)[item['line']]=item
     dep_list=json.loads((ROOT/'sources/dependencies.json').read_text())['dependencies']
-    deps={d['original_url']:d for d in dep_list}
+    legacy_deps=json.loads((ROOT/'sources/legacy-reviewed-lock.json').read_text())['dependencies']
+    dep_list=unique(dep_list+legacy_deps)
+    deps={d.get('original_url',d['url']):d for d in dep_list}
     deps.update({d['url']:d for d in dep_list})
     compatibility={r['original_url']:r for r in script_policy.get('compatibility',[])}
     overrides={r['original_url']:r for r in script_policy.get('overrides',[])}
@@ -184,21 +187,33 @@ def compile_source(check=False):
     config['rules']=unique(config['rules'])
     for key in ['url-rewrite','body-rewrite','script','mock']:h[key]=unique(h.get(key,[]))
     h['mitm']=unique(h.get('mitm',[])+[host for host in hosts if host not in ['*','*.*','*.com','*.cn','*.net']])
+    merge_report=merge_reviewed(config,repair,own_base,policy,script_policy,dep_list)
+    binding_aliases=merge_report.pop('_binding_id_aliases')
+    merge_report['semantic_binding_aliases']=sum(a!=b for a,b in binding_aliases.items())
+    for record in ledger:
+        for output in record.get('outputs',[]):
+            if output['kind']=='http.script':
+                old_id=output['id'];output['id']=binding_aliases[old_id]
+                if old_id!=output['id']:output['upstream_id']=old_id
     used_names={b['name'] for b in h['script']}
     config['script-providers']={k:v for k,v in providers.items() if k in used_names}
     for v in list(config['script-providers'].values())+list(config['rule-providers'].values()):used_urls.add(v['url'])
     known_deps={d['url']:d for d in dep_list}
     locks=[{k:d[k] for k in ['url','repository','http_status','bytes','sha256']} for url,d in sorted(known_deps.items()) if url in used_urls]
     # Own scripts are in the same repository; pin to the published script revision.
+    publication_file=ROOT/'sources/published-scripts.json'
+    publication=json.loads(publication_file.read_text()) if publication_file.exists() else {}
     for v in config['script-providers'].values():
         if v['url'].startswith(own_base):
             p=ROOT/'scripts'/v['url'].rsplit('/',1)[-1];assert p.is_file(),p.name
-            data=p.read_bytes();locks.append({'url':v['url'],'repository':'moneychen003/stash-adblock','http_status':200,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})
+            data=p.read_bytes();sha=hashlib.sha256(data).hexdigest();verified=publication.get(v['url'],{}).get('sha256')==sha
+            locks.append({'url':v['url'],'repository':'moneychen003/stash-adblock','http_status':200 if verified else None,'verification':'anonymous-http-sha256' if verified else 'local-sha256; pending-publication','bytes':len(data),'sha256':sha})
     coverage={'version':version['version'],'source_sha256':digest,'source_commit':version['upstream_commit'],
               'source_statement_count':len(rows),'dispositions':dict(Counter(r['status'] for r in ledger)),
               'compiled_source_sections':len(by_section),'compiled_action_types':dict(transforms),
               'published_counts':{'rules':len(config['rules']),'url_rewrite':len(h['url-rewrite']),'body_rewrite':len(h['body-rewrite']),'script_bindings':len(h['script']),'script_providers':len(config['script-providers']),'mitm_hosts':len(h['mitm']),'local_scripts':sum(v['url'].startswith(own_base) for v in config['script-providers'].values())},
-              'note':'每条启用源语句都有编译、拆窄、排除或实测补丁替代记录。覆盖数量不是全部App实机验收数；无设备清单、CA、节点、账号或个人网络设置。'}
+              'reviewed_release_union':merge_report,
+              'note':'每条启用源语句都有编译、拆窄、排除或实测补丁替代记录，并合并已审核旧版。覆盖数量不是全部App实机验收数；无设备清单、CA、节点、账号或个人网络设置。'}
     assert len(ledger)==len(rows)==len({r['line'] for r in ledger})
     products={ROOT/'sources/config.json':config,ROOT/'rules/coverage.json':coverage,
               ROOT/'rules/conversion-ledger.json':{'version':version['version'],'source_sha256':digest,'statements':ledger},

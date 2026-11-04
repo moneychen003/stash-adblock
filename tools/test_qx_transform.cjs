@@ -20,6 +20,9 @@ const response = (body, status = 200, headers = {'Content-Type': 'application/js
 const large = '{"id":9007199254740993123,"ad":true,"other":true}';
 const changed = run(JSON.stringify({kind: 'regex', pattern: '"ad":true', replacement: '"ad":false'}), response(large));
 assert.equal(changed.body, '{"id":9007199254740993123,"ad":false,"other":true}');
+const encoded = run(encodeURIComponent(JSON.stringify({kind:'regex',pattern:'"ad":true',replacement:'"ad":false'})),response(large));
+assert.equal(encoded.body,changed.body,'Shadowrocket INI-safe arguments must preserve Stash behavior');
+assert.deepEqual(plain(run('%invalid',response(large))),{});
 assert.equal(run({kind: 'regex', pattern: 'ad', replacement: 'clean'}, response('ad ad')).body, 'clean clean');
 assert.equal(run({kind: 'regex', pattern: '(<head>)', replacement: '$1<style>hide</style>'},
   response('<head><title>x</title>', 200, {'content-type': 'text/html'})).body,

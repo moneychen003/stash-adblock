@@ -10,7 +10,7 @@
 - 优酷、爱奇艺／芒果 TV 的广告字段和节点标识参考 fmz200 `cnftp.js`，改为只处理广告，保留播放流、水印、付费状态、普通导航和青少年配置。
 - 小红书广告专用实现参考 fmz 的对应脚本，采用局部 JSON 文本编辑，保留普通图文／视频、作者身份和大整数；未带入水印、下载及普通界面删改。
 - YouTube 广告专用实现根据 [Maasea/sgmodule 固定来源](https://github.com/Maasea/sgmodule/blob/65075cdb388fc5e3094afd7e7314c67b243f3525/Script/Youtube/youtube.response.js)的广告字段路径重新实现，不打包其运行库，不开启会员、后台播放、字幕或普通信息流布局改写。
-- QX 文本替换与条件处理适配器为本仓库通用代码；原生 jq 由 Stash 处理。
+- QX 文本替换与条件处理适配器为本仓库通用代码；原生 jq 由各客户端处理。
 - 彩云天气静态 Mock 使用上游引用的 [Keywos 功能响应数据](https://github.com/Keywos/rule/blob/a06d921d370ad6fca9e972a3f76e64d90bc8cfae/mocks/caiyun.json)，保留来源；没有复制其独立脚本正文或替其授予统一许可证。
 
 ## 当前远程运行依赖
@@ -31,4 +31,10 @@
 
 固定来源、HTTP 状态、大小与 SHA-256 见 [upstream-lock.json](rules/upstream-lock.json)，完整来源元数据见 [dependencies.json](sources/dependencies.json)。部分来源只用于审查或字段参考，不是当前运行依赖。固定版本不会自动跟随上游分支更新，需要维护者审核后发布。
 
-脚本在使用者自己的 Stash 中处理匹配请求／响应；部分上游处理会请求原站 API。没有新增本项目的统计或数据收集服务。手机自己的 CA、私人 DNS、家庭路由、设备标识和原始请求／截图不进入公开构建，也不应在反馈中上传。
+脚本在使用者自己的客户端中处理匹配请求／响应；部分上游处理会请求原站 API。没有新增本项目的统计或数据收集服务。手机自己的 CA、私人 DNS、家庭路由、设备标识和原始请求／截图不进入公开构建，也不应在反馈中上传。
+
+## 双端合并与已审核旧版
+
+此版还与 2026.11.04.2 已审核规则取并集。旧版不能覆盖新的非广告排除或广告专用替换；变更理由列在 coverage.json 的 reviewed_release_union。AWA 同一固定 payload 内联到两端；脚本、参数、静态响应由同一份结构化数据生成，未带入个人证书、节点或密钥。
+
+旧版保留的额外远程引用涉及 ddgksf2013/Scripts、Script-Hub-Org/Script-Hub、Biliverse/ADBlock 与 Keywos/rule 等项目，具体仍以当前锁文件为运行依赖清单；外部脚本只引用固定 URL，不据本仓库许可重新授权。小红书与 YouTube 继续使用新版广告专用实现，不重新挂载旧的混合实现。
