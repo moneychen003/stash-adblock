@@ -19,7 +19,9 @@
     "pinduoduo.js": "45f12cca6fe12a35eed8595617e379642a28f562aeefbe178b96fb1893c92c20",
     "qx-body-transform.js": "87e4006c5d62ef102492c227c837904b30f10dcf95186a5225ce131b39ad01ba",
     "weibo.js": "3aed7db15d48c3c9e9f370a78b0e3fe93168e4461b9cefb10f3f44d93520db1f",
+    "xiaohongshu-ad-only.js": "015ef932a18255a62ca66f3babae2e28819d164adf529e4dc5c887da96d33f65",
     "youku-ad-only.js": "86998fc1d58289a4885457ac6f03cc3a854e739d162b08b31074ac706ffa1a64",
+    "youtube-ad-only.js": "14a5b75e950fa4445e51fd7622e7f0a2106a40dd5b7b1ad80a8aaa6e26b3ca2b",
     "zhihu-ad-only.js": "44408c2098167283969bbe4c823868404c0b1ff6e0f7f7616b75ee4276900b85"
   }
 }
