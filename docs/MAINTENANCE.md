@@ -9,10 +9,13 @@ python -m pip install -r requirements.txt
 python tools/build.py
 python tools/validate.py
 python tools/test_dual.py
+python tools/test_compiler.py
 python tools/test_coverage.py
 node tools/test_scripts.cjs
 node tools/test_qx_transform.cjs
 node tools/test_fmz_video.cjs
+node tools/test_media_ad_only.cjs
+node tools/test_xiaohongshu.cjs
 ```
 
 编译器会检查上游快照哈希、政策中的原始行文本、兼容性说明、完整语句台账与旧版覆盖。新上游出现未支持语法或未锁定脚本时直接失败，不能静默丢弃。更新上游需要重新核对政策与依赖。

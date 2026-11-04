@@ -1,2 +1,2 @@
-# Preserve the pinned upstream snapshot byte-for-byte, including its original whitespace.
-sources/upstream/fmz-rewrite.snippet -whitespace
+# Preserve the upstream snapshot byte-for-byte for its published SHA-256.
+sources/upstream/fmz-rewrite.snippet -text -whitespace

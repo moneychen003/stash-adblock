@@ -30,13 +30,6 @@
       "sha256": "99ec4f40821f4eaf88caf98c1608a76b3c9d99d2a5e268c5e28767f11fd52901"
     },
     {
-      "url": "https://raw.githubusercontent.com/Maasea/sgmodule/65075cdb388fc5e3094afd7e7314c67b243f3525/Script/Youtube/youtube.response.js",
-      "repository": "Maasea/sgmodule",
-      "http_status": 200,
-      "bytes": 132973,
-      "sha256": "f98483d5f5017514f82502253c0db5ce2d4ffb7839887aa2cadc22666f5a7f12"
-    },
-    {
       "url": "https://raw.githubusercontent.com/NobyDa/Script/0b8d083d444f4476700cb9d5d059c07b42da85eb/Bahamut/BahamutAnimeAds.js",
       "repository": "NobyDa/Script",
       "http_status": 200,
@@ -443,13 +436,6 @@
       "sha256": "20eb0dcaeb258ced382d3cff90378f1286b8622199e34f31e76d1561226c3882"
     },
     {
-      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/xiaohongshu/xiaohongshu.js",
-      "repository": "fmz200/wool_scripts",
-      "http_status": 200,
-      "bytes": 28643,
-      "sha256": "318d89bce1117edb26a93b383804e195649ec4674a04efa9e3ddb4ef7f34b498"
-    },
-    {
       "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/xiaotucc.js",
       "repository": "fmz200/wool_scripts",
       "http_status": 200,
@@ -520,13 +506,6 @@
       "sha256": "e6ff8a29a82508abff43eab1e85c7d518002c6d810f5458d1b78a8219fc4cdcf"
     },
     {
-      "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/bilibiliManga.js",
-      "repository": "zirawell/R-Store",
-      "http_status": 200,
-      "bytes": 2295,
-      "sha256": "17035efc2c7b5d367a5f6e70ca2e0f7f23aa342c9edb3bf044587e5ee073f261"
-    },
-    {
       "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/ccblife.js",
       "repository": "zirawell/R-Store",
       "http_status": 200,
@@ -539,13 +518,6 @@
       "http_status": 200,
       "bytes": 1836,
       "sha256": "8ae52e7bccc43facf64dc9edaf8e6e1c1da564c6bbab242fb9e51a304e3a0b16"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/dianping.js",
-      "repository": "zirawell/R-Store",
-      "http_status": 200,
-      "bytes": 2257,
-      "sha256": "78971da6855858d1a6737872209cfc0aaaf7755fbe8da19f4115a03591820252"
     },
     {
       "url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/flyert.js",
@@ -690,6 +662,22 @@
       "verification": "local-sha256; pending-publication",
       "bytes": 3282,
       "sha256": "614573a7540b1d130992cbf5462db7c1c296dce8fd44db69601b607a876c3000"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/6861576dee7b9c9084262cb208d4490a8ff6d2a3/scripts/xiaohongshu-ad-only.js",
+      "repository": "moneychen003/stash-adblock",
+      "http_status": null,
+      "verification": "local-sha256; pending-publication",
+      "bytes": 7003,
+      "sha256": "015ef932a18255a62ca66f3babae2e28819d164adf529e4dc5c887da96d33f65"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moneychen003/stash-adblock/6861576dee7b9c9084262cb208d4490a8ff6d2a3/scripts/youtube-ad-only.js",
+      "repository": "moneychen003/stash-adblock",
+      "http_status": null,
+      "verification": "local-sha256; pending-publication",
+      "bytes": 10346,
+      "sha256": "14a5b75e950fa4445e51fd7622e7f0a2106a40dd5b7b1ad80a8aaa6e26b3ca2b"
     }
   ]
 }

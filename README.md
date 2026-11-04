@@ -24,15 +24,15 @@ https://raw.githubusercontent.com/moneychen003/stash-adblock/main/rules/stash-ad
 
 | 项目 | 两端共用的内容 |
 | --- | --- |
-| 分流 | 3148 条；固定 AWA 广告条目已内联，避免把 Clash YAML 交给小火箭读取 |
-| URL／正文改写 | 1164 条 URL 改写、29 条正文改写 |
-| 脚本 | 235 条绑定、99 个 provider；保留二进制、正文、超时与参数信息 |
+| 分流 | 3098 条；固定 AWA 广告条目已内联，避免把 Clash YAML 交给小火箭读取 |
+| URL／正文改写 | 1150 条 URL 改写、29 条正文改写 |
+| 脚本 | 225 条绑定、97 个 provider；保留二进制、正文、超时与参数信息 |
 | 静态响应 | 3 项；两端核对响应字节与头部 |
 | HTTPS 范围 | 1025 个主机条目，包含原上游的有限域名通配，无全局 `*` |
 
 上游快照中 **4383 条有效语句**均有编译、拆窄、排除或补丁替代记录，见 [conversion-ledger.json](rules/conversion-ledger.json)。此前已审核规则也参与取并集；精确重复项去重，广告覆盖不按 App 类型整组删除。具体来源和计数见 [coverage.json](rules/coverage.json)。
 
-保留微博、B站、豆瓣、广电、拼多多、雪球、QQ音乐和优酷等定向处理，京东、酷安及其他 App／小程序的原有广告处理也保留。**规则数和上游声称的支持数量，不等于实测成功的 App 数。**对应广告位已解决、部分改善与仅抽测未见广告，仍按 [13 款 App 实测分类表](docs/APP-STATUS.md)区分。
+保留微博、B站、豆瓣、广电、拼多多、雪球、QQ音乐和优酷等定向处理，京东、酷安及其他 App／小程序的原有广告处理也保留。**规则数和上游声称的支持数量，不等于实测成功的 App 数。**旧版成功、本轮波动、仍有推广及受阻项目，继续在 [App 逐项观察与历史记录](docs/APP-STATUS.md)中区分。
 
 ## 去掉哪些内容
 
@@ -51,4 +51,4 @@ https://raw.githubusercontent.com/moneychen003/stash-adblock/main/rules/stash-ad
 - [缓存与重装](docs/CACHE-AND-REINSTALL.md) · [故障反馈](docs/TROUBLESHOOTING.md)
 - [来源与许可](THIRD_PARTY.md) · [维护方法](docs/MAINTENANCE.md)
 
-本仓库原创内容及注明的 GPL 衍生内容按 GPL-3.0-or-later 发布；原作者署名保留，第三方独立脚本按原项目声明，仅引用固定 URL。反馈时不要上传账号、证书、密钥、原始抓包或完整个人应用清单。
+本仓库原创内容按各文件 SPDX 发布，包含 GPL-3.0-or-later 与单独的 Apache-2.0 实现；上游及衍生内容保留其原许可范围；原作者署名保留，第三方独立脚本按原项目声明，仅引用固定 URL。反馈时不要上传账号、证书、密钥、原始抓包或完整个人应用清单。

@@ -36330,11 +36330,12 @@
       "source": "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(banner_list|hot_list) url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
       "replacement": "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/banner_list url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
       "reason": "仅保留搜索广告 banner，热搜列表是普通内容。",
+      "implementation": "GPL 上游混合水印、下载、普通搜索与广告；本地脚本仅处理明确广告字段和广告节点。",
       "status": "replaced",
       "outputs": [
         {
           "kind": "http.script",
-          "id": "9c41485823f734dd"
+          "id": "f2663fa6387344d7"
         }
       ]
     },
@@ -36349,25 +36350,38 @@
       "line": 5518,
       "section": "小红书",
       "source": "^https?:\\/\\/(so|edith)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/notes\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
-      "status": "excluded",
-      "reason": "小红书搜索结果按 model_type 整类删，可能删普通结果。"
+      "implementation": "GPL 上游混合水印、下载、普通搜索与广告；本地脚本仅处理明确广告字段和广告节点。",
+      "status": "compiled",
+      "outputs": [
+        {
+          "kind": "http.script",
+          "id": "abd4abd5211b9b1f"
+        }
+      ]
     },
     {
       "line": 5520,
       "section": "小红书",
       "source": "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/config\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
-      "status": "excluded",
-      "reason": "小红书全局配置删除主题、商店等普通功能。"
+      "implementation": "GPL 上游混合水印、下载、普通搜索与广告；本地脚本仅处理明确广告字段和广告节点。",
+      "status": "compiled",
+      "outputs": [
+        {
+          "kind": "http.script",
+          "id": "85f2a67a94f45c42"
+        }
+      ]
     },
     {
       "line": 5521,
       "section": "小红书",
       "source": "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "implementation": "GPL 上游混合水印、下载、普通搜索与广告；本地脚本仅处理明确广告字段和广告节点。",
       "status": "compiled",
       "outputs": [
         {
           "kind": "http.script",
-          "id": "bec68ba3606be968"
+          "id": "d5589bfb97f88916"
         }
       ]
     },
@@ -36389,34 +36403,53 @@
       "line": 5528,
       "section": "小红书",
       "source": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/(followfeed|homefeed)\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
-      "status": "excluded",
-      "reason": "小红书关注/首页流分支混合删普通推荐。"
+      "replacement": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v6\\/homefeed\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "reason": "仅恢复 v6/homefeed，明确广告节点过滤；不恢复 followfeed 和普通推荐删改。",
+      "implementation": "GPL 上游混合水印、下载、普通搜索与广告；本地脚本仅处理明确广告字段和广告节点。",
+      "status": "replaced",
+      "outputs": [
+        {
+          "kind": "http.script",
+          "id": "8421abbaeedfb49b"
+        }
+      ]
     },
     {
       "line": 5529,
       "section": "小红书",
       "source": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/(v2\\/note\\/feed|v3\\/note\\/videofeed)\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
-      "status": "excluded",
-      "reason": "小红书视频流分支改下载权限和水印。"
+      "replacement": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v3\\/note\\/videofeed\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "reason": "仅恢复 v3/note/videofeed，明确广告节点过滤；不接入 v2/note/feed 的水印与下载修改。",
+      "implementation": "GPL 上游混合水印、下载、普通搜索与广告；本地脚本仅处理明确广告字段和广告节点。",
+      "status": "replaced",
+      "outputs": [
+        {
+          "kind": "http.script",
+          "id": "e732f0af8dc80c6b"
+        }
+      ]
     },
     {
       "line": 5530,
       "section": "小红书",
       "source": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/(v4\\/note\\/videofeed|v10\\/note\\/video\\/save)\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
-      "status": "excluded",
-      "reason": "小红书视频保存分支改下载权限和水印。"
+      "replacement": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v4\\/note\\/videofeed\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "reason": "仅恢复 v4/note/videofeed，明确广告节点过滤；不接入 v10/note/video/save。",
+      "implementation": "GPL 上游混合水印、下载、普通搜索与广告；本地脚本仅处理明确广告字段和广告节点。",
+      "status": "replaced",
+      "outputs": [
+        {
+          "kind": "http.script",
+          "id": "8228cabbec10aef8"
+        }
+      ]
     },
     {
       "line": 5532,
       "section": "小红书",
       "source": "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d\\/note\\/comment\\/list url response-body red_id response-body fmz200",
-      "status": "compiled",
-      "outputs": [
-        {
-          "kind": "http.script",
-          "id": "3975d1f28dff1a59"
-        }
-      ]
+      "status": "excluded",
+      "reason": "评论列表中的 red_id 字段整体重命名会改变普通身份数据，不属于广告内容过滤。"
     },
     {
       "line": 5534,
@@ -42746,8 +42779,16 @@
       "line": 6457,
       "section": "YouTube",
       "source": "^https:\\/\\/youtubei\\.googleapis\\.com\\/youtubei\\/v1\\/(browse|next|player|search|reel\\/reel_watch_sequence|guide|account\\/get_setting|get_watch) url script-response-body https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js",
-      "status": "excluded",
-      "reason": "YouTube 脚本默认 blockUpload，并处理 Shorts/沉浸界面；混合功能无法仅作为广告脚本保留。"
+      "replacement": "^https:\\/\\/youtubei\\.googleapis\\.com\\/youtubei\\/v1\\/(player|reel\\/reel_watch_sequence|get_watch)(?:[?#]|$) url script-response-body https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js",
+      "reason": "仅恢复播放器、内嵌播放器及明确广告标记的Shorts；不启用后台播放、字幕、上传/下载、账户或普通信息流布局改写。",
+      "implementation": "Apache-2.0字段证据，独立广告字段/原始protobuf切片处理，保留播放权限与未知字段。",
+      "status": "replaced",
+      "outputs": [
+        {
+          "kind": "http.script",
+          "id": "7ceaa9765adc4bd3"
+        }
+      ]
     },
     {
       "line": 6459,

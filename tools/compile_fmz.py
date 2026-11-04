@@ -177,7 +177,7 @@ def compile_source(check=False):
                     providers[name]={'url':d['url'],'interval':86400};used_urls.add(d['url'])
                 stage='request' if action in ['script-request-body','script-request-header','script-analyze-echo-response'] else 'response'
                 require=action not in ['script-request-header','script-response-header']
-                binary=bool(comp and comp.get('binary_mode')) or arg.rsplit('/',1)[-1] in ['tieba-proto.js','baidumap.js']
+                binary=bool(override and override.get('binary_mode')) or bool(comp and comp.get('binary_mode')) or arg.rsplit('/',1)[-1] in ['tieba-proto.js','baidumap.js']
                 b=bind(pattern,name,stage,require,binary,timeout=30 if 'BahamutAnimeAds' in arg else 10)
                 outputs.append(('http.script',b))
             else:raise ValueError(f'Unconverted QX action at {number}: {action}')
@@ -187,7 +187,7 @@ def compile_source(check=False):
     config['rules']=unique(config['rules'])
     for key in ['url-rewrite','body-rewrite','script','mock']:h[key]=unique(h.get(key,[]))
     h['mitm']=unique(h.get('mitm',[])+[host for host in hosts if host not in ['*','*.*','*.com','*.cn','*.net']])
-    merge_report=merge_reviewed(config,repair,own_base)
+    merge_report=merge_reviewed(config,repair,own_base,policy,script_policy,dep_list)
     binding_aliases=merge_report.pop('_binding_id_aliases')
     merge_report['semantic_binding_aliases']=sum(a!=b for a,b in binding_aliases.items())
     for record in ledger:

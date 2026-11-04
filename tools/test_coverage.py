@@ -49,3 +49,6 @@ for url in [
     assert not rewritten(url),url
     assert handler(url) is None,url
 print('PASS: retained repair priority, exact ad rejection, MitM coverage and ordinary-function exclusions')
+
+# The earlier working Douban combination also forced this API host off QUIC.
+assert "AND,((DOMAIN,api.douban.com),(PROTOCOL,QUIC)),REJECT" in c["rules"]

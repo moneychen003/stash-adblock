@@ -2655,6 +2655,11 @@
       "line": 6544,
       "source": "USER-AGENT,AVOS*, reject",
       "reason": "整类 User-Agent 在所有 URL 上拒绝，缺少广告路径或字段约束，不能作为纯去广告规则公开启用。"
+    },
+    {
+      "line": 5532,
+      "source": "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d\\/note\\/comment\\/list url response-body red_id response-body fmz200",
+      "reason": "评论列表中的 red_id 字段整体重命名会改变普通身份数据，不属于广告内容过滤。"
     }
   ],
   "replacements": [

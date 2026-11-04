@@ -4,44 +4,462 @@
   "source_commit": "4b7830670baf235ed945085cb926dc499cf619e0",
   "source_statement_count": 4383,
   "dispositions": {
-    "compiled": 3771,
-    "excluded": 595,
-    "replaced": 16,
+    "compiled": 3772,
+    "excluded": 590,
+    "replaced": 20,
     "superseded": 1
   },
-  "compiled_source_sections": 677,
+  "compiled_source_sections": 678,
   "compiled_action_types": {
     "route": 2547,
     "reject": 436,
     "script-analyze-echo-response": 1,
     "reject-dict": 339,
-    "script-response-body": 115,
+    "script-response-body": 121,
     "reject-200": 204,
     "reject-img": 92,
     "echo-response": 1,
-    "response-body": 23,
+    "response-body": 22,
     "302": 3,
     "jsonjq-response-body": 25,
     "script-request-body": 1
   },
   "published_counts": {
-    "rules": 3148,
-    "url_rewrite": 1164,
+    "rules": 3098,
+    "url_rewrite": 1150,
     "body_rewrite": 29,
-    "script_bindings": 235,
-    "script_providers": 99,
+    "script_bindings": 225,
+    "script_providers": 97,
     "mitm_hosts": 1025,
-    "local_scripts": 11
+    "local_scripts": 13
   },
   "reviewed_release_union": {
     "reviewed_source_version": "2026.11.04.2",
     "legacy_input_rules": 2559,
     "legacy_input_url_rewrites": 419,
     "legacy_input_script_bindings": 143,
+    "legacy_after_current_review": {
+      "rules": 2509,
+      "url_rewrites": 405,
+      "script_bindings": 129
+    },
     "awa_payload_rules": 665,
     "exact_duplicates_removed": true,
     "priority": "verified response repairs, reviewed legacy handlers, fresh upstream handlers",
-    "semantic_binding_aliases": 49
+    "legacy_review_adjustments": [
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,180.76.76.200/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,203.107.1.1/24,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN,api.iqiyi.com,REJECT",
+        "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,203.107.63.154/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,101.227.97.240/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,101.227.200.11/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,101.227.200.28/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,124.192.153.42/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN,httpdns.baidubce.com,REJECT",
+        "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN-SUFFIX,resource.baomihua.com,REJECT",
+        "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,211.161.101.110/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN,msync-im1-vip6-std.easemob.com,REJECT",
+        "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,49.71.37.101/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,117.71.105.23/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,218.94.207.205/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,117.92.229.188/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,101.36.166.16/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,180.96.2.114/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN-SUFFIX,api.iapps.ifeng.com,REJECT",
+        "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN,icloud-amap.com,REJECT",
+        "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,114.119.160.0/21,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,101.124.19.122/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR6,2402:db40:5100:1011::5/128,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN-KEYWORD,me.api.moji.com,REJECT",
+        "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN-SUFFIX,cdn.moji.com,REJECT",
+        "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN-SUFFIX,cdn.moji002.com,REJECT",
+        "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN-SUFFIX,cdn2.moji002.com,REJECT",
+        "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN-SUFFIX,cdn.outfit7.com,REJECT",
+        "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN-SUFFIX,cdn-gcs.outfit7.com,REJECT",
+        "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,120.222.240.171/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,47.56.131.76/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,47.97.215.55/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,47.99.42.29/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,120.27.235.201/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,121.196.197.147/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN,order.sm.cn,REJECT",
+        "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN-KEYWORD,msg.push.51y5.net,REJECT",
+        "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN-SUFFIX,image.box.xiaomi.com,REJECT",
+        "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN-SUFFIX,api.jr.mi.com,REJECT",
+        "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,114.132.165.205/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN,118.89.204.198,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,118.89.204.198/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,122.229.8.47/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,122.229.29.89/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "IP-CIDR,120.240.95.37/32,REJECT",
+        "reason": "裸 IP/CIDR 缺少稳定的广告专用归属证据，整段拒绝可能影响共享服务或基础网络；待逐项证实后再纳入公开规则。"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN-KEYWORD,api.freed.so,REJECT",
+        "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN-SUFFIX,crashapi.growingio.com,REJECT",
+        "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN-SUFFIX,cdn-settings.segment.com,REJECT",
+        "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+      },
+      {
+        "kind": "rules",
+        "value": "DOMAIN-SUFFIX,mobile-service.segment.com,REJECT",
+        "reason": "整域命中普通 API、内容、账户、推送或基础网络服务，无法限定广告"
+      },
+      {
+        "kind": "http.url-rewrite",
+        "value": "^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.fliggy\\.crm\\.screen\\.(allresource|predict) - reject-dict",
+        "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+      },
+      {
+        "kind": "http.url-rewrite",
+        "value": "^https?:\\/\\/cn-acs\\.m\\.cainiao\\.com\\/gw\\/mtop\\.com\\.cainiao\\.longquan\\.place\\.getpageresourcecontent\\.cn - reject-dict",
+        "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+      },
+      {
+        "kind": "http.url-rewrite",
+        "value": "^https?:\\/\\/p\\d\\.meituan\\.net\\/nrpresourcevenus\\/\\w+\\.gif - reject-img",
+        "reason": "通用图片或视频匹配未限定广告素材"
+      },
+      {
+        "kind": "http.url-rewrite",
+        "value": "^https?:\\/\\/daijia\\.kuaidadi\\.com\\/gateway\\?api=prado\\.cms\\.delivery\\.batch&apiVe - reject-dict",
+        "reason": "整条响应或字段替换过宽，可能改动正常页面数据"
+      },
+      {
+        "kind": "http.url-rewrite",
+        "value": "^https?:\\/\\/.+\\.pglstatp-toutiao\\.com\\/.+\\/toutiao\\.mp4 - reject",
+        "reason": "通用图片或视频匹配未限定广告素材"
+      },
+      {
+        "kind": "http.url-rewrite",
+        "value": "^https:\\/\\/scdn\\.line-apps\\.com\\/appresources\\/moretab\\/list\\.json - reject",
+        "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+      },
+      {
+        "kind": "http.url-rewrite",
+        "value": "^https:\\/\\/mada-travel\\.17u\\.cn\\/mdapi\\/config\\/tabAct - reject-dict",
+        "reason": "整条接口为配置、系统服务或版本更新，阻断会影响正常功能"
+      },
+      {
+        "kind": "http.url-rewrite",
+        "value": "^https?:\\/\\/ok\\.166\\.net\\/reunionpub\\/202[2-9]{1}-[0-9]{2}-[0-9]{2}\\/ntesgod_cms\\/.*.jpg$ - reject-200",
+        "reason": "通用图片或视频匹配未限定广告素材"
+      },
+      {
+        "kind": "http.url-rewrite",
+        "value": "^https:\\/\\/acs\\.m\\.goofish\\.com\\/gw\\/mtop\\.taobao\\.idlemtopsearch\\.search\\.discover\\/1\\.0 - reject-dict",
+        "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+      },
+      {
+        "kind": "http.url-rewrite",
+        "value": "^https?:\\/\\/images\\.cib\\.com\\.cn\\/commons\\/uploads\\/commons\\/[a-zA-Z0-9]{32}\\.jpg\\?ver=20221[1-2]{1} - reject-200",
+        "reason": "通用图片或视频匹配未限定广告素材"
+      },
+      {
+        "kind": "http.url-rewrite",
+        "value": "^https?:\\/\\/images\\.cib\\.com\\.cn\\/commons\\/uploads\\/commons\\/[a-zA-Z0-9]{32}\\.jpg\\?ver=20230[1-9]{1} - reject-200",
+        "reason": "通用图片或视频匹配未限定广告素材"
+      },
+      {
+        "kind": "http.url-rewrite",
+        "value": "^https:\\/\\/api\\.zhihu\\.com\\/search\\/preset_words - reject-dict",
+        "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+      },
+      {
+        "kind": "http.url-rewrite",
+        "value": "^https:\\/\\/www\\.zhihu\\.com\\/api\\/v4\\/search\\/related_queries\\/(article|answer)\\/\\d+ - reject-dict",
+        "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+      },
+      {
+        "kind": "http.url-rewrite",
+        "value": "^https?:\\/\\/e\\.weather\\.com\\.cn\\/weChat\\/typhoonNull\\.json - reject-dict",
+        "reason": "整条接口为普通搜索、内容、消息、导航或服务"
+      },
+      {
+        "kind": "http.script-adaptation",
+        "value": "^https?:\\/\\/youtubei\\.googleapis\\.com\\/youtubei\\/v1\\/(browse|next|player|search|reel\\/reel_watch_sequence|guide|account\\/get_setting|get_watch)",
+        "provider_url": "https://raw.githubusercontent.com/Maasea/sgmodule/65075cdb388fc5e3094afd7e7314c67b243f3525/Script/Youtube/youtube.response.js",
+        "replacement_provider": "cq.youtube-ad-only",
+        "reason": "Apache-2.0字段证据，独立广告字段/原始protobuf切片处理，保留播放权限与未知字段。"
+      },
+      {
+        "kind": "http.script",
+        "value": "^https?:\\/\\/manga\\.bilibili\\.com\\/twirp\\/user\\.v\\d\\.User\\/UCenterConf",
+        "provider_url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/bilibiliManga.js",
+        "reason": "UCenterConf 只保留少数账户菜单并更改福利入口，超出广告展示。"
+      },
+      {
+        "kind": "http.script",
+        "value": "^https?:\\/\\/img\\.meituan\\.net\\/(?:dpmobile|goodsawardpic)\\/",
+        "provider_url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/dianping.js",
+        "reason": "大众点评按通用图片路径与请求头拒绝资源，无法判定仅广告。"
+      },
+      {
+        "kind": "http.script",
+        "value": "^https?:\\/\\/ddplus\\.meituan\\.net\\/v\\d\\/mss_\\w+\\/picassovc",
+        "provider_url": "https://raw.githubusercontent.com/zirawell/R-Store/15a0075d3ad6f5c5e2723330bcf0c08c52d2946a/Res/Scripts/AntiAd/dianping.js",
+        "reason": "大众点评替换普通组件函数名，非广告过滤。"
+      },
+      {
+        "kind": "http.script",
+        "value": "^https:\\/\\/youtubei\\.googleapis\\.com\\/youtubei\\/v1\\/(browse|next|player|search|reel\\/reel_watch_sequence|guide|account\\/get_setting|get_watch)",
+        "provider_url": "https://raw.githubusercontent.com/Maasea/sgmodule/65075cdb388fc5e3094afd7e7314c67b243f3525/Script/Youtube/youtube.response.js",
+        "reason": "仅恢复播放器、内嵌播放器及明确广告标记的Shorts；不启用后台播放、字幕、上传/下载、账户或普通信息流布局改写。"
+      },
+      {
+        "kind": "http.script",
+        "value": "^https:\\/\\/api\\.zhihu\\.com\\/(answers|articles)\\/v2\\/\\d+",
+        "provider_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/zhihu/zhihu.js",
+        "reason": "知乎回答/文章分支清空相关问题，属于普通内容。"
+      },
+      {
+        "kind": "http.script",
+        "value": "^https:\\/\\/api\\.zhihu\\.com\\/feed\\/render\\/tab\\/config\\?",
+        "provider_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/zhihu/zhihu.js",
+        "reason": "知乎过滤普通首页导航。"
+      },
+      {
+        "kind": "http.script",
+        "value": "^https:\\/\\/api\\.zhihu\\.com\\/(moments_v3|topstory\\/hot-lists\\/total|topstory\\/recommend)",
+        "provider_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/zhihu/zhihu.js",
+        "reason": "知乎 moments/hot 分支删除普通推荐内容。"
+      },
+      {
+        "kind": "http.script",
+        "value": "^https:\\/\\/api\\.zhihu\\.com\\/v2\\/topstory\\/hot-lists\\/everyone-seeing\\?",
+        "provider_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/zhihu/zhihu.js",
+        "reason": "知乎热榜分支可能删除普通内容。"
+      },
+      {
+        "kind": "http.script",
+        "value": "^https:\\/\\/api\\.zhihu\\.com\\/bazaar\\/vip_tab\\/header\\?",
+        "provider_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/zhihu/zhihu.js",
+        "reason": "知乎会员页头部涉及真实会员入口。"
+      },
+      {
+        "kind": "http.script",
+        "value": "^https:\\/\\/api\\.zhihu\\.com\\/next-(bff|data|render)\\?",
+        "provider_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/zhihu/zhihu.js",
+        "reason": "知乎 next 系列同时按推荐标题删普通内容。"
+      },
+      {
+        "kind": "http.script",
+        "value": "^https:\\/\\/api\\.zhihu\\.com\\/questions\\/\\d+(\\/answers|\\/feeds|\\?include=)",
+        "provider_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/zhihu/zhihu.js",
+        "reason": "知乎问题页分支删除普通回答/推荐。"
+      },
+      {
+        "kind": "http.script",
+        "value": "^https:\\/\\/www\\.zhihu\\.com\\/api\\/v4\\/(articles|answers)\\/\\d+\\/recommendations?\\?",
+        "provider_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/zhihu/zhihu.js",
+        "reason": "知乎文章/回答推荐接口删除普通内容。"
+      },
+      {
+        "kind": "http.script",
+        "value": "^https:\\/\\/appcloud2\\.zhihu\\.com\\/v3\\/config",
+        "provider_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/zhihu/zhihu.js",
+        "reason": "知乎配置分支修改 DNS、灰度、导航和同步。"
+      },
+      {
+        "kind": "http.script",
+        "value": "^https:\\/\\/m-cloud\\.zhihu\\.com\\/api\\/cloud\\/config\\/all\\?",
+        "provider_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Scripts/zhihu/zhihu.js",
+        "reason": "知乎全局配置修改主题与背景图。"
+      }
+    ],
+    "semantic_binding_aliases": 55
   },
   "note": "每条启用源语句都有编译、拆窄、排除或实测补丁替代记录，并合并已审核旧版。覆盖数量不是全部App实机验收数；无设备清单、CA、节点、账号或个人网络设置。"
 }

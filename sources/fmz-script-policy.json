@@ -222,16 +222,6 @@
       "reason": "小红书清空搜索提示与趋势，属于普通搜索。"
     },
     {
-      "line": 5518,
-      "source": "^https?:\\/\\/(so|edith)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/notes\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
-      "reason": "小红书搜索结果按 model_type 整类删，可能删普通结果。"
-    },
-    {
-      "line": 5520,
-      "source": "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/config\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
-      "reason": "小红书全局配置删除主题、商店等普通功能。"
-    },
-    {
       "line": 5523,
       "source": "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/note\\/widgets url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
       "reason": "小红书笔记组件删除 generic/widget_list，未限广告。"
@@ -242,21 +232,6 @@
       "reason": "小红书图文与 live_photo 分支改下载权限、水印及原图。"
     },
     {
-      "line": 5528,
-      "source": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/(followfeed|homefeed)\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
-      "reason": "小红书关注/首页流分支混合删普通推荐。"
-    },
-    {
-      "line": 5529,
-      "source": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/(v2\\/note\\/feed|v3\\/note\\/videofeed)\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
-      "reason": "小红书视频流分支改下载权限和水印。"
-    },
-    {
-      "line": 5530,
-      "source": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/(v4\\/note\\/videofeed|v10\\/note\\/video\\/save)\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
-      "reason": "小红书视频保存分支改下载权限和水印。"
-    },
-    {
       "line": 5756,
       "source": "^https?:\\/\\/www\\.myusmile\\.online\\/user\\/plaqueTopic\\/selectByType url script-response-body https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/usmile.js",
       "reason": "usmile 按 tok 请求头返回 204，可能拦截鉴权请求。"
@@ -265,11 +240,6 @@
       "line": 6248,
       "source": "^https?:\\/\\/push\\.m\\.youku\\.com\\/collect-api\\/get_push_interval_config_wx\\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js",
       "reason": "优酷弹窗广告已由本地 cq.youku-ad-only 覆盖，避免 cnftp 原脚本重新绑定。"
-    },
-    {
-      "line": 6457,
-      "source": "^https:\\/\\/youtubei\\.googleapis\\.com\\/youtubei\\/v1\\/(browse|next|player|search|reel\\/reel_watch_sequence|guide|account\\/get_setting|get_watch) url script-response-body https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js",
-      "reason": "YouTube 脚本默认 blockUpload，并处理 Shorts/沉浸界面；混合功能无法仅作为广告脚本保留。"
     },
     {
       "line": 6554,
@@ -334,6 +304,30 @@
       "source": "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/(banner_list|hot_list) url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
       "replacement": "^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/search\\/banner_list url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
       "reason": "仅保留搜索广告 banner，热搜列表是普通内容。"
+    },
+    {
+      "line": 5528,
+      "source": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/(followfeed|homefeed)\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "replacement": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v6\\/homefeed\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "reason": "仅恢复 v6/homefeed，明确广告节点过滤；不恢复 followfeed 和普通推荐删改。"
+    },
+    {
+      "line": 5529,
+      "source": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/(v2\\/note\\/feed|v3\\/note\\/videofeed)\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "replacement": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v3\\/note\\/videofeed\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "reason": "仅恢复 v3/note/videofeed，明确广告节点过滤；不接入 v2/note/feed 的水印与下载修改。"
+    },
+    {
+      "line": 5530,
+      "source": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/(v4\\/note\\/videofeed|v10\\/note\\/video\\/save)\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "replacement": "^https?:\\/\\/(edith|rec|www)\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v4\\/note\\/videofeed\\? url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "reason": "仅恢复 v4/note/videofeed，明确广告节点过滤；不接入 v10/note/video/save。"
+    },
+    {
+      "line": 6457,
+      "source": "^https:\\/\\/youtubei\\.googleapis\\.com\\/youtubei\\/v1\\/(browse|next|player|search|reel\\/reel_watch_sequence|guide|account\\/get_setting|get_watch) url script-response-body https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js",
+      "replacement": "^https:\\/\\/youtubei\\.googleapis\\.com\\/youtubei\\/v1\\/(player|reel\\/reel_watch_sequence|get_watch)(?:[?#]|$) url script-response-body https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js",
+      "reason": "仅恢复播放器、内嵌播放器及明确广告标记的Shorts；不启用后台播放、字幕、上传/下载、账户或普通信息流布局改写。"
     }
   ],
   "overrides": [
@@ -341,6 +335,19 @@
       "original_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js",
       "provider": "cq.fmz-video-ad-only",
       "reason": "GPL 上游混合广告和导航/会员/水印修改；本地脚本按请求路径只删明确广告字段。排除行须先于 URL 覆盖生效；优酷由已有 cq.youku-ad-only 接管。"
+    },
+    {
+      "original_url": "https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
+      "provider": "cq.xiaohongshu-ad-only",
+      "file": "xiaohongshu-ad-only.js",
+      "reason": "GPL 上游混合水印、下载、普通搜索与广告；本地脚本仅处理明确广告字段和广告节点。"
+    },
+    {
+      "original_url": "https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js",
+      "provider": "cq.youtube-ad-only",
+      "file": "youtube-ad-only.js",
+      "binary_mode": true,
+      "reason": "Apache-2.0字段证据，独立广告字段/原始protobuf切片处理，保留播放权限与未知字段。"
     }
   ],
   "compatibility": [

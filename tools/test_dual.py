@@ -55,9 +55,14 @@ assert sections['[MITM]']==['hostname = %APPEND% '+', '.join(h['mitm'])]
 assert c['rule-providers']=={} and not any(r.startswith('RULE-SET,') for r in c['rules'])
 # Keep the legacy review's coverage while adding upstream; no count-based truncation.
 legacy=json.loads((ROOT/'sources/legacy-reviewed.json').read_text())
-assert set(legacy['rules'])-{'RULE-SET,AWAvenue-OnlyAds,REJECT'}<=set(c['rules'])
-assert set(legacy['http']['url-rewrite'])<=set(h['url-rewrite'])
+review=json.loads((ROOT/'rules/coverage.json').read_text())['reviewed_release_union'].get('legacy_review_adjustments',[])
+allowed_rules={r['value'] for r in review if r['kind']=='rules'}
+allowed_urls={r['value'] for r in review if r['kind']=='http.url-rewrite'}
+assert set(legacy['rules'])-{'RULE-SET,AWAvenue-OnlyAds,REJECT'}-allowed_rules<=set(c['rules'])
+assert set(legacy['http']['url-rewrite'])-allowed_urls<=set(h['url-rewrite'])
 assert set(legacy['http']['mitm'])<=set(h['mitm'])
+assert not any('/Maasea/sgmodule/' in p['url'] for p in c['script-providers'].values()),'Legacy must not remount the mixed YouTube implementation'
+assert any(b['name']=='cq.youtube-ad-only' and b.get('binary-mode') for b in h['script'])
 def identifier(value):
     import hashlib
     return hashlib.sha256(json.dumps(value,ensure_ascii=False,sort_keys=True).encode()).hexdigest()[:16]

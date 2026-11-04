@@ -12,6 +12,7 @@
     "DOMAIN,sdkapp.uve.weibo.com,DIRECT",
     "DOMAIN,wbapp.uve.weibo.com,DIRECT",
     "DOMAIN,bootpreload.uve.weibo.com,DIRECT",
+    "AND,((DOMAIN,api.douban.com),(PROTOCOL,QUIC)),REJECT",
     "DOMAIN,adstats.tencentmusic.com,REJECT",
     "DOMAIN,ad.tencentmusic.com,REJECT",
     "DOMAIN,adcdn.tencentmusic.com,REJECT",
@@ -139,7 +140,7 @@
         "name": "cq.coolapk",
         "type": "response",
         "require-body": true,
-        "max-size": -1,
+        "max-size": 3145728,
         "timeout": 10
       },
       {
@@ -147,7 +148,7 @@
         "name": "cq.youku-ad-only",
         "type": "response",
         "require-body": true,
-        "max-size": -1,
+        "max-size": 3145728,
         "timeout": 60
       },
       {
@@ -155,7 +156,7 @@
         "name": "cq.youku-ad-only",
         "type": "response",
         "require-body": true,
-        "max-size": -1,
+        "max-size": 3145728,
         "timeout": 60
       },
       {
@@ -163,7 +164,7 @@
         "name": "cq.youku-ad-only",
         "type": "response",
         "require-body": true,
-        "max-size": -1,
+        "max-size": 3145728,
         "timeout": 60
       },
       {
@@ -171,7 +172,7 @@
         "name": "cq.bilibili-splash",
         "type": "response",
         "require-body": true,
-        "max-size": -1,
+        "max-size": 3145728,
         "timeout": 10
       },
       {
@@ -187,7 +188,7 @@
         "name": "cq.upstream.wool-weibo__weibo_launch_105",
         "type": "response",
         "require-body": true,
-        "max-size": -1,
+        "max-size": 3145728,
         "timeout": 10
       }
     ],
